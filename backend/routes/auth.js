@@ -1,0 +1,1 @@
+const r=require('express').Router(); r.post('/login',(q,s)=>s.json({ok:true})); r.post('/register',(q,s)=>s.json({ok:true})); module.exports=r;

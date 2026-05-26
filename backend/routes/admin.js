@@ -1,0 +1,1 @@
+const r=require('express').Router(); r.get('/stats',(q,s)=>s.json({users:0,kycPending:0})); module.exports=r;

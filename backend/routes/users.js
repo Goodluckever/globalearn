@@ -1,0 +1,1 @@
+const r=require('express').Router(); r.get('/',(q,s)=>s.json([{id:1,name:'demo-user'}])); module.exports=r;

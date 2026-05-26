@@ -1,0 +1,1 @@
+const r=require('express').Router(); r.post('/',(q,s)=>s.json({status:'submitted'})); module.exports=r;
