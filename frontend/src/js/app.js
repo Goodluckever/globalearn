@@ -1,0 +1,1 @@
+console.log('GlobalEarn premium production scaffold loaded');
