@@ -1,1 +1,0 @@
-fetch(window.API_URL+'/').then(r=>r.json()).then(()=>{document.getElementById('backend-status').innerHTML='<div class="card">Backend Connected</div>'}).catch(()=>{});document.getElementById('languageSwitcher').addEventListener('change',e=>{if(e.target.value==='French'){document.getElementById('heroTitle').textContent='Courtage Crypto • Forex • Actions';}});
