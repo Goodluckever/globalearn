@@ -740,3 +740,60 @@ if (menuToggle) {
     navLinks.classList.toggle("active");
   });
 }
+/* =====================================
+LIVE TRADE POPUP NOTIFICATION
+===================================== */
+
+const popup = document.getElementById("tradePopup");
+const popupUser = document.getElementById("popupUser");
+const popupTrade = document.getElementById("popupTrade");
+
+const traders = [
+    "James from United Kingdom",
+    "Michael from Canada",
+    "Sophia from Germany",
+    "David from Australia",
+    "Emma from France",
+    "John from USA",
+    "Daniel from Mumbai",
+    "Oliver from Spain",
+    "Ethan from Italy",
+    "Noah from UAE"
+];
+
+const trades = [
+    "Earned $2,450 trading BTC/USD",
+    "Earned $4,120 trading Gold",
+    "Earned $1,950 trading EUR/USD",
+    "Earned $8,240 trading ETH/USD",
+    "Earned $3,870 trading Nasdaq",
+    "Earned $6,430 trading Oil",
+    "Earned $2,100 trading XRP/USD",
+    "Earned $5,940 trading Stocks",
+    "Earned $7,600 trading Bitcoin",
+    "Earned $9,230 trading Forex"
+];
+
+function showTradePopup(){
+
+    const randomUser =
+        traders[Math.floor(Math.random() * traders.length)];
+
+    const randomTrade =
+        trades[Math.floor(Math.random() * trades.length)];
+
+    popupUser.textContent = randomUser;
+    popupTrade.textContent = randomTrade;
+
+    popup.classList.add("show-popup");
+
+    setTimeout(() => {
+        popup.classList.remove("show-popup");
+    }, 4000);
+}
+
+/* first popup */
+setTimeout(showTradePopup, 2000);
+
+/* every few seconds */
+setInterval(showTradePopup, 7000);
