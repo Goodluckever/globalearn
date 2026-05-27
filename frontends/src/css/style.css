@@ -1177,3 +1177,97 @@ RESPONSIVE
 }
 
 }
+/* =========================================
+MOBILE MENU
+========================================= */
+
+.menu-toggle{
+    display:none;
+    border:none;
+    background:#2166ff;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:22px;
+    font-weight:700;
+}
+
+.hidden-element{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s ease;
+}
+
+.show-element{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.live-trade-popup{
+    position:fixed;
+    left:25px;
+    bottom:25px;
+    background:#0d1830;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:18px 20px;
+    z-index:9999;
+    transform:translateY(140px);
+    opacity:0;
+    transition:.5s;
+    max-width:330px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.show-popup{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.popup-content{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.popup-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#22c55e;
+    margin-top:8px;
+}
+
+.popup-content p{
+    color:#9ea9c9;
+    margin-top:5px;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    background:#071120;
+    padding:20px;
+    border-radius:20px;
+}
+
+.nav-links.mobile-active{
+    display:flex;
+}
+
+.live-trade-popup{
+    left:15px;
+    right:15px;
+    max-width:none;
+    bottom:15px;
+}
+
+}
