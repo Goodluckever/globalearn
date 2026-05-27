@@ -3,83 +3,81 @@
 <head>
 
 <meta charset="UTF-8">
-<meta
-name="viewport"
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>
-GlobalEarn Dashboard
-</title>
+<title>GlobalEarn Dashboard</title>
 
-<link
-rel="stylesheet"
+<link rel="stylesheet"
 href="dashboard.css">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- ===================================== -->
+<!-- ========================================= -->
 <!-- SIDEBAR -->
-<!-- ===================================== -->
+<!-- ========================================= -->
 
 <aside class="sidebar">
 
-    <div class="logo">
+    <div class="brand">
 
         <h2>
             GlobalEarn
         </h2>
 
+        <p>
+            Premium Dashboard
+        </p>
+
     </div>
 
-    <ul>
+    <nav class="side-links">
 
-        <li>
+        <a href="#overview">
             Dashboard
-        </li>
+        </a>
 
-        <li>
+        <a href="#portfolio">
             Portfolio
-        </li>
+        </a>
 
-        <li>
-            Trading Products
-        </li>
+        <a href="#markets">
+            Markets
+        </a>
 
-        <li>
-            Market Analysis
-        </li>
+        <a href="#history">
+            Trading Activity
+        </a>
 
-        <li>
-            Notifications
-        </li>
+        <a href="#education">
+            Education
+        </a>
 
-        <li>
-            KYC Verification
-        </li>
+        <a href="#profile">
+            Profile
+        </a>
 
-        <li>
-            Settings
-        </li>
-
-    </ul>
+    </nav>
 
 </aside>
 
-<!-- ===================================== -->
+<!-- ========================================= -->
 <!-- MAIN -->
-<!-- ===================================== -->
+<!-- ========================================= -->
 
 <main class="dashboard-main">
 
-    <!-- topbar -->
+    <!-- HEADER -->
 
-    <section class="topbar">
+    <section class="dashboard-header">
 
         <div>
 
@@ -88,201 +86,285 @@ rel="stylesheet">
             </h1>
 
             <p>
-                Premium Trading Dashboard
+                Monitor your markets,
+                trading activity and
+                portfolio insights.
             </p>
 
         </div>
 
         <button class="dashboard-btn">
-
-            Open Markets
-
+            Start Trading
         </button>
 
     </section>
 
-    <!-- stats -->
+    <!-- OVERVIEW -->
 
-    <section class="dashboard-stats">
+    <section
+    class="overview-grid"
+    id="overview">
 
-        <div class="dashboard-card">
+        <div class="overview-card">
 
-            <h3>
-                Portfolio Value
-            </h3>
+            <span>
+                Portfolio Balance
+            </span>
 
             <h2>
-                $12,580
+                $24,500
             </h2>
 
         </div>
 
-        <div class="dashboard-card">
+        <div class="overview-card">
 
-            <h3>
-                Active Markets
-            </h3>
+            <span>
+                Active Trades
+            </span>
 
             <h2>
-                70+
+                12
             </h2>
 
         </div>
 
-        <div class="dashboard-card">
+        <div class="overview-card">
 
-            <h3>
-                Trading Products
-            </h3>
+            <span>
+                Daily Growth
+            </span>
 
             <h2>
-                6
+                +5.2%
             </h2>
 
         </div>
 
-        <div class="dashboard-card">
+        <div class="overview-card">
 
-            <h3>
-                Market Signals
-            </h3>
+            <span>
+                Market Watchlist
+            </span>
 
             <h2>
-                24
+                24 Assets
             </h2>
 
         </div>
 
     </section>
 
-    <!-- chart -->
+    <!-- MARKET CHART -->
 
-    <section class="chart-section">
+    <section
+    class="dashboard-chart"
+    id="markets">
 
-        <h2>
-            Live Market View
-        </h2>
+        <div class="section-header">
 
-        <div id="dashboard_chart">
+            <h2>
+                Live Market Chart
+            </h2>
+        </div>
+
+        <div id="dashboardChart"></div>
+
+    </section>
+
+    <!-- PORTFOLIO -->
+
+    <section
+    class="portfolio-grid"
+    id="portfolio">
+
+        <div class="portfolio-card">
+
+            <h3>
+                Bitcoin
+            </h3>
+
+            <p>
+                BTC Portfolio
+            </p>
+
+            <h2>
+                +2.4%
+            </h2>
+
+        </div>
+
+        <div class="portfolio-card">
+
+            <h3>
+                Gold
+            </h3>
+
+            <p>
+                Commodity
+            </p>
+
+            <h2>
+                +1.2%
+            </h2>
+
+        </div>
+
+        <div class="portfolio-card">
+
+            <h3>
+                Nasdaq
+            </h3>
+
+            <p>
+                Index Fund
+            </p>
+
+            <h2>
+                +3.1%
+            </h2>
+
         </div>
 
     </section>
 
-    <!-- portfolio -->
+    <!-- TRADING HISTORY -->
 
-    <section class="portfolio-section">
+    <section
+    class="history-section"
+    id="history">
 
-        <h2>
-            Portfolio Overview
-        </h2>
+        <div class="section-header">
 
-        <div class="portfolio-grid">
+            <h2>
+                Recent Trading Activity
+            </h2>
 
-            <div class="portfolio-card">
+        </div>
 
-                <h3>
-                    Crypto Assets
-                </h3>
+        <div class="table-wrapper">
 
-                <p>
-                    BTC, ETH, XRP
-                </p>
+            <table>
 
-            </div>
+                <thead>
 
-            <div class="portfolio-card">
+                    <tr>
 
-                <h3>
-                    Forex Markets
-                </h3>
+                        <th>
+                            Asset
+                        </th>
 
-                <p>
-                    EUR/USD, GBP/USD
-                </p>
+                        <th>
+                            Type
+                        </th>
 
-            </div>
+                        <th>
+                            Amount
+                        </th>
 
-            <div class="portfolio-card">
+                        <th>
+                            Status
+                        </th>
 
-                <h3>
-                    Stocks
-                </h3>
+                    </tr>
 
-                <p>
-                    Apple, Tesla, Amazon
-                </p>
+                </thead>
 
-            </div>
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            BTC/USD
+                        </td>
+
+                        <td>
+                            Buy
+                        </td>
+
+                        <td>
+                            $2,500
+                        </td>
+
+                        <td>
+                            Completed
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            GOLD
+                        </td>
+
+                        <td>
+                            Buy
+                        </td>
+
+                        <td>
+                            $1,500
+                        </td>
+
+                        <td>
+                            Running
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
 
         </div>
 
     </section>
 
-    <!-- activity -->
+    <!-- EDUCATION -->
 
-    <section class="activity-section">
+    <section
+    class="education-grid"
+    id="education">
 
-        <h2>
-            Recent Trading Activity
-        </h2>
+        <div class="education-card">
 
-        <table>
+            <iframe
+            src="https://www.youtube.com/embed/41JCpzvnn_0"
+            allowfullscreen>
+            </iframe>
 
-            <thead>
+            <h3>
+                Bitcoin Trading
+            </h3>
 
-                <tr>
+        </div>
 
-                    <th>
-                        Market
-                    </th>
+        <div class="education-card">
 
-                    <th>
-                        Type
-                    </th>
+            <iframe
+            src="https://www.youtube.com/embed/SSo_EIwHSd4"
+            allowfullscreen>
+            </iframe>
 
-                    <th>
-                        Status
-                    </th>
+            <h3>
+                Forex Trading
+            </h3>
 
-                </tr>
-
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>BTC/USD</td>
-                    <td>Crypto</td>
-                    <td>Active</td>
-                </tr>
-
-                <tr>
-                    <td>EUR/USD</td>
-                    <td>Forex</td>
-                    <td>Monitoring</td>
-                </tr>
-
-                <tr>
-                    <td>NASDAQ</td>
-                    <td>Index</td>
-                    <td>Watching</td>
-                </tr>
-
-            </tbody>
-
-        </table>
+        </div>
 
     </section>
 
-    <!-- kyc -->
+    <!-- PROFILE -->
 
-    <section class="kyc-section">
+    <section
+    class="profile-card"
+    id="profile">
 
         <h2>
-            KYC Verification
+            Profile Verification
         </h2>
 
-        <form class="kyc-form">
+        <form>
 
             <input
             type="text"
@@ -293,48 +375,33 @@ rel="stylesheet">
             placeholder="Email">
 
             <input
-            type="text"
+            type="tel"
             placeholder="Phone Number">
 
             <select>
 
                 <option>
-                    Select Country
+                    Country
                 </option>
 
                 <option>
-                    United States
+                    Nigeria
                 </option>
 
                 <option>
-                    United Kingdom
+                    USA
                 </option>
 
                 <option>
-                    Canada
+                    UK
                 </option>
 
             </select>
 
-            <select>
+            <button
+            class="dashboard-btn">
 
-                <option>
-                    Gender
-                </option>
-
-                <option>
-                    Male
-                </option>
-
-                <option>
-                    Female
-                </option>
-
-            </select>
-
-            <button>
-
-                Submit Verification
+                Save Profile
 
             </button>
 
@@ -344,39 +411,8 @@ rel="stylesheet">
 
 </main>
 
-<script src=
-"https://s3.tradingview.com/tv.js">
-</script>
-
-<script>
-
-new TradingView.widget({
-
-container_id:
-"dashboard_chart",
-
-width:"100%",
-
-height:450,
-
-symbol:
-"BINANCE:BTCUSDT",
-
-interval:"30",
-
-theme:"dark",
-
-style:"1",
-
-locale:"en"
-
-});
-
-</script>
-
-<script src=
-"dashboard.js">
-</script>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script src="dashboard.js"></script>
 
 </body>
-</html>
+                </html>
