@@ -457,3 +457,70 @@ body{
 }
 
 }
+/* =========================================
+DASHBOARD ANIMATIONS
+========================================= */
+
+.dashboard-hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.7s ease;
+}
+
+.dashboard-show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.active-side{
+    background:#112347;
+    color:#fff !important;
+}
+
+.dashboard-notification{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    background:#0c1830;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:18px 22px;
+
+    z-index:9999;
+
+    opacity:0;
+
+    transform:
+    translateY(80px);
+
+    transition:.4s;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+}
+
+.dashboard-notify-show{
+    opacity:1;
+    transform:
+    translateY(0);
+}
+
+.dashboard-notification p{
+    color:#9ea9c9;
+    margin-top:5px;
+}
+
+@media(max-width:768px){
+
+.dashboard-notification{
+    left:15px;
+    right:15px;
+    bottom:15px;
+}
+
+}
