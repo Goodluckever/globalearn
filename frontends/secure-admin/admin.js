@@ -29,10 +29,10 @@ function initAdminLogin() {
 
             // CHANGE THESE
             const ADMIN_EMAIL =
-                "admin@globalearn.com";
+                "globalearnbrokerage@gmail.com";
 
             const ADMIN_PASSWORD =
-                "GlobalEarn2026";
+                "Everboy@12";
 
             if(
                 email === ADMIN_EMAIL &&
