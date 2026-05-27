@@ -2,52 +2,32 @@
 // GLOBAL CONFIG
 // =========================================
 
-const CONFIG = {
-    API_URL: "https://globalearn-n1bu.onrender.com"
-};
+const API_BASE_URL = "https://globalearn-nfmm.onrender.com";
 
 // =========================================
 // BACKEND CONNECTION STATUS
 // =========================================
 
-async function checkBackendStatus() {
+const API_BASE_URL = "https://globalearn-nfmm.onrender.com";
 
-    const statusEl =
-        document.getElementById("backend-status");
+async function checkServerConnection() {
+  const statusBox = document.getElementById("server-status");
 
-    if (!statusEl) return;
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/health`);
+    const data = await response.json();
 
-    statusEl.innerHTML =
-        "Checking server connection...";
-
-    try {
-
-        const response = await fetch(
-            CONFIG.API_URL
-        );
-
-        if (response.ok) {
-
-            statusEl.innerHTML = `
-                ✅ Backend Connected
-            `;
-
-        } else {
-
-            statusEl.innerHTML = `
-                ⚠ Server Responded
-            `;
-        }
-
-    } catch (error) {
-
-        statusEl.innerHTML = `
-            ❌ Backend Offline
-        `;
-
-        console.log(error);
-    }
+    statusBox.innerHTML = "🟢 Backend Connected";
+    console.log("Backend:", data);
+  } catch (error) {
+    statusBox.innerHTML = "🔴 Backend Offline";
+    console.error(error);
+  }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  checkServerConnection();
+});
 
 // =========================================
 // LANGUAGE SWITCHER
