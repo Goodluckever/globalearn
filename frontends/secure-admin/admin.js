@@ -1,142 +1,353 @@
-// =================================
-// PRIVATE ADMIN LOGIN
-// =================================
+// =========================================
+// ADMIN LOGIN AUTH
+// =========================================
 
-const loginForm =
-document.getElementById(
-"adminLoginForm"
-);
+function initAdminLogin() {
 
-if(loginForm){
+    const loginForm =
+        document.getElementById(
+            "adminLoginForm"
+        );
 
-loginForm.addEventListener(
-"submit",
-(e)=>{
+    if (!loginForm) return;
 
-e.preventDefault();
+    loginForm.addEventListener(
+        "submit",
+        function(e){
 
-const username =
-document.getElementById(
-"adminUsername"
-).value;
+            e.preventDefault();
 
-const password =
-document.getElementById(
-"adminPassword"
-).value;
+            const email =
+                document.getElementById(
+                    "adminEmail"
+                ).value;
 
-if(
-username === "admin" &&
-password === "globalearn123"
+            const password =
+                document.getElementById(
+                    "adminPassword"
+                ).value;
+
+            // CHANGE THESE
+            const ADMIN_EMAIL =
+                "admin@globalearn.com";
+
+            const ADMIN_PASSWORD =
+                "GlobalEarn2026";
+
+            if(
+                email === ADMIN_EMAIL &&
+                password === ADMIN_PASSWORD
+            ){
+
+                sessionStorage.setItem(
+                    "adminLoggedIn",
+                    "true"
+                );
+
+                showAdminNotification(
+                    "Login Successful"
+                );
+
+                setTimeout(()=>{
+
+                    window.location.href =
+                    "admin.html";
+
+                },1000);
+
+            } else {
+
+                showAdminNotification(
+                    "Invalid Credentials"
+                );
+            }
+        }
+    );
+}
+
+// =========================================
+// ADMIN SESSION PROTECTION
+// =========================================
+
+function protectAdminRoute() {
+
+    const isAdmin =
+        sessionStorage.getItem(
+            "adminLoggedIn"
+        );
+
+    const page =
+        window.location.pathname;
+
+    if(
+        page.includes(
+            "admin.html"
+        ) &&
+        isAdmin !== "true"
+    ){
+
+        window.location.href =
+            "login.html";
+    }
+}
+
+// =========================================
+// TRADINGVIEW ANALYTICS
+// =========================================
+
+function initAdminChart() {
+
+    const chart =
+        document.getElementById(
+            "adminChart"
+        );
+
+    if (!chart) return;
+
+    new TradingView.widget({
+
+        container_id:
+            "adminChart",
+
+        width:"100%",
+
+        height:600,
+
+        symbol:
+            "BINANCE:BTCUSDT",
+
+        interval:"30",
+
+        timezone:"Etc/UTC",
+
+        theme:"dark",
+
+        style:"1",
+
+        locale:"en",
+
+        toolbar_bg:"#081120",
+
+        enable_publishing:false,
+
+        allow_symbol_change:true
+    });
+}
+
+// =========================================
+// USER SEARCH
+// =========================================
+
+function initUserSearch() {
+
+    const search =
+        document.getElementById(
+            "searchUser"
+        );
+
+    const table =
+        document.getElementById(
+            "usersTable"
+        );
+
+    if(
+        !search ||
+        !table
+    ) return;
+
+    search.addEventListener(
+        "keyup",
+        function(){
+
+            const value =
+                this.value
+                .toLowerCase();
+
+            const rows =
+                table.querySelectorAll(
+                    "tbody tr"
+                );
+
+            rows.forEach(row=>{
+
+                const text =
+                    row.innerText
+                    .toLowerCase();
+
+                row.style.display =
+                    text.includes(
+                        value
+                    )
+                    ? ""
+                    : "none";
+            });
+        }
+    );
+}
+
+// =========================================
+// SETTINGS SAVE
+// =========================================
+
+function initSettingsSave() {
+
+    const form =
+        document.getElementById(
+            "settingsForm"
+        );
+
+    if(!form) return;
+
+    form.addEventListener(
+        "submit",
+        function(e){
+
+            e.preventDefault();
+
+            showAdminNotification(
+                "Settings Saved"
+            );
+        }
+    );
+}
+
+// =========================================
+// LOGOUT
+// =========================================
+
+function initLogout() {
+
+    const logoutBtn =
+        document.getElementById(
+            "logoutBtn"
+        );
+
+    if(!logoutBtn) return;
+
+    logoutBtn.addEventListener(
+        "click",
+        ()=>{
+
+            sessionStorage.removeItem(
+                "adminLoggedIn"
+            );
+
+            showAdminNotification(
+                "Logged Out"
+            );
+
+            setTimeout(()=>{
+
+                window.location.href =
+                    "login.html";
+
+            },1000);
+        }
+    );
+}
+
+// =========================================
+// ADMIN NOTIFICATIONS
+// =========================================
+
+function showAdminNotification(
+    message
 ){
 
-localStorage.setItem(
-"adminAccess",
-"true"
-);
+    const notify =
+        document.createElement(
+            "div"
+        );
 
-window.location.href =
-"admin.html";
+    notify.className =
+        "admin-notification";
 
-}else{
+    notify.innerHTML = `
+        <strong>
+            GlobalEarn Admin
+        </strong>
+        <p>
+            ${message}
+        </p>
+    `;
 
-document.getElementById(
-"adminLoginMessage"
-).innerHTML =
-`
-<p style="color:red">
-Invalid credentials
-</p>
-`;
+    document.body.appendChild(
+        notify
+    );
 
+    setTimeout(()=>{
+
+        notify.classList.add(
+            "show-admin-notification"
+        );
+
+    },100);
+
+    setTimeout(()=>{
+
+        notify.remove();
+
+    },3500);
 }
 
-});
+// =========================================
+// ADMIN ACTIVITY FEED
+// =========================================
 
+function initAdminActivityFeed(){
+
+    const updates = [
+
+        "New User Registered",
+        "Market Analytics Updated",
+        "Portfolio Data Refreshed",
+        "Support Ticket Received",
+        "BTC Market Increased",
+        "Dashboard Activity Synced"
+
+    ];
+
+    setInterval(()=>{
+
+        const update =
+            updates[
+                Math.floor(
+                    Math.random() *
+                    updates.length
+                )
+            ];
+
+        showAdminNotification(
+            update
+        );
+
+    },15000);
 }
 
-// =================================
-// ROUTE PROTECTION
-// =================================
+// =========================================
+// INIT
+// =========================================
 
-if(
-window.location.pathname
-.includes("admin.html")
-){
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
 
-const access =
-localStorage.getItem(
-"adminAccess"
+        protectAdminRoute();
+
+        initAdminLogin();
+
+        initAdminChart();
+
+        initUserSearch();
+
+        initSettingsSave();
+
+        initLogout();
+
+        initAdminActivityFeed();
+
+        showAdminNotification(
+            "Admin System Ready"
+        );
+    }
 );
-
-if(access !== "true"){
-
-window.location.href =
-"login.html";
-
-}
-
-}
-
-// =================================
-// ADMIN NOTIFICATION
-// =================================
-
-function adminNote(message){
-
-const note =
-document.createElement(
-"div"
-);
-
-note.innerText =
-message;
-
-note.style.position =
-"fixed";
-
-note.style.top =
-"20px";
-
-note.style.right =
-"20px";
-
-note.style.background =
-"#1d6fff";
-
-note.style.padding =
-"18px";
-
-note.style.borderRadius =
-"14px";
-
-document.body.appendChild(
-note
-);
-
-setTimeout(()=>{
-
-note.remove();
-
-},3000);
-
-}
-
-const adminBtn =
-document.querySelector(
-".admin-btn"
-);
-
-if(adminBtn){
-
-adminBtn.addEventListener(
-"click",
-()=>{
-
-adminNote(
-"Notification Created"
-);
-
-});
-
-}
