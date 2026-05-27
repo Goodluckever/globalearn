@@ -92,52 +92,55 @@ section{
     margin-bottom:20px;
 }
 
-/* =========================================
-   MARKET TICKER
-========================================= */
+/* ==============================
+MARKET TICKER - TOP FIX
+============================== */
 
 .market-ticker{
+    position:fixed;
+    top:0;
+    left:0;
     width:100%;
-    overflow:hidden;
 
-    background:#07111f;
+    height:52px;
 
-    border-top:
-    1px solid rgba(255,255,255,.05);
+    background:#020d24;
 
     border-bottom:
-    1px solid rgba(255,255,255,.05);
+    1px solid rgba(255,255,255,.08);
 
-    padding:14px 0;
+    overflow:hidden;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
 }
 
 .ticker-track{
     display:flex;
-    align-items:center;
-
-    gap:50px;
-
+    gap:70px;
     width:max-content;
 
     white-space:nowrap;
 
-    animation:
-    tickerMove 28s linear infinite;
+    animation:tickerMove 25s linear infinite;
+
+    padding-left:20px;
 }
 
 .ticker-track span{
-    color:#4ade80;
-    font-size:15px;
+    color:#2eea84;
+    font-size:20px;
     font-weight:700;
 }
 
 @keyframes tickerMove{
-
-    0%{
+    from{
         transform:translateX(0);
     }
 
-    100%{
+    to{
         transform:translateX(-50%);
     }
 }
@@ -148,27 +151,26 @@ section{
 
 .navbar{
     position:fixed;
-    top:0;
-    left:0;
+    top:52px; /* below ticker */
 
+    left:0;
     width:100%;
-    height:80px;
+
+    z-index:9998;
+
+    background:
+    rgba(2,15,45,.96);
+
+    backdrop-filter:blur(14px);
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:0 7%;
-
-    background:
-    rgba(4,12,30,.94);
-
-    backdrop-filter:blur(18px);
+    padding:18px 24px;
 
     border-bottom:
-    1px solid rgba(255,255,255,.06);
-
-    z-index:1000;
+    1px solid rgba(255,255,255,.08);
 }
 
 .logo{
