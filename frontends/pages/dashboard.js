@@ -1,127 +1,371 @@
-// =====================================
-// DASHBOARD NOTIFICATION
-// =====================================
+// =========================================
+// DASHBOARD TRADINGVIEW CHART
+// =========================================
 
-function dashboardNotification(message){
+function initTradingChart() {
 
-const note =
-document.createElement("div");
+    const chart =
+        document.getElementById(
+            "dashboardChart"
+        );
 
-note.className =
-"dashboard-note";
+    if (!chart) return;
 
-note.innerText =
-message;
+    new TradingView.widget({
 
-document.body.appendChild(
-note
-);
+        container_id:
+            "dashboardChart",
 
-setTimeout(()=>{
+        width:"100%",
 
-note.classList.add(
-"show-note"
-);
+        height:600,
 
-},100);
+        symbol:
+            "BINANCE:BTCUSDT",
 
-setTimeout(()=>{
+        interval:"30",
 
-note.remove();
+        timezone:"Etc/UTC",
 
-},3500);
+        theme:"dark",
 
+        style:"1",
+
+        locale:"en",
+
+        toolbar_bg:"#081120",
+
+        enable_publishing:false,
+
+        allow_symbol_change:true
+    });
 }
 
-// =====================================
-// WELCOME
-// =====================================
+// =========================================
+// DASHBOARD REVEAL ANIMATIONS
+// =========================================
 
-setTimeout(()=>{
+function initDashboardReveal() {
 
-dashboardNotification(
-"Welcome to GlobalEarn Dashboard"
-);
+    const cards =
+        document.querySelectorAll(
+            ".overview-card, .portfolio-card, .education-card, .profile-card, .dashboard-chart"
+        );
 
-},1500);
+    const observer =
+        new IntersectionObserver(
+            entries => {
 
-// =====================================
-// BUTTON ACTION
-// =====================================
+                entries.forEach(
+                    entry => {
 
-const dashboardBtn =
-document.querySelector(
-".dashboard-btn"
-);
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-if(dashboardBtn){
+                        entry.target.classList.add(
+                            "dashboard-show"
+                        );
+                    }
+                });
 
-dashboardBtn.addEventListener(
-"click",
-()=>{
+            },
+            {
+                threshold:0.15
+            }
+        );
 
-dashboardNotification(
-"Opening Market Dashboard..."
-);
+    cards.forEach(card => {
 
-});
+        card.classList.add(
+            "dashboard-hidden"
+        );
 
+        observer.observe(card);
+    });
 }
 
-// =====================================
-// KYC SUBMIT
-// =====================================
+// =========================================
+// SIDEBAR ACTIVE LINKS
+// =========================================
 
-const kycForm =
-document.querySelector(
-".kyc-form"
-);
+function initSidebarLinks() {
 
-if(kycForm){
+    const links =
+        document.querySelectorAll(
+            ".side-links a"
+        );
 
-kycForm.addEventListener(
-"submit",
-(e)=>{
+    links.forEach(link => {
 
-e.preventDefault();
+        link.addEventListener(
+            "click",
+            function () {
 
-dashboardNotification(
-"KYC Submitted Successfully"
-);
+                links.forEach(l => {
 
-});
+                    l.classList.remove(
+                        "active-side"
+                    );
+                });
 
+                this.classList.add(
+                    "active-side"
+                );
+            }
+        );
+    });
 }
 
-// =====================================
-// AUTO MARKET MESSAGE
-// =====================================
+// =========================================
+// PROFILE SAVE
+// =========================================
 
-const dashboardMessages = [
+function initProfileSave() {
 
-"BTC market updated",
+    const form =
+        document.querySelector(
+            ".profile-card form"
+        );
 
-"Forex market monitored",
+    if (!form) return;
 
-"NASDAQ market moved +1.2%",
+    form.addEventListener(
+        "submit",
+        function (e) {
 
-"Portfolio synced",
+            e.preventDefault();
 
-"Market signals updated"
+            const inputs =
+                form.querySelectorAll(
+                    "input, select"
+                );
 
-];
+            const profile = {};
 
-setInterval(()=>{
+            inputs.forEach(input => {
 
-dashboardNotification(
+                profile[
+                    input.placeholder ||
+                    "country"
+                ] =
+                    input.value;
+            });
 
-dashboardMessages[
-Math.floor(
-Math.random()*
-dashboardMessages.length
-)
-]
+            localStorage.setItem(
+                "globalearn_profile",
+                JSON.stringify(profile)
+            );
 
+            showNotification(
+                "Profile Saved Successfully"
+            );
+        }
+    );
+}
+
+// =========================================
+// LOAD PROFILE
+// =========================================
+
+function loadProfile() {
+
+    const data =
+        localStorage.getItem(
+            "globalearn_profile"
+        );
+
+    if (!data) return;
+
+    const profile =
+        JSON.parse(data);
+
+    const inputs =
+        document.querySelectorAll(
+            ".profile-card input, .profile-card select"
+        );
+
+    inputs.forEach(input => {
+
+        const key =
+            input.placeholder ||
+            "country";
+
+        if (
+            profile[key]
+        ) {
+
+            input.value =
+                profile[key];
+        }
+    });
+}
+
+// =========================================
+// PREMIUM NOTIFICATION SYSTEM
+// =========================================
+
+function showNotification(message) {
+
+    const notify =
+        document.createElement(
+            "div"
+        );
+
+    notify.className =
+        "dashboard-notification";
+
+    notify.innerHTML = `
+        <strong>
+            GlobalEarn
+        </strong>
+
+        <p>
+            ${message}
+        </p>
+    `;
+
+    document.body.appendChild(
+        notify
+    );
+
+    setTimeout(() => {
+
+        notify.classList.add(
+            "dashboard-notify-show"
+        );
+
+    },100);
+
+    setTimeout(() => {
+
+        notify.remove();
+
+    },3500);
+}
+
+// =========================================
+// LIVE MARKET ACTIVITY
+// =========================================
+
+function initDashboardActivity() {
+
+    const messages = [
+
+        "BTC Market Up +2.4%",
+        "Gold Market Updated",
+        "New Forex Signal Available",
+        "Nasdaq +1.3% Today",
+        "Portfolio Analytics Refreshed",
+        "Education Center Updated"
+
+    ];
+
+    setInterval(() => {
+
+        const message =
+            messages[
+                Math.floor(
+                    Math.random() *
+                    messages.length
+                )
+            ];
+
+        showNotification(
+            message
+        );
+
+    },12000);
+}
+
+// =========================================
+// BUTTON ACTIONS
+// =========================================
+
+function initDashboardButtons() {
+
+    const buttons =
+        document.querySelectorAll(
+            ".dashboard-btn"
+        );
+
+    buttons.forEach(btn => {
+
+        btn.addEventListener(
+            "click",
+            () => {
+
+                showNotification(
+                    "Trading dashboard opened"
+                );
+            }
+        );
+    });
+}
+
+// =========================================
+// SMOOTH SCROLL
+// =========================================
+
+function initSmoothScroll() {
+
+    const links =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+    links.forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function(e){
+
+                e.preventDefault();
+
+                const section =
+                    document.querySelector(
+                        this.getAttribute(
+                            "href"
+                        )
+                    );
+
+                if(section){
+
+                    section.scrollIntoView({
+                        behavior:"smooth"
+                    });
+                }
+            }
+        );
+    });
+}
+
+// =========================================
+// INIT
+// =========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initTradingChart();
+
+        initDashboardReveal();
+
+        initSidebarLinks();
+
+        initProfileSave();
+
+        loadProfile();
+
+        initDashboardActivity();
+
+        initDashboardButtons();
+
+        initSmoothScroll();
+
+        showNotification(
+            "Welcome Back To GlobalEarn"
+        );
+    }
 );
-
-},10000);
