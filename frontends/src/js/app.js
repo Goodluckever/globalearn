@@ -3,47 +3,47 @@
 // =========================================
 
 const API_BASE_URL =
-"https://globalearn-nfmm.onrender.com";
+  "https://globalearn-nfmm.onrender.com";
 
-/* =========================
-BACKEND STATUS
-========================= */
+async function checkServerConnection() {
 
-async function checkBackendStatus(){
-
-    const status =
+  const statusBox =
     document.getElementById(
-        "backend-status"
+      "server-status"
     );
 
-    if(!status) return;
+  if (!statusBox) return;
 
-    try{
+  try {
 
-        const response =
-        await fetch(
-            `${API_BASE_URL}/api/health`
-        );
+    const response =
+      await fetch(
+        `${API_BASE_URL}/api/health`
+      );
 
-        const data =
-        await response.json();
+    const data =
+      await response.json();
 
-        console.log(data);
+    statusBox.innerHTML =
+      "🟢 Backend Connected";
 
-        status.innerHTML =
-        "🟢 Backend Connected";
+    console.log(data);
 
-    }
+  } catch (error) {
 
-    catch(error){
+    statusBox.innerHTML =
+      "🔴 Backend Offline";
 
-        console.error(error);
-
-        status.innerHTML =
-        "🔴 Backend Offline";
-    }
+    console.error(error);
+  }
 }
 
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    checkServerConnection();
+  }
+);
 /* =========================
 PAGE LOAD
 ========================= */
