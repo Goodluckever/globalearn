@@ -1244,83 +1244,112 @@ MOBILE MENU
         font-size:24px;
     }
 }
-/* ==========================
-   PREMIUM NAVBAR FIX
-========================== */
-
-.navbar{
-    position: sticky; /* change from fixed */
-    top:0;
-    width:100%;
-    z-index:999;
-    background:rgba(6,14,40,.95);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    padding:16px 20px;
+/* =========================
+   FIXED MOBILE NAVBAR
+========================= */
+.navbar,
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background: rgba(4, 12, 45, 0.96);
+  backdrop-filter: blur(12px);
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* nav container */
-.nav-container{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    max-width:1400px;
-    margin:auto;
+/* NAV CONTENT */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* nav links */
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:20px;
-    list-style:none;
+/* LOGO */
+.logo,
+.navbar h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
 }
 
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    transition:.3s;
+/* SELECT DROPDOWNS */
+.currency-select,
+.language-select,
+select {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #081a4a;
+  color: #fff;
+  padding: 0 14px;
+  font-size: 16px;
+  outline: none;
 }
 
-.nav-links a:hover{
-    color:#4da3ff;
+/* =========================
+   FIX PAGE HIDING UNDER NAVBAR
+========================= */
+body {
+  background: #020b25;
+  color: white;
+  overflow-x: hidden;
+  padding-top: 140px;
 }
 
-/* mobile menu */
-.menu-toggle{
-    display:none;
-    font-size:28px;
-    color:#fff;
-    cursor:pointer;
+/* HERO SECTION */
+.hero {
+  padding: 40px 20px;
 }
 
-/* mobile responsive */
-@media(max-width:768px){
+/* SECTION SPACING */
+section {
+  padding: 30px 20px;
+}
 
-    .menu-toggle{
-        display:block;
-    }
+/* =========================
+   FLOATING SUPPORT ICONS
+========================= */
+.support-floating {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-    .nav-links{
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        background:#081633;
-        flex-direction:column;
-        padding:20px;
-        display:none;
-        overflow-y:auto;
-        max-height:80vh; /* allow scrolling */
-    }
+.support-floating a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
 
-    .nav-links.active{
-        display:flex;
-    }
+/* MOBILE FIX */
+@media (max-width:768px) {
+  body {
+    padding-top: 160px;
+  }
 
-    body{
-        overflow-x:hidden;
-    }
+  .support-floating {
+    right: 12px;
+    bottom: 18px;
+  }
+
+  /* stop icons covering content */
+  footer,
+  .cta-section,
+  .plans-section {
+    padding-bottom: 120px;
+  }
     }
