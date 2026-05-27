@@ -526,3 +526,54 @@ body{
 }
 
 }
+/* =========================================
+ADMIN NOTIFICATIONS
+========================================= */
+
+.admin-notification{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    background:#0c1830;
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:18px 22px;
+
+    z-index:9999;
+
+    opacity:0;
+
+    transform:
+    translateY(80px);
+
+    transition:.4s;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+}
+
+.show-admin-notification{
+    opacity:1;
+    transform:
+    translateY(0);
+}
+
+.admin-notification p{
+    color:#9ea9c9;
+    margin-top:5px;
+}
+
+@media(max-width:768px){
+
+.admin-notification{
+    left:15px;
+    right:15px;
+    bottom:15px;
+}
+
+}
