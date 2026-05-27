@@ -1271,3 +1271,137 @@ MOBILE MENU
 }
 
 }
+/* ==========================
+   FLOATING SUPPORT BUTTONS
+========================== */
+
+.floating-support {
+    position: fixed;
+    right: 18px;
+    bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+}
+
+.float-btn {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,.35);
+    transition: .3s ease;
+    font-size: 28px;
+}
+
+.float-btn:hover{
+    transform: scale(1.08);
+}
+
+.whatsapp-btn{
+    background: linear-gradient(135deg,#25D366,#18b956);
+    color:#fff;
+}
+
+.email-btn{
+    background: linear-gradient(135deg,#4facfe,#2563eb);
+    color:#fff;
+}
+
+/* mobile fit */
+@media(max-width:768px){
+    .floating-support{
+        right:15px;
+        bottom:85px;
+    }
+
+    .float-btn{
+        width:55px;
+        height:55px;
+        font-size:24px;
+    }
+}
+/* ==========================
+   PREMIUM NAVBAR FIX
+========================== */
+
+.navbar{
+    position: sticky; /* change from fixed */
+    top:0;
+    width:100%;
+    z-index:999;
+    background:rgba(6,14,40,.95);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:16px 20px;
+}
+
+/* nav container */
+.nav-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* nav links */
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#4da3ff;
+}
+
+/* mobile menu */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* mobile responsive */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#081633;
+        flex-direction:column;
+        padding:20px;
+        display:none;
+        overflow-y:auto;
+        max-height:80vh; /* allow scrolling */
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    body{
+        overflow-x:hidden;
+    }
+    }
