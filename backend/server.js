@@ -10,6 +10,10 @@ app.use(express.json());
 // HEALTH CHECK
 // =================================
 
+app.get("/", (req, res) => {
+  res.send("GlobalEarn Backend Running");
+});
+
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
@@ -95,7 +99,7 @@ success:false
 });
 
 const PORT =
-process.env.PORT || 5000;
+process.env.PORT || 10000;
 
 app.listen(PORT, ()=>{
 
