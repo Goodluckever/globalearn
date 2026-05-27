@@ -1358,30 +1358,22 @@ TESTIMONIALS - BINANCE STYLE
 
 /* language switcher in footer */
 
-.footer-language{
-    display:flex;
-    flex-direction:column;
+.language-floating{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    z-index:9999;
 }
 
-.footer-language select{
-    height:52px;
-
-    border:none;
-    outline:none;
-
-    border-radius:16px;
-
+.language-floating select{
+    height:50px;
     padding:0 18px;
-
-    background:#0d1d43;
+    border:none;
+    border-radius:14px;
+    background:#091735;
     color:#fff;
-
-    font-size:15px;
-    font-weight:600;
-
-    margin-top:10px;
+    font-size:16px;
 }
-
 /* footer bottom */
 
 .footer-bottom{
@@ -1453,84 +1445,69 @@ TESTIMONIALS - BINANCE STYLE
 /* ==========================
 PREMIUM TRADE POPUP
 ========================== */
-
-.trade-popup{
+.live-trade-popup{
     position:fixed;
-
-    left:18px;
-    bottom:120px;
-
-    width:330px;
-
+    left:20px;
+    bottom:90px;
+    width:280px;
     z-index:9999;
 
     background:
-    linear-gradient(
-    180deg,
-    rgba(7,18,42,.98),
-    rgba(3,10,25,.98));
+    rgba(7,18,38,.96);
 
-    border:1px solid
-    rgba(255,255,255,.08);
+    border:
+    1px solid rgba(255,255,255,.08);
 
-    border-radius:28px;
+    border-radius:20px;
 
-    padding:20px;
+    backdrop-filter:blur(14px);
+
+    padding:16px 18px;
+
+    transform:
+    translateY(40px);
 
     opacity:0;
 
-    transform:
-    translateY(100px);
-
-    transition:.5s ease;
+    transition:.4s ease;
 
     box-shadow:
-    0 12px 45px rgba(0,0,0,.45);
+    0 15px 45px rgba(0,0,0,.35);
 }
 
-.trade-popup.show-popup{
+.live-trade-popup.show-popup{
+    transform:translateY(0);
     opacity:1;
-    transform:
-    translateY(0);
 }
 
-.trade-popup-top{
+.popup-content{
     display:flex;
-    gap:16px;
+    gap:14px;
     align-items:flex-start;
 }
 
-.trade-dot{
-    width:14px;
-    height:14px;
-
+.popup-dot{
+    width:12px;
+    height:12px;
     border-radius:50%;
-
-    background:#22c55e;
-
-    margin-top:8px;
+    background:#00d26a;
+    margin-top:6px;
 
     box-shadow:
-    0 0 20px #22c55e;
+    0 0 18px #00d26a;
 }
 
-#popupUser{
-    font-size:20px;
+.popup-content strong{
+    color:#fff;
+    font-size:17px;
+    display:block;
 }
 
-#popupTrade{
-    color:#a8b3d4;
-    margin-top:8px;
-}
-
-@media(max-width:768px){
-
-    .trade-popup{
-        left:15px;
-        right:15px;
-        width:auto;
-        bottom:110px;
-    }
+.popup-content p{
+    margin-top:5px;
+    color:#9ca8c7;
+    font-size:14px;
+    line-height:1.5;
 }
 /* =========================================
    ANIMATION
