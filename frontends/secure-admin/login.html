@@ -1,1 +1,74 @@
-<h1>Hidden Admin Login</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+GlobalEarn Admin Login
+</title>
+
+<link
+rel="stylesheet"
+href="admin.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body class="admin-login-page">
+
+<div class="admin-login-wrapper">
+
+    <div class="admin-login-card">
+
+        <span class="admin-badge">
+            Private Access
+        </span>
+
+        <h1>
+            Admin Login
+        </h1>
+
+        <p>
+            Restricted administrator access only.
+        </p>
+
+        <form id="adminLoginForm">
+
+            <input
+            type="text"
+            id="adminUsername"
+            placeholder="Admin Username"
+            required>
+
+            <input
+            type="password"
+            id="adminPassword"
+            placeholder="Admin Password"
+            required>
+
+            <button type="submit">
+
+                Secure Login
+
+            </button>
+
+        </form>
+
+        <div id="adminLoginMessage">
+        </div>
+
+    </div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
