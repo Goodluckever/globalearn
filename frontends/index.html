@@ -18,48 +18,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <body>
 
-<!-- ========================================= -->
 <!-- MARKET TICKER -->
-<!-- ========================================= -->
-
-<section class="market-ticker">
-    
 <div class="market-ticker">
-
     <div class="ticker-track">
-
-        <span>BTC/USD +2.34%</span>
-        <span>ETH/USD +4.15%</span>
+        <span>BTC/USD +2.15%</span>
+        <span>ETH/USD +1.48%</span>
         <span>Gold +1.92%</span>
         <span>EUR/USD +0.61%</span>
-        <span>NASDAQ +3.14%</span>
-        <span>XRP/USD +5.20%</span>
-
+        <span>NASDAQ +3.11%</span>
+        <span>USD/JPY +0.89%</span>
+        <span>Oil +2.44%</span>
     </div>
-
 </div>
-
-</section>
 
 <!-- NAVBAR -->
 <header class="navbar">
 
-    <a href="#" class="logo">
+    <div class="logo">
         GlobalEarn
-    </a>
+    </div>
 
     <div class="nav-right">
 
-        <!-- Currency -->
-        <select class="currency-select">
-            <option>USD $</option>
-            <option>EUR €</option>
-            <option>GBP £</option>
-            <option>INR ₹</option>
+        <select id="currencySwitcher">
+            <option value="USD">USD $</option>
+            <option value="EUR">EUR €</option>
+            <option value="GBP">GBP £</option>
+            <option value="INR">INR ₹</option>
         </select>
 
-        <!-- Menu Toggle -->
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle">
             ☰
         </button>
 
