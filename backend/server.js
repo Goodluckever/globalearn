@@ -1,22 +1,108 @@
+const express = require("express");
+const cors = require("cors");
 
-const express=require('express');
-const cors=require('cors');
-require('dotenv').config();
+const app = express();
 
-const authRoutes=require('./routes/auth');
-const userRoutes=require('./routes/users');
-const kycRoutes=require('./routes/kyc');
-const adminRoutes=require('./routes/admin');
-
-const app=express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/',(req,res)=>res.json({app:'GlobalEarn Premium',mode:'simulation'}));
-app.use('/api/auth',authRoutes);
-app.use('/api/users',userRoutes);
-app.use('/api/kyc',kycRoutes);
-app.use('/api/admin',adminRoutes);
+// =================================
+// HEALTH CHECK
+// =================================
 
-const PORT=process.env.PORT||5000;
-app.listen(PORT,()=>console.log(`Server on ${PORT}`));
+app.get("/", (req, res) => {
+
+    res.json({
+        success: true,
+        message:
+        "GlobalEarn Backend Running"
+    });
+
+});
+
+// =================================
+// DASHBOARD DATA
+// =================================
+
+app.get("/api/dashboard",
+(req, res)=>{
+
+res.json({
+
+portfolio:12580,
+
+markets:70,
+
+products:6,
+
+signals:24
+
+});
+
+});
+
+// =================================
+// USER KYC
+// =================================
+
+app.post("/api/kyc",
+(req,res)=>{
+
+const data = req.body;
+
+res.json({
+
+success:true,
+
+message:
+"KYC Submitted",
+
+data
+
+});
+
+});
+
+// =================================
+// LOGIN MOCK
+// =================================
+
+app.post("/api/login",
+(req,res)=>{
+
+const {
+email,
+password
+} = req.body;
+
+if(email && password){
+
+return res.json({
+
+success:true,
+
+message:
+"Login successful"
+
+});
+
+}
+
+return res.status(400).json({
+
+success:false
+
+});
+
+});
+
+const PORT =
+process.env.PORT || 5000;
+
+app.listen(PORT, ()=>{
+
+console.log(
+`Server running on ${PORT}`
+);
+
+});
