@@ -1,125 +1,125 @@
 // =========================================
-// CONFIG
+// GLOBAL CONFIG
 // =========================================
 
-const API_URL =
-"https://globalearn-n1bu.onrender.com";
+const CONFIG = {
+    API_URL: "https://globalearn-n1bu.onrender.com"
+};
 
 // =========================================
-// BACKEND STATUS CHECK
+// BACKEND CONNECTION STATUS
 // =========================================
 
-const backendStatus =
-document.getElementById("backend-status");
+async function checkBackendStatus() {
 
-async function checkBackend() {
+    const statusEl =
+        document.getElementById("backend-status");
 
-    if (!backendStatus) return;
+    if (!statusEl) return;
+
+    statusEl.innerHTML =
+        "Checking server connection...";
 
     try {
 
-        backendStatus.innerHTML =
-        `
-        <div class="server-online">
-            Connecting to server...
-        </div>
-        `;
-
-        const response =
-        await fetch(API_URL);
+        const response = await fetch(
+            CONFIG.API_URL
+        );
 
         if (response.ok) {
 
-            backendStatus.innerHTML =
-            `
-            <div class="server-online">
-                🟢 Backend Connected
-            </div>
+            statusEl.innerHTML = `
+                ✅ Backend Connected
             `;
 
         } else {
 
-            backendStatus.innerHTML =
-            `
-            <div class="server-offline">
-                🔴 Backend Offline
-            </div>
+            statusEl.innerHTML = `
+                ⚠ Server Responded
             `;
         }
 
     } catch (error) {
 
-        backendStatus.innerHTML =
-        `
-        <div class="server-offline">
-            🔴 Server Unavailable
-        </div>
+        statusEl.innerHTML = `
+            ❌ Backend Offline
         `;
+
+        console.log(error);
     }
 }
-
-checkBackend();
 
 // =========================================
 // LANGUAGE SWITCHER
 // =========================================
 
-const languageSwitcher =
-document.getElementById("languageSwitcher");
+function initLanguageSwitcher() {
 
-const heroTitle =
-document.getElementById("heroTitle");
+    const languageSwitcher =
+        document.getElementById(
+            "languageSwitcher"
+        );
 
-const heroText =
-document.getElementById("heroText");
+    const heroTitle =
+        document.getElementById(
+            "heroTitle"
+        );
 
-if (languageSwitcher) {
+    const heroText =
+        document.getElementById(
+            "heroText"
+        );
+
+    if (
+        !languageSwitcher ||
+        !heroTitle ||
+        !heroText
+    ) return;
 
     languageSwitcher.addEventListener(
         "change",
-        (e) => {
+        function () {
 
-            const lang = e.target.value;
+            const value = this.value;
 
-            if (lang === "fr") {
+            if (value === "fr") {
 
-                heroTitle.innerText =
-                "Tradez Crypto, Forex et Actions";
+                heroTitle.textContent =
+                    "Tradez Crypto, Forex, Actions et Marchés Mondiaux";
 
-                heroText.innerText =
-                "Accédez aux marchés mondiaux avec des outils premium.";
-
-            }
-
-            else if (lang === "es") {
-
-                heroTitle.innerText =
-                "Opera Cripto, Forex y Acciones";
-
-                heroText.innerText =
-                "Acceda a los mercados globales con herramientas premium.";
+                heroText.textContent =
+                    "Accédez aux outils de trading premium, analyses de marché et portefeuille avancé.";
 
             }
 
-            else if (lang === "ar") {
+            else if (value === "es") {
 
-                heroTitle.innerText =
-                "تداول العملات والأسهم والفوركس";
+                heroTitle.textContent =
+                    "Opera Cripto, Forex, Acciones y Mercados Globales";
 
-                heroText.innerText =
-                "الوصول إلى الأسواق العالمية بأدوات احترافية.";
+                heroText.textContent =
+                    "Acceda a herramientas premium, educación financiera y monitoreo del mercado.";
+
+            }
+
+            else if (value === "ar") {
+
+                heroTitle.textContent =
+                    "تداول العملات الرقمية والفوركس والأسهم";
+
+                heroText.textContent =
+                    "منصة تداول احترافية مع أدوات سوق وتعليم وتحليلات متقدمة";
 
             }
 
             else {
 
-                heroTitle.innerText =
-                "Trade Crypto, Forex, Stocks & Global Markets";
+                heroTitle.textContent =
+                    "Trade Crypto, Forex, Stocks & Global Markets";
 
-                heroText.innerText =
-                "Access premium trading tools, real-time market insights, educational resources, and advanced portfolio tracking through GlobalEarn Premium Brokerage.";
+                heroText.textContent =
+                    "Access premium trading tools, real-time market insights, educational resources, and advanced portfolio tracking through GlobalEarn Premium Brokerage.";
             }
-
         }
     );
 }
@@ -128,28 +128,79 @@ if (languageSwitcher) {
 // CURRENCY SWITCHER
 // =========================================
 
-const currencySwitcher =
-document.getElementById(
-"currencySwitcher"
-);
+function initCurrencySwitcher() {
 
-if (currencySwitcher) {
+    const switcher =
+        document.getElementById(
+            "currencySwitcher"
+        );
 
-    currencySwitcher.addEventListener(
+    if (!switcher) return;
+
+    switcher.addEventListener(
         "change",
-        () => {
+        function () {
 
-            const selectedCurrency =
-            currencySwitcher.value;
+            const currency =
+                this.value;
 
-            localStorage.setItem(
-                "currency",
-                selectedCurrency
-            );
+            const prices =
+                document.querySelectorAll(
+                    ".tier-price"
+                );
 
-            showNotification(
-                `Currency changed to ${selectedCurrency}`
-            );
+            prices.forEach(price => {
+
+                const raw =
+                    parseInt(
+                        price.dataset.usd
+                    );
+
+                if (!raw) return;
+
+                let converted =
+                    raw;
+
+                let symbol =
+                    "$";
+
+                switch (currency) {
+
+                    case "EUR":
+                        converted =
+                            raw * 0.92;
+                        symbol = "€";
+                        break;
+
+                    case "GBP":
+                        converted =
+                            raw * 0.79;
+                        symbol = "£";
+                        break;
+
+                    case "INR":
+                        converted =
+                            raw * 83;
+                        symbol = "₹";
+                        break;
+
+                    case "AED":
+                        converted =
+                            raw * 3.67;
+                        symbol = "AED ";
+                        break;
+
+                    default:
+                        converted =
+                            raw;
+                        symbol = "$";
+                }
+
+                price.textContent =
+                    symbol +
+                    Math.round(converted)
+                        .toLocaleString();
+            });
         }
     );
 }
@@ -158,192 +209,345 @@ if (currencySwitcher) {
 // CTA BUTTONS
 // =========================================
 
-const openButtons =
-document.querySelectorAll(
-".primary-btn, .cta-btn, .plan-btn"
-);
+function initCTAButtons() {
 
-openButtons.forEach((button) => {
+    const primaryButtons =
+        document.querySelectorAll(
+            ".primary-btn"
+        );
 
-    button.addEventListener(
-        "click",
-        () => {
+    const tierButtons =
+        document.querySelectorAll(
+            ".tier-btn"
+        );
 
-            showNotification(
-                "Redirecting to Dashboard..."
-            );
+    primaryButtons.forEach(button => {
 
-            setTimeout(() => {
+        button.addEventListener(
+            "click",
+            function () {
 
                 window.location.href =
-                "dashboard/dashboard.html";
+                    "dashboard/dashboard.html";
+            }
+        );
+    });
 
-            }, 1200);
+    tierButtons.forEach(button => {
 
-        }
-    );
-});
+        button.addEventListener(
+            "click",
+            function () {
+
+                alert(
+                    "Redirecting to dashboard..."
+                );
+
+                window.location.href =
+                    "dashboard/dashboard.html";
+            }
+        );
+    });
+}
 
 // =========================================
-// LIVE POPUP NOTIFICATIONS
+// SMOOTH SCROLL
 // =========================================
 
-const tradeActivities = [
+function initSmoothScroll() {
 
-"Michael from Canada opened a Gold trade",
+    const links =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
-"Sarah from UK monitored BTC market",
+    links.forEach(link => {
 
-"David from Germany explored Forex market",
+        link.addEventListener(
+            "click",
+            function (e) {
 
-"Investor upgraded to Premium Plan",
+                e.preventDefault();
 
-"Trader monitored NASDAQ market",
+                const targetId =
+                    this.getAttribute("href");
 
-"Client explored Stock Portfolio",
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
 
-"Portfolio updated successfully",
+                if (target) {
 
-"VIP trader explored Crypto markets",
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            }
+        );
+    });
+}
 
-"Trader accessed TradingView chart",
+// =========================================
+// INIT
+// =========================================
 
-"Investor reviewed market insights"
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-];
+        checkBackendStatus();
 
-function createTradePopup() {
+        initLanguageSwitcher();
+
+        initCurrencySwitcher();
+
+        initCTAButtons();
+
+        initSmoothScroll();
+    }
+);
+// =========================================
+// LIVE TRADING POPUP NOTIFICATIONS
+// =========================================
+
+function initTradingPopup() {
+
+    const traders = [
+
+        "James from Canada opened BTC trade",
+        "Sophia from Germany bought Gold",
+        "Daniel from UAE opened Forex position",
+        "Michael from UK invested in Nasdaq",
+        "Emma from France opened ETH trade",
+        "William from Australia bought Stocks",
+        "Olivia from Singapore opened BTC trade",
+        "Liam from USA opened Forex position",
+        "Noah from South Africa invested in Gold",
+        "Ava from Nigeria opened Crypto trade"
+
+    ];
 
     const popup =
-    document.createElement("div");
+        document.createElement("div");
 
     popup.className =
-    "trade-popup";
-
-    popup.innerHTML =
-    `
-    <strong>Live Activity</strong>
-    <p>
-    ${
-        tradeActivities[
-        Math.floor(
-        Math.random()
-        * tradeActivities.length
-        )]
-    }
-    </p>
-    `;
+        "live-trade-popup";
 
     document.body.appendChild(
         popup
     );
 
-    setTimeout(() => {
+    function showPopup() {
+
+        const randomTrade =
+            traders[
+                Math.floor(
+                    Math.random() *
+                    traders.length
+                )
+            ];
+
+        popup.innerHTML = `
+            <div class="popup-content">
+
+                <div class="popup-dot"></div>
+
+                <div>
+
+                    <strong>
+                        Live Market Activity
+                    </strong>
+
+                    <p>
+                        ${randomTrade}
+                    </p>
+
+                </div>
+
+            </div>
+        `;
 
         popup.classList.add(
             "show-popup"
         );
 
-    }, 200);
+        setTimeout(() => {
 
-    setTimeout(() => {
+            popup.classList.remove(
+                "show-popup"
+            );
 
-        popup.remove();
+        }, 4000);
+    }
 
-    }, 5000);
+    showPopup();
+
+    setInterval(
+        showPopup,
+        7000
+    );
 }
 
-setInterval(
-    createTradePopup,
-    7000
-);
-
 // =========================================
-// NOTIFICATION SYSTEM
+// FAQ IMPROVEMENTS
 // =========================================
 
-function showNotification(message){
+function initFAQ() {
 
-    const notification =
-    document.createElement("div");
-
-    notification.className =
-    "notification-box";
-
-    notification.innerText =
-    message;
-
-    document.body.appendChild(
-        notification
-    );
-
-    setTimeout(() => {
-
-        notification.classList.add(
-            "show-notification"
+    const faqItems =
+        document.querySelectorAll(
+            ".faq-wrapper details"
         );
 
-    }, 100);
+    faqItems.forEach(item => {
 
-    setTimeout(() => {
+        item.addEventListener(
+            "toggle",
+            function () {
 
-        notification.remove();
+                if (this.open) {
 
-    }, 3500);
+                    faqItems.forEach(
+                        detail => {
+
+                        if (
+                            detail !== this
+                        ) {
+
+                            detail.open =
+                                false;
+                        }
+                    });
+                }
+            }
+        );
+    });
 }
 
 // =========================================
-// FAQ AUTO CLOSE
+// NAVBAR SCROLL EFFECT
 // =========================================
 
-const faqs =
-document.querySelectorAll(
-"details"
-);
+function initNavbarEffects() {
 
-faqs.forEach((faq) => {
+    const navbar =
+        document.querySelector(
+            ".navbar"
+        );
 
-    faq.addEventListener(
-        "toggle",
+    if (!navbar) return;
+
+    window.addEventListener(
+        "scroll",
         () => {
 
-            if (faq.open) {
+            if (
+                window.scrollY > 50
+            ) {
 
-                faqs.forEach((item) => {
+                navbar.style.background =
+                    "rgba(4,10,22,.95)";
 
-                    if (
-                        item !== faq
-                    ) {
-                        item.removeAttribute(
-                            "open"
-                        );
-                    }
-
-                });
-
+                navbar.style.boxShadow =
+                    "0 12px 35px rgba(0,0,0,.35)";
             }
 
+            else {
+
+                navbar.style.background =
+                    "rgba(5,13,29,.75)";
+
+                navbar.style.boxShadow =
+                    "none";
+            }
         }
     );
-});
+}
 
 // =========================================
-// MARKET TICKER PAUSE
+// PREMIUM SCROLL ANIMATIONS
 // =========================================
 
-const ticker =
-document.querySelector(
-".ticker-track"
-);
+function initRevealAnimation() {
 
-if (ticker) {
+    const elements =
+        document.querySelectorAll(
+            ".product-card, .why-card, .tier-card, .testimonial-card, .story-card, .video-card, .stat-card"
+        );
+
+    const observer =
+        new IntersectionObserver(
+            entries => {
+
+                entries.forEach(
+                    entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "show-element"
+                        );
+                    }
+                });
+
+            },
+            {
+                threshold:0.15
+            }
+        );
+
+    elements.forEach(el => {
+
+        el.classList.add(
+            "hidden-element"
+        );
+
+        observer.observe(el);
+    });
+}
+
+// =========================================
+// PAGE FADE TRANSITION
+// =========================================
+
+function initPageTransition() {
+
+    document.body.style.opacity =
+        "0";
+
+    document.body.style.transition =
+        "opacity .6s ease";
+
+    setTimeout(() => {
+
+        document.body.style.opacity =
+            "1";
+
+    },100);
+}
+
+// =========================================
+// TICKER PAUSE ON HOVER
+// =========================================
+
+function initTickerInteraction() {
+
+    const ticker =
+        document.querySelector(
+            ".ticker-track"
+        );
+
+    if (!ticker) return;
 
     ticker.addEventListener(
         "mouseenter",
         () => {
 
             ticker.style.animationPlayState =
-            "paused";
+                "paused";
         }
     );
 
@@ -352,50 +556,197 @@ if (ticker) {
         () => {
 
             ticker.style.animationPlayState =
-            "running";
+                "running";
         }
     );
 }
 
 // =========================================
-// MOBILE NAV TOGGLE
+// APPEND TO INIT
 // =========================================
 
-const navbar =
-document.querySelector(
-".navbar"
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initTradingPopup();
+
+        initFAQ();
+
+        initNavbarEffects();
+
+        initRevealAnimation();
+
+        initPageTransition();
+
+        initTickerInteraction();
+    }
 );
+// =========================================
+// MOBILE MENU SUPPORT
+// =========================================
 
-const navLinks =
-document.querySelector(
-".nav-links"
-);
+function initMobileMenu() {
 
-const mobileButton =
-document.createElement(
-"button"
-);
+    const navbar =
+        document.querySelector(
+            ".navbar"
+        );
 
-mobileButton.innerHTML =
-"☰";
+    const navLinks =
+        document.querySelector(
+            ".nav-links"
+        );
 
-mobileButton.className =
-"mobile-menu";
+    if (
+        !navbar ||
+        !navLinks
+    ) return;
 
-if (navbar) {
+    let menuBtn =
+        document.querySelector(
+            ".menu-toggle"
+        );
 
-    navbar.prepend(
-        mobileButton
-    );
+    if (!menuBtn) {
 
-    mobileButton.addEventListener(
+        menuBtn =
+            document.createElement(
+                "button"
+            );
+
+        menuBtn.className =
+            "menu-toggle";
+
+        menuBtn.innerHTML =
+            "☰";
+
+        navbar.prepend(
+            menuBtn
+        );
+    }
+
+    menuBtn.addEventListener(
         "click",
         () => {
 
             navLinks.classList.toggle(
-                "show-menu"
+                "mobile-active"
             );
 
+            menuBtn.innerHTML =
+                navLinks.classList.contains(
+                    "mobile-active"
+                )
+                    ? "✕"
+                    : "☰";
         }
     );
 }
+
+// =========================================
+// PREMIUM HOVER INTERACTIONS
+// =========================================
+
+function initPremiumHoverEffects() {
+
+    const cards =
+        document.querySelectorAll(
+            ".product-card, .why-card, .tier-card, .testimonial-card, .story-card, .video-card"
+        );
+
+    cards.forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            e => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    e.clientX - rect.left;
+
+                const y =
+                    e.clientY - rect.top;
+
+                card.style.background =
+                    `
+                    radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(80,140,255,.12),
+                    rgba(15,28,55,.96)
+                    )
+                    `;
+            }
+        );
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.background =
+                    `
+                    linear-gradient(
+                    180deg,
+                    rgba(14,25,48,.98),
+                    rgba(7,13,28,.98)
+                    )
+                    `;
+            }
+        );
+    });
+}
+
+// =========================================
+// PERFORMANCE OPTIMIZATION
+// =========================================
+
+function lazyLoadIframes() {
+
+    const iframes =
+        document.querySelectorAll(
+            "iframe"
+        );
+
+    iframes.forEach(frame => {
+
+        frame.setAttribute(
+            "loading",
+            "lazy"
+        );
+    });
+}
+
+// =========================================
+// FINAL APP POLISH
+// =========================================
+
+function initFinalPolish() {
+
+    console.log(
+        "GlobalEarn Premium Loaded"
+    );
+
+    document.body.classList.add(
+        "app-loaded"
+    );
+}
+
+// =========================================
+// APPEND TO INIT
+// =========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        initMobileMenu();
+
+        initPremiumHoverEffects();
+
+        lazyLoadIframes();
+
+        initFinalPolish();
+    }
+);
