@@ -3,64 +3,75 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-name="viewport"
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>
-GlobalEarn Admin Panel
-</title>
+<title>GlobalEarn Admin Dashboard</title>
 
-<link
-rel="stylesheet"
+<link rel="stylesheet"
 href="admin.css">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
 </head>
 
 <body>
 
+<!-- ========================================= -->
+<!-- ADMIN SIDEBAR -->
+<!-- ========================================= -->
+
 <aside class="admin-sidebar">
 
-    <h2>
-        GlobalEarn Admin
-    </h2>
+    <div class="admin-logo">
 
-    <ul>
+        <h2>
+            GlobalEarn
+        </h2>
 
-        <li>
+        <p>
+            Admin Control Center
+        </p>
+
+    </div>
+
+    <nav class="admin-links">
+
+        <a href="#overview">
             Dashboard
-        </li>
+        </a>
 
-        <li>
-            User Management
-        </li>
+        <a href="#users">
+            Users
+        </a>
 
-        <li>
-            Trading Plans
-        </li>
+        <a href="#activity">
+            Activity
+        </a>
 
-        <li>
-            Notifications
-        </li>
+        <a href="#analytics">
+            Analytics
+        </a>
 
-        <li>
-            KYC Requests
-        </li>
-
-        <li>
+        <a href="#settings">
             Settings
-        </li>
+        </a>
 
-    </ul>
+    </nav>
 
 </aside>
 
+<!-- ========================================= -->
+<!-- MAIN ADMIN CONTENT -->
+<!-- ========================================= -->
+
 <main class="admin-main">
+
+    <!-- HEADER -->
 
     <section class="admin-header">
 
@@ -71,95 +82,313 @@ rel="stylesheet">
             </h1>
 
             <p>
-                Private GlobalEarn Administration
+                Manage platform activity,
+                monitor users and control
+                platform operations.
             </p>
 
         </div>
 
-        <button class="admin-btn">
+        <button
+        id="logoutBtn"
+        class="admin-btn">
 
-            Create Notification
+            Logout
 
         </button>
 
     </section>
 
-    <section class="admin-stats">
+    <!-- OVERVIEW -->
+
+    <section
+    class="admin-overview"
+    id="overview">
 
         <div class="admin-card">
-            <h3>Total Users</h3>
-            <h2>12,580</h2>
+
+            <span>
+                Total Users
+            </span>
+
+            <h2>
+                12,840
+            </h2>
+
         </div>
 
         <div class="admin-card">
-            <h3>Pending KYC</h3>
-            <h2>245</h2>
+
+            <span>
+                Active Sessions
+            </span>
+
+            <h2>
+                5,216
+            </h2>
+
         </div>
 
         <div class="admin-card">
-            <h3>Trading Plans</h3>
-            <h2>6</h2>
+
+            <span>
+                Market Status
+            </span>
+
+            <h2>
+                Online
+            </h2>
+
         </div>
 
         <div class="admin-card">
-            <h3>Support Tickets</h3>
-            <h2>94</h2>
+
+            <span>
+                Support Tickets
+            </span>
+
+            <h2>
+                36
+            </h2>
+
         </div>
 
     </section>
 
-    <section class="user-table-section">
+    <!-- USER MANAGEMENT -->
 
-        <h2>
-            User Management
-        </h2>
+    <section
+    class="admin-users"
+    id="users">
 
-        <table>
+        <div class="section-header">
 
-            <thead>
+            <h2>
+                User Management
+            </h2>
 
-                <tr>
+            <p>
+                Search, review and manage users.
+            </p>
 
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Country</th>
-                    <th>Status</th>
+        </div>
 
-                </tr>
+        <div class="admin-search">
 
-            </thead>
+            <input
+            type="text"
+            id="searchUser"
+            placeholder="Search user by email or name">
 
-            <tbody>
+        </div>
 
-                <tr>
-                    <td>Michael T</td>
-                    <td>michael@email.com</td>
-                    <td>Canada</td>
-                    <td>Verified</td>
-                </tr>
+        <div class="admin-table-wrapper">
 
-                <tr>
-                    <td>Sarah J</td>
-                    <td>sarah@email.com</td>
-                    <td>UK</td>
-                    <td>Pending</td>
-                </tr>
+            <table id="usersTable">
 
-                <tr>
-                    <td>David P</td>
-                    <td>david@email.com</td>
-                    <td>Germany</td>
-                    <td>Verified</td>
-                </tr>
+                <thead>
 
-            </tbody>
+                    <tr>
 
-        </table>
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Email
+                        </th>
+
+                        <th>
+                            Country
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            John Carter
+                        </td>
+
+                        <td>
+                            john@email.com
+                        </td>
+
+                        <td>
+                            USA
+                        </td>
+
+                        <td>
+                            Active
+                        </td>
+
+                        <td>
+
+                            <button class="table-btn">
+                                View
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            James Lee
+                        </td>
+
+                        <td>
+                            james@email.com
+                        </td>
+
+                        <td>
+                            UK
+                        </td>
+
+                        <td>
+                            Pending
+                        </td>
+
+                        <td>
+
+                            <button class="table-btn">
+                                View
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ACTIVITY -->
+
+    <section
+    class="admin-activity"
+    id="activity">
+
+        <div class="section-header">
+
+            <h2>
+                Platform Activity
+            </h2>
+
+        </div>
+
+        <div class="activity-grid">
+
+            <div class="activity-card">
+                BTC Market Updated
+            </div>
+
+            <div class="activity-card">
+                User Registration Completed
+            </div>
+
+            <div class="activity-card">
+                Support Ticket Submitted
+            </div>
+
+            <div class="activity-card">
+                Market Analytics Updated
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ANALYTICS -->
+
+    <section
+    class="admin-analytics"
+    id="analytics">
+
+        <div class="section-header">
+
+            <h2>
+                Platform Analytics
+            </h2>
+
+        </div>
+
+        <div id="adminChart"></div>
+
+    </section>
+
+    <!-- SETTINGS -->
+
+    <section
+    class="admin-settings"
+    id="settings">
+
+        <div class="section-header">
+
+            <h2>
+                Admin Settings
+            </h2>
+
+        </div>
+
+        <form id="settingsForm">
+
+            <input
+            type="text"
+            placeholder="Platform Name">
+
+            <input
+            type="email"
+            placeholder="Support Email">
+
+            <select>
+
+                <option>
+                    Platform Status
+                </option>
+
+                <option>
+                    Online
+                </option>
+
+                <option>
+                    Maintenance
+                </option>
+
+            </select>
+
+            <button
+            class="admin-btn"
+            type="submit">
+
+                Save Settings
+
+            </button>
+
+        </form>
 
     </section>
 
 </main>
 
+<script src="https://s3.tradingview.com/tv.js"></script>
 <script src="admin.js"></script>
 
 </body>
