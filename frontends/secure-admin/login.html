@@ -3,70 +3,99 @@
 <head>
 
 <meta charset="UTF-8">
-<meta
-name="viewport"
+<meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>
-GlobalEarn Admin Login
-</title>
+<title>GlobalEarn Admin Login</title>
 
-<link
-rel="stylesheet"
+<link rel="stylesheet"
 href="admin.css">
 
-<link
-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
 rel="stylesheet">
 
 </head>
 
-<body class="admin-login-page">
+<body>
 
-<div class="admin-login-wrapper">
+<section class="admin-login-page">
 
     <div class="admin-login-card">
 
-        <span class="admin-badge">
-            Private Access
-        </span>
+        <div class="admin-brand">
 
-        <h1>
-            Admin Login
-        </h1>
+            <h1>
+                GlobalEarn
+            </h1>
 
-        <p>
-            Restricted administrator access only.
-        </p>
+            <p>
+                Secure Administrator Access
+            </p>
+
+        </div>
+
+        <div class="admin-badge">
+
+            Hidden Private Admin Portal
+        </div>
 
         <form id="adminLoginForm">
 
-            <input
-            type="text"
-            id="adminUsername"
-            placeholder="Admin Username"
-            required>
+            <div class="form-group">
 
-            <input
-            type="password"
-            id="adminPassword"
-            placeholder="Admin Password"
-            required>
+                <label>
+                    Admin Email
+                </label>
 
-            <button type="submit">
+                <input
+                type="email"
+                id="adminEmail"
+                placeholder="Enter admin email"
+                required>
 
-                Secure Login
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                type="password"
+                id="adminPassword"
+                placeholder="Enter password"
+                required>
+
+            </div>
+
+            <button
+            type="submit"
+            class="admin-btn">
+
+                Login To Admin Dashboard
 
             </button>
 
         </form>
 
-        <div id="adminLoginMessage">
+        <div class="admin-security">
+
+            <span>
+                🔒 Encrypted Admin Access
+            </span>
+
+            <span>
+                ⚡ Private Direct Route
+            </span>
         </div>
 
     </div>
 
-</div>
+</section>
 
 <script src="admin.js"></script>
 
