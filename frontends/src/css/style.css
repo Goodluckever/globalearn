@@ -1450,53 +1450,88 @@ TESTIMONIALS - BINANCE STYLE
     #2166ff,
     #53a2ff);
 }
+/* ==========================
+PREMIUM TRADE POPUP
+========================== */
 
-/* =========================================
-   LIVE TRADE POPUP
-========================================= */
-
-..live-trade-popup{
+.trade-popup{
     position:fixed;
-    left:15px;
+
+    left:18px;
     bottom:120px;
-    z-index:999;
+
+    width:330px;
+
+    z-index:9999;
 
     background:
     linear-gradient(
     180deg,
-    rgba(8,18,40,.98),
-    rgba(5,10,25,.98));
+    rgba(7,18,42,.98),
+    rgba(3,10,25,.98));
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid
+    rgba(255,255,255,.08);
 
-    width:330px;
     border-radius:28px;
 
-    padding:18px 22px;
+    padding:20px;
 
     opacity:0;
-    transform:translateY(80px);
-    transition:.4s ease;
+
+    transform:
+    translateY(100px);
+
+    transition:.5s ease;
 
     box-shadow:
-    0 10px 40px rgba(0,0,0,.4);
+    0 12px 45px rgba(0,0,0,.45);
 }
 
-.show-popup{
+.trade-popup.show-popup{
     opacity:1;
-    transform:translateY(0);
+    transform:
+    translateY(0);
+}
+
+.trade-popup-top{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+}
+
+.trade-dot{
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    margin-top:8px;
+
+    box-shadow:
+    0 0 20px #22c55e;
+}
+
+#popupUser{
+    font-size:20px;
+}
+
+#popupTrade{
+    color:#a8b3d4;
+    margin-top:8px;
 }
 
 @media(max-width:768px){
 
-    .live-trade-popup{
+    .trade-popup{
         left:15px;
         right:15px;
         width:auto;
         bottom:110px;
     }
 }
-
 /* =========================================
    ANIMATION
 ========================================= */
@@ -1665,3 +1700,155 @@ TESTIMONIALS - BINANCE STYLE
         grid-template-columns:1fr;
     }
    }
+/* ==========================
+PREMIUM CTA
+========================== */
+
+.premium-cta{
+    position:relative;
+
+    margin:100px 20px;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    padding:80px 35px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #071c47 0%,
+    #102f78 50%,
+    #071326 100%);
+
+    border:1px solid
+    rgba(255,255,255,.08);
+}
+
+.cta-glow{
+    position:absolute;
+    width:350px;
+    height:350px;
+
+    background:
+    rgba(45,108,255,.22);
+
+    filter:blur(100px);
+
+    top:-120px;
+    right:-120px;
+}
+
+.cta-badge{
+    display:inline-flex;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:#7eb0ff;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+}
+
+.premium-cta h2{
+    font-size:58px;
+    font-weight:900;
+    max-width:900px;
+    margin:auto auto 20px;
+}
+
+.premium-cta p{
+    max-width:760px;
+    margin:auto auto 40px;
+
+    color:#c1cbe7;
+
+    line-height:1.9;
+    font-size:19px;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.cta-primary-btn{
+    background:
+    linear-gradient(
+    135deg,
+    #2563ff,
+    #59a8ff);
+
+    color:#fff;
+
+    padding:20px 42px;
+
+    border-radius:20px;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+.cta-secondary-btn{
+    border:1px solid
+    rgba(255,255,255,.12);
+
+    padding:20px 42px;
+
+    border-radius:20px;
+}
+
+.cta-stats{
+    margin-top:50px;
+
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.cta-stat h3{
+    font-size:38px;
+    color:#65a8ff;
+}
+
+.cta-stat p{
+    margin-top:6px;
+    color:#a9b7d7;
+}
+
+@media(max-width:768px){
+
+    .premium-cta{
+        padding:60px 24px;
+        margin:80px 16px;
+    }
+
+    .premium-cta h2{
+        font-size:38px;
+    }
+
+    .premium-cta p{
+        font-size:17px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .cta-primary-btn,
+    .cta-secondary-btn{
+        width:100%;
+    }
+}
