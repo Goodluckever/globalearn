@@ -3,38 +3,35 @@
 // =========================================
 
 const API_BASE_URL =
-  "https://globalearn-nfmm.onrender.com";
+"https://globalearn-nfmm.onrender.com";
 
-// =========================================
-// BACKEND CONNECTION STATUS
-// =========================================
+/* =========================
+BACKEND STATUS
+========================= */
 
-async function checkServerConnection() {
+async function checkBackendStatus(){
 
-    const statusBox =
-        document.getElementById(
-            "backend-status"
-        );
+    const status =
+    document.getElementById(
+        "backend-status"
+    );
 
-    if (!statusBox) return;
+    if(!status) return;
 
-    try {
+    try{
 
         const response =
-            await fetch(
-                `${API_BASE_URL}/api/health`
-            );
-
-        const data =
-            await response.json();
-
-        console.log(
-            "Backend:",
-            data
+        await fetch(
+            `${API_BASE_URL}/api/health`
         );
 
-        statusBox.innerHTML =
-            "🟢 Backend Connected";
+        const data =
+        await response.json();
+
+        console.log(data);
+
+        status.innerHTML =
+        "🟢 Backend Connected";
 
     }
 
@@ -42,11 +39,23 @@ async function checkServerConnection() {
 
         console.error(error);
 
-        statusBox.innerHTML =
-            "🔴 Backend Offline";
+        status.innerHTML =
+        "🔴 Backend Offline";
     }
 }
 
+/* =========================
+PAGE LOAD
+========================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        checkBackendStatus();
+
+    }
+);
 // =========================================
 // LANGUAGE SWITCHER
 // =========================================
