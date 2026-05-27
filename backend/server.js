@@ -10,14 +10,12 @@ app.use(express.json());
 // HEALTH CHECK
 // =================================
 
-app.get("/", (req, res) => {
-
-    res.json({
-        success: true,
-        message:
-        "GlobalEarn Backend Running"
-    });
-
+app.get("/api/health", (req, res) => {
+  res.json({
+    status: "ok",
+    app: "GlobalEarn Backend",
+    server: "connected"
+  });
 });
 
 // =================================
