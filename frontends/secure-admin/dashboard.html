@@ -263,9 +263,10 @@ localStorage.getItem(
 
 if(
 !user ||
+!token ||
 user.role !==
 "admin"
-)
+){
 
 window.location.href =
 "../auth.html";
