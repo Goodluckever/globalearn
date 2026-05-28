@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+/>
 
-<title>GlobalEarn Premium Brokerage</title>
+<title>
+GlobalEarn Premium Brokerage
+</title>
 
-<link rel="stylesheet" href="./src/css/style.css">
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com"
+/>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+/>
 
-<link rel="icon" href="assets/logo.png">
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+/>
+
+<link
+rel="stylesheet"
+href="./src/css/style.css"
+/>
+
+<link
+rel="icon"
+href="favicon.ico"
+/>
+
 </head>
 
 <body>
 
-<!-- MARKET TICKER -->
- <section class="ticker-wrapper">
-    <div class="ticker-track">
-        <span>BTC/USD +2.45%</span>
-        <span>ETH/USD +1.87%</span>
-        <span>Gold +1.92%</span>
-        <span>EUR/USD +0.61%</span>
-        <span>NASDAQ +3.20%</span>
-    </div>
-</section>
+<!-- ==========================
+MARKET TICKER
+=========================== -->
 
-<header class="navbar">
+<div class="market-ticker">
+
+    <div class="ticker-track">
+
+        <span>BTC/USD $109,420 ▲</span>
+        <span>ETH/USD $6,210 ▲</span>
+        <span>SOL/USD $238 ▲</span>
+        <span>XRP/USD $2.40 ▲</span>
+        <span>ADA/USD $1.84 ▲</span>
+        <span>GOLD $3,340 ▲</span>
+        <span>NASDAQ 21,980 ▲</span>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+NAVBAR
+=========================== -->
+
+<nav class="navbar">
 
     <div class="logo">
         <h1>GlobalEarn</h1>
     </div>
 
+    <!-- RIGHT NAV -->
+
     <div class="nav-right">
 
-        <select id="currencySwitcher"
-            class="currency-switcher">
+        <!-- Currency -->
 
+        <select
+            id="currencySwitcher"
+            class="currency-switcher"
+        >
             <option value="USD">
                 USD $
             </option>
@@ -56,7 +98,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 INR ₹
             </option>
 
+            <option value="AED">
+                AED
+            </option>
         </select>
+
+        <!-- Menu Button -->
 
         <button class="menu-toggle">
             ☰
@@ -64,108 +111,205 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     </div>
 
-</header>
+</nav>
 
-<section class="hero">
+<!-- ==========================
+MOBILE MENU
+=========================== -->
 
-    <div class="hero-badge">
-        Trusted Global Trading Platform
-    </div>
+<div class="mobile-menu">
 
-    <h1 id="heroTitle">
-        Trade Crypto, Forex &
-        Stocks With Confidence
-    </h1>
+    <a href="#home">
+        Home
+    </a>
 
-    <p id="heroText">
-        Access premium global markets,
-        professional trading tools,
-        market analytics, education
-        and smart portfolio tracking
-        through GlobalEarn Premium.
-    </p>
+    <a href="#markets">
+        Markets
+    </a>
 
-    <div class="hero-buttons">
+    <a href="#tiers">
+        Trading Plans
+    </a>
 
-        <button class="primary-btn">
-            Open Live Account
-        </button>
+    <a href="#testimonials">
+        Testimonials
+    </a>
 
-        <button class="secondary-btn">
-            Explore Markets
-        </button>
+    <a href="#faq">
+        FAQ
+    </a>
 
-    </div>
+    <a href="#contact">
+        Contact
+    </a>
 
-    <div class="hero-stats">
-
-        <div class="stat-card">
-            <h2>$847M+</h2>
-            <p>Daily Market Volume</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>170+</h2>
-            <p>Countries Supported</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>24/7</h2>
-            <p>Trading Access</p>
-        </div>
-
-    </div>
-
-</section>
-
-        <div id="server-status" class="server-status">
-    Connecting backend...
 </div>
 
-    </div>
+<!-- ==========================
+HERO SECTION
+=========================== -->
 
-    <!-- Hero Card -->
-    <div class="hero-card">
+<section
+    id="home"
+    class="hero"
+>
 
-        <h3>Live Market Overview</h3>
+    <div class="hero-content">
 
-        <p>
-            Monitor market activity in real time.
+        <span class="hero-badge">
+
+            Trusted Global
+            Crypto, Forex &
+            Stock Brokerage
+
+        </span>
+
+        <h1 id="heroTitle">
+
+            Trade Crypto,
+            Forex, Stocks &
+            Global Markets
+
+        </h1>
+
+        <p id="heroText">
+
+            Access premium
+            institutional-grade
+            trading tools,
+            real-time market
+            analytics, portfolio
+            monitoring, and
+            professional investment
+            opportunities with
+            GlobalEarn Premium
+            Brokerage Platform.
+
         </p>
 
-        <div class="market-mini-card">
-            BTC/USD — $105,320
+        <!-- CTA BUTTONS -->
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+            >
+                Open Live Account
+            </button>
+
+            <button
+                class="secondary-btn"
+            >
+                Explore Investment
+                Solutions
+            </button>
+
         </div>
 
-        <div class="market-mini-card">
-            ETH/USD — $4,240
+        <!-- BACKEND STATUS -->
+
+        <div
+            id="server-status"
+            class="server-status"
+        >
+            🟡 Connecting Backend...
         </div>
 
-        <div class="market-mini-card">
-            Gold — $3,285
+    </div>
+
+    <!-- HERO CARD -->
+
+    <div class="hero-card">
+
+        <h3>
+
+            Professional
+            Trading Platform
+
+        </h3>
+
+        <p>
+
+            Gain access to
+            professional-grade
+            trading experiences
+            across global markets
+            with premium analytics
+            and intelligent market
+            tracking.
+
+        </p>
+
+        <div
+            class="market-mini-card"
+        >
+
+            <strong>
+                Crypto Markets
+            </strong>
+
+            <p>
+                Bitcoin, Ethereum,
+                Solana, XRP,
+                Cardano & more
+            </p>
+
+        </div>
+
+        <div
+            class="market-mini-card"
+        >
+
+            <strong>
+                Forex Markets
+            </strong>
+
+            <p>
+                Major, minor and
+                exotic global
+                currency pairs
+            </p>
+
+        </div>
+
+        <div
+            class="market-mini-card"
+        >
+
+            <strong>
+                Global Stocks
+            </strong>
+
+            <p>
+                Trade premium
+                international
+                shares and indices
+            </p>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- ========================================= -->
-<!-- PREMIUM STATS -->
-<!-- ========================================= -->
+<!-- ==========================
+PREMIUM STATS
+=========================== -->
 
 <section class="stats-section">
 
     <div class="stat-card">
 
-        <h2>
-
-            $847M+
-
+        <h2
+            data-counter="150000"
+        >
+            0
         </h2>
 
         <p>
 
-            Global Market Liquidity
+            Active Global
+            Traders
 
         </p>
 
@@ -173,15 +317,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="stat-card">
 
-        <h2>
-
-            170+
-
+        <h2
+            data-counter="847"
+        >
+            0
         </h2>
 
         <p>
 
-            Countries Supported
+            Million+
+            Daily Market
+            Liquidity
 
         </p>
 
@@ -189,15 +335,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="stat-card">
 
-        <h2>
-
-            150K+
-
+        <h2
+            data-counter="170"
+        >
+            0
         </h2>
 
         <p>
 
-            Active Traders
+            Supported
+            Countries
 
         </p>
 
@@ -205,129 +352,139 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="stat-card">
 
-        <h2>
-
-            99.9%
-
+        <h2
+            data-counter="99"
+        >
+            0
         </h2>
 
         <p>
 
-            Platform Uptime
+            Platform
+            Stability &
+            Uptime %
 
         </p>
 
     </div>
 
 </section>
+<!-- ==========================
+LIVE MARKET VIEW
+=========================== -->
 
-<!-- ========================================= -->
-<!-- LIVE MARKET VIEW -->
-<!-- ========================================= -->
-
-<section class="market-view">
+<section
+    id="markets"
+    class="market-view"
+>
 
     <div class="section-title">
 
+        <span class="section-badge">
+            Live Trading Markets
+        </span>
+
         <h2>
-
-            Professional Trading Market View
-
+            Professional Live
+            Trading Environment
         </h2>
 
         <p>
 
-            Monitor live financial markets with
-            advanced trading charts.
+            Monitor live market
+            movement, price action,
+            institutional liquidity
+            and global financial
+            instruments through our
+            premium trading system.
 
         </p>
 
     </div>
 
-    <div class="tradingview-wrapper">
+    <div
+        class="tradingview-wrapper"
+    >
 
-        <div id="tradingview_chart"></div>
+        <div
+            id="tradingview_chart"
+        ></div>
 
     </div>
 
 </section>
 
-<script src="https://s3.tradingview.com/tv.js"></script>
+<!-- ==========================
+PRODUCTS / MARKET INSTRUMENTS
+=========================== -->
 
-<script>
-
-new TradingView.widget({
-
-container_id: "tradingview_chart",
-
-width: "100%",
-
-height: 600,
-
-symbol: "BINANCE:BTCUSDT",
-
-interval: "30",
-
-timezone: "Etc/UTC",
-
-theme: "dark",
-
-style: "1",
-
-locale: "en",
-
-toolbar_bg: "#081120",
-
-enable_publishing: false,
-
-allow_symbol_change: true
-
-});
-
-</script>
-<!-- ========================================= -->
-<!-- TRADING PRODUCTS -->
-<!-- ========================================= -->
-
-<section class="products-section" id="products">
+<section class="products-section">
 
     <div class="section-title">
 
+        <span class="section-badge">
+            Market Instruments
+        </span>
+
         <h2>
-            Trading Products
+
+            Access Global
+            Financial Markets
+
         </h2>
 
         <p>
-            Access multiple global financial markets
-            through one professional brokerage platform.
+
+            Diversify your
+            portfolio with
+            premium access to
+            cryptocurrency,
+            forex, commodities,
+            stocks, futures and
+            indices.
+
         </p>
 
     </div>
 
     <div class="products-grid">
 
+        <!-- CRYPTO -->
+
         <div class="product-card">
 
-            <div class="product-icon">
+            <div
+                class="product-icon"
+            >
                 ₿
             </div>
 
             <h3>
-                Cryptocurrency Trading
+                Cryptocurrency
             </h3>
 
             <p>
-                Trade Bitcoin, Ethereum, XRP,
-                Solana, Cardano and other
-                digital assets with live pricing.
+
+                Access Bitcoin,
+                Ethereum, Solana,
+                XRP, Cardano and
+                other digital
+                assets with
+                premium market
+                intelligence.
+
             </p>
 
         </div>
 
+        <!-- FOREX -->
+
         <div class="product-card">
 
-            <div class="product-icon">
-                $
+            <div
+                class="product-icon"
+            >
+                FX
             </div>
 
             <h3>
@@ -335,16 +492,25 @@ allow_symbol_change: true
             </h3>
 
             <p>
-                Access major, minor and exotic
-                currency pairs with real-time
-                market analysis.
+
+                Trade over
+                70+ global
+                currency pairs
+                including major,
+                minor and exotic
+                forex instruments.
+
             </p>
 
         </div>
 
+        <!-- STOCKS -->
+
         <div class="product-card">
 
-            <div class="product-icon">
+            <div
+                class="product-icon"
+            >
                 📈
             </div>
 
@@ -353,17 +519,25 @@ allow_symbol_change: true
             </h3>
 
             <p>
-                Trade shares from major companies
-                listed across US, UK and global
-                financial exchanges.
+
+                Trade premium
+                international
+                company shares
+                and institutional
+                stock opportunities.
+
             </p>
 
         </div>
 
+        <!-- GOLD -->
+
         <div class="product-card">
 
-            <div class="product-icon">
-                🛢
+            <div
+                class="product-icon"
+            >
+                🥇
             </div>
 
             <h3>
@@ -371,34 +545,50 @@ allow_symbol_change: true
             </h3>
 
             <p>
-                Access Gold, Silver, Crude Oil,
-                Natural Gas and other commodities
-                through advanced trading tools.
+
+                Access Gold,
+                Silver, Crude Oil,
+                Natural Gas and
+                energy markets
+                globally.
+
             </p>
 
         </div>
 
+        <!-- INDICES -->
+
         <div class="product-card">
 
-            <div class="product-icon">
+            <div
+                class="product-icon"
+            >
                 📊
             </div>
 
             <h3>
-                Indices Trading
+                Market Indices
             </h3>
 
             <p>
-                Monitor and trade major financial
-                indices including Nasdaq, S&P 500,
-                DAX and Nikkei.
+
+                Trade global
+                financial indices
+                including Nasdaq,
+                S&P 500, DAX,
+                FTSE and Dow Jones.
+
             </p>
 
         </div>
 
+        <!-- FUTURES -->
+
         <div class="product-card">
 
-            <div class="product-icon">
+            <div
+                class="product-icon"
+            >
                 ⚡
             </div>
 
@@ -407,9 +597,13 @@ allow_symbol_change: true
             </h3>
 
             <p>
-                Access futures contracts across
-                commodities, energies and financial
-                markets worldwide.
+
+                Access advanced
+                futures markets
+                including energy,
+                metals and index
+                futures contracts.
+
             </p>
 
         </div>
@@ -418,21 +612,33 @@ allow_symbol_change: true
 
 </section>
 
-<!-- ========================================= -->
-<!-- WHY TRADE WITH US -->
-<!-- ========================================= -->
+<!-- ==========================
+WHY CHOOSE US
+=========================== -->
 
-<section class="why-section" id="why">
+<section class="why-section">
 
     <div class="section-title">
 
+        <span class="section-badge">
+            Why GlobalEarn
+        </span>
+
         <h2>
-            Why Trade With GlobalEarn
+
+            Built For Modern
+            Professional Traders
+
         </h2>
 
         <p>
-            Built for modern traders seeking
-            performance, education and advanced tools.
+
+            Experience institutional
+            quality tools, market
+            intelligence and global
+            opportunities through a
+            premium trading platform.
+
         </p>
 
     </div>
@@ -442,12 +648,17 @@ allow_symbol_change: true
         <div class="why-card">
 
             <h3>
-                Advanced Trading Charts
+                Real-Time Markets
             </h3>
 
             <p>
-                Professional TradingView charting
-                tools with real-time data analysis.
+
+                Live pricing,
+                institutional
+                trading insights
+                and premium
+                analytics.
+
             </p>
 
         </div>
@@ -455,12 +666,17 @@ allow_symbol_change: true
         <div class="why-card">
 
             <h3>
-                AI Market Insights
+                Global Trading
             </h3>
 
             <p>
-                Track market trends and monitor
-                global financial opportunities.
+
+                Access forex,
+                crypto, stocks,
+                commodities and
+                financial indices
+                worldwide.
+
             </p>
 
         </div>
@@ -468,52 +684,17 @@ allow_symbol_change: true
         <div class="why-card">
 
             <h3>
-                Multi-Asset Trading
+                Secure Platform
             </h3>
 
             <p>
-                Trade crypto, forex, stocks,
-                commodities, futures and indices
-                from one platform.
-            </p>
 
-        </div>
+                Premium-grade
+                infrastructure
+                optimized for
+                professional
+                market access.
 
-        <div class="why-card">
-
-            <h3>
-                Portfolio Management
-            </h3>
-
-            <p>
-                Manage trading activity with
-                smart portfolio tracking tools.
-            </p>
-
-        </div>
-
-        <div class="why-card">
-
-            <h3>
-                Trading Education
-            </h3>
-
-            <p>
-                Learn through educational videos,
-                trading tutorials and market guides.
-            </p>
-
-        </div>
-
-        <div class="why-card">
-
-            <h3>
-                24/7 Support Access
-            </h3>
-
-            <p>
-                Reach customer support anytime
-                through WhatsApp and email support.
             </p>
 
         </div>
@@ -522,41 +703,48 @@ allow_symbol_change: true
 
 </section>
 
-<!-- ========================================= -->
-<!-- OUR STORY -->
-<!-- ========================================= -->
+<!-- ==========================
+ABOUT / STORY SECTION
+=========================== -->
 
 <section class="story-section">
 
     <div class="story-left">
 
         <span class="section-badge">
-
-            Our Story
-
+            About GlobalEarn
         </span>
 
         <h2>
 
-            Building A Modern Brokerage Experience
+            A Professional
+            Trading Experience
+            Designed For Growth
 
         </h2>
 
         <p>
 
-            GlobalEarn was designed to provide
-            traders with a professional brokerage-style
-            trading experience combining market access,
-            education, portfolio monitoring and
-            premium financial tools.
+            GlobalEarn Premium
+            Brokerage provides
+            access to professional
+            financial markets
+            with premium tools,
+            portfolio monitoring
+            and institutional-grade
+            trading experiences.
 
         </p>
 
         <p>
 
-            Our platform focuses on accessibility,
-            modern trading infrastructure and
-            educational growth for global traders.
+            Our infrastructure
+            is designed for users
+            seeking intelligent
+            exposure to global
+            opportunities through
+            professional trading
+            experiences.
 
         </p>
 
@@ -567,15 +755,16 @@ allow_symbol_change: true
         <div class="story-card">
 
             <h3>
-
-                24/7 Global Market Access
-
+                Mission
             </h3>
 
             <p>
 
-                Access live financial markets
-                anytime from desktop and mobile devices.
+                Deliver premium
+                access to global
+                financial markets
+                through advanced
+                technology.
 
             </p>
 
@@ -584,15 +773,32 @@ allow_symbol_change: true
         <div class="story-card">
 
             <h3>
-
-                Professional Trading Infrastructure
-
+                Vision
             </h3>
 
             <p>
 
-                Advanced charts, trading analytics
-                and premium market monitoring tools.
+                Build a globally
+                trusted premium
+                trading ecosystem
+                for modern traders.
+
+            </p>
+
+        </div>
+
+        <div class="story-card">
+
+            <h3>
+                Global Access
+            </h3>
+
+            <p>
+
+                Support investors
+                across more than
+                170+ countries
+                worldwide.
 
             </p>
 
@@ -601,103 +807,34 @@ allow_symbol_change: true
     </div>
 
 </section>
+<!-- ==========================
+TRADING TIERS
+=========================== -->
 
-<!-- ========================================= -->
-<!-- YOUTUBE EDUCATION -->
-<!-- ========================================= -->
-
-<section class="youtube-section">
-
-    <div class="section-title">
-
-        <h2>
-
-            Trading Education Center
-
-        </h2>
-
-        <p>
-
-            Learn trading concepts, cryptocurrency,
-            forex analysis and market strategies.
-
-        </p>
-
-    </div>
-
-    <div class="youtube-grid">
-
-        <div class="video-card">
-
-            <iframe
-            src="https://www.youtube.com/embed/41JCpzvnn_0"
-            title="Bitcoin Education"
-            allowfullscreen>
-            </iframe>
-
-            <h3>
-
-                Understanding Bitcoin Trading
-
-            </h3>
-
-        </div>
-
-        <div class="video-card">
-
-            <iframe
-            src="https://www.youtube.com/embed/SSo_EIwHSd4"
-            title="Forex Trading"
-            allowfullscreen>
-            </iframe>
-
-            <h3>
-
-                Beginner Forex Trading Guide
-
-            </h3>
-
-        </div>
-
-        <div class="video-card">
-
-            <iframe
-            src="https://www.youtube.com/embed/p7HKvqRI_Bo"
-            title="Stock Market"
-            allowfullscreen>
-            </iframe>
-
-            <h3>
-
-                Stock Market Trading Basics
-
-            </h3>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ========================================= -->
-<!-- 6 TRADING TIERS -->
-<!-- ========================================= -->
- <section class="plans-section" id="plans">
+<section
+    id="tiers"
+    class="tiers-section"
+>
 
     <div class="section-title">
 
         <span class="section-badge">
-            Premium Trading Plans
+            Trading Plans
         </span>
 
         <h2>
-            Professional Trading Tiers
+            Professional Trading
+            Investment Tiers
         </h2>
 
         <p>
-            Access premium crypto, forex,
-            stock and global market tools
-            through our professional
-            brokerage solutions.
+
+            Select from premium
+            investment tiers built
+            for professional traders
+            seeking access to global
+            financial opportunities.
+
         </p>
 
     </div>
@@ -709,30 +846,44 @@ allow_symbol_change: true
         <div class="tier-card">
 
             <span class="tier-badge">
-                STANDARD
+                STARTER
             </span>
 
             <h3>
                 Starter Plan
             </h3>
 
-            <div class="tier-price"
-                data-usd="100">
-
+            <div
+                class="tier-price"
+                data-usd="100"
+            >
                 $100
-
             </div>
 
             <ul>
-                <li>✓ Crypto Trading Access</li>
-                <li>✓ Forex Market Access</li>
-                <li>✓ Beginner Trading Dashboard</li>
-                <li>✓ Educational Resources</li>
-                <li>✓ Market Monitoring</li>
+
+                <li>
+                    ✓ Beginner Trading
+                    Access
+                </li>
+
+                <li>
+                    ✓ Crypto & Forex
+                    Exposure
+                </li>
+
+                <li>
+                    ✓ Portfolio Monitoring
+                </li>
+
+                <li>
+                    ✓ 24/7 Support
+                </li>
+
             </ul>
 
             <button class="tier-btn">
-                Open Account
+                Start Trading
             </button>
 
         </div>
@@ -746,22 +897,36 @@ allow_symbol_change: true
             </span>
 
             <h3>
-                Growth Plan
+                Standard Plan
             </h3>
 
-            <div class="tier-price"
-                data-usd="500">
-
-                $500
-
+            <div
+                class="tier-price"
+                data-usd="300"
+            >
+                $300
             </div>
 
             <ul>
-                <li>✓ Crypto + Forex + Stocks</li>
-                <li>✓ Real-Time Market Updates</li>
-                <li>✓ Trading Signals</li>
-                <li>✓ Portfolio Dashboard</li>
-                <li>✓ Customer Support</li>
+
+                <li>
+                    ✓ Crypto, Forex &
+                    Stocks Access
+                </li>
+
+                <li>
+                    ✓ Advanced Market
+                    Monitoring
+                </li>
+
+                <li>
+                    ✓ Market Analytics
+                </li>
+
+                <li>
+                    ✓ Premium Support
+                </li>
+
             </ul>
 
             <button class="tier-btn">
@@ -772,95 +937,186 @@ allow_symbol_change: true
 
         <!-- TIER 3 -->
 
-        <div class="tier-card premium-tier">
+        <div class="tier-card">
 
             <span class="tier-badge">
-                POPULAR
+                ADVANCED
             </span>
 
             <h3>
                 Advanced Plan
             </h3>
 
-            <div class="tier-price"
-                data-usd="1000">
-
-                $1,000
-
+            <div
+                class="tier-price"
+                data-usd="500"
+            >
+                $500
             </div>
 
             <ul>
-                <li>✓ Advanced Trading Dashboard</li>
-                <li>✓ Premium Market Signals</li>
-                <li>✓ Crypto, Forex & Stocks</li>
-                <li>✓ Trading Education</li>
-                <li>✓ Risk Monitoring Tools</li>
+
+                <li>
+                    ✓ Crypto + Forex +
+                    Commodities
+                </li>
+
+                <li>
+                    ✓ Professional Market
+                    Insights
+                </li>
+
+                <li>
+                    ✓ Risk Monitoring
+                </li>
+
+                <li>
+                    ✓ Dedicated Assistance
+                </li>
+
             </ul>
 
             <button class="tier-btn">
-                Upgrade Plan
+                Open Premium
             </button>
 
         </div>
 
         <!-- TIER 4 -->
 
-        <div class="tier-card premium-tier">
+        <div class="tier-card">
 
             <span class="tier-badge">
                 PREMIUM
             </span>
 
             <h3>
-                Professional Plan
+                Premium Plan
             </h3>
 
-            <div class="tier-price"
-                data-usd="5000">
-
-                $5,000
-
+            <div
+                class="tier-price"
+                data-usd="1000"
+            >
+                $1,000
             </div>
 
             <ul>
-                <li>✓ Premium Trading Interface</li>
-                <li>✓ Professional Market Insights</li>
-                <li>✓ Advanced Portfolio Tools</li>
-                <li>✓ Priority Client Support</li>
-                <li>✓ Advanced Analytics</li>
+
+                <li>
+                    ✓ Premium Market
+                    Exposure
+                </li>
+
+                <li>
+                    ✓ Global Trading
+                    Opportunities
+                </li>
+
+                <li>
+                    ✓ Institutional
+                    Analytics
+                </li>
+
+                <li>
+                    ✓ Priority Support
+                </li>
+
             </ul>
 
             <button class="tier-btn">
-                Go Premium
+                Join Premium
             </button>
 
         </div>
 
         <!-- TIER 5 -->
 
-        <div class="tier-card elite-tier">
+        <div class="tier-card">
+
+            <span class="tier-badge">
+                PRO
+            </span>
+
+            <h3>
+                Professional Plan
+            </h3>
+
+            <div
+                class="tier-price"
+                data-usd="2500"
+            >
+                $2,500
+            </div>
+
+            <ul>
+
+                <li>
+                    ✓ Professional Market
+                    Access
+                </li>
+
+                <li>
+                    ✓ Advanced Portfolio
+                    Monitoring
+                </li>
+
+                <li>
+                    ✓ Market Intelligence
+                </li>
+
+                <li>
+                    ✓ VIP Assistance
+                </li>
+
+            </ul>
+
+            <button class="tier-btn">
+                Become Pro
+            </button>
+
+        </div>
+
+        <!-- TIER 6 -->
+
+        <div class="tier-card">
 
             <span class="tier-badge">
                 ELITE
             </span>
 
             <h3>
-                VIP Elite
+                Elite Premium Plan
             </h3>
 
-            <div class="tier-price"
-                data-usd="10000">
-
-                $10,000
-
+            <div
+                class="tier-price"
+                data-usd="5000"
+            >
+                $5,000
             </div>
 
             <ul>
-                <li>✓ VIP Trading Dashboard</li>
-                <li>✓ Multi-Market Access</li>
-                <li>✓ Advanced Trading Tools</li>
-                <li>✓ Dedicated Support</li>
-                <li>✓ Market Intelligence</li>
+
+                <li>
+                    ✓ Institutional-Level
+                    Access
+                </li>
+
+                <li>
+                    ✓ Global Premium
+                    Markets
+                </li>
+
+                <li>
+                    ✓ Dedicated VIP
+                    Monitoring
+                </li>
+
+                <li>
+                    ✓ Highest Support Tier
+                </li>
+
             </ul>
 
             <button class="tier-btn">
@@ -869,77 +1125,53 @@ allow_symbol_change: true
 
         </div>
 
-        <!-- TIER 6 -->
-
-        <div class="tier-card elite-tier">
-
-            <span class="tier-badge">
-                INSTITUTIONAL
-            </span>
-
-            <h3>
-                Institutional Pro
-            </h3>
-
-            <div class="tier-price"
-                data-usd="25000">
-
-                $25,000
-
-            </div>
-
-            <ul>
-                <li>✓ Institutional Dashboard</li>
-                <li>✓ Advanced Portfolio Monitoring</li>
-                <li>✓ Premium Crypto + Forex + Stocks</li>
-                <li>✓ Professional Risk Monitoring</li>
-                <li>✓ Dedicated Account Manager</li>
-            </ul>
-
-            <button class="tier-btn">
-                Access Platform
-            </button>
-
-        </div>
-
     </div>
 
-    </section>            
+</section>
 
-<!-- ========================================= -->
-<!-- TESTIMONIALS -->
-<!-- ========================================= -->
-<section class="testimonials-section" id="testimonials">
+<!-- ==========================
+TESTIMONIALS
+=========================== -->
+
+<section
+    id="testimonials"
+    class="testimonials-section"
+>
 
     <div class="section-title">
+
         <span class="section-badge">
-            Trusted By Traders
+            Testimonials
         </span>
 
         <h2>
-            What Traders Say About GlobalEarn
+            Trusted By Global
+            Traders
         </h2>
 
-        <p>
-            Thousands trust GlobalEarn for premium crypto, forex and stock market education.
-        </p>
     </div>
 
     <div class="testimonials-grid">
 
-        <!-- 1 -->
         <div class="testimonial-card">
 
             <div class="testimonial-top">
 
-                <img src="https://randomuser.me/api/portraits/men/32.jpg"
-                    class="testimonial-avatar">
+                <img
+                src="https://i.pravatar.cc/150?img=12"
+                class="testimonial-avatar"
+                />
 
                 <div>
-                    <h3>Michael T.</h3>
-                    <span>Canada</span>
+                    <h3>
+                        Michael J.
+                    </h3>
 
-                    <div class="stars">
+                    <span>
+                        Canada
+                    </span>
+
+                    <div class="rating">
                         ★★★★★
                     </div>
                 </div>
@@ -947,24 +1179,32 @@ allow_symbol_change: true
             </div>
 
             <p>
-                Professional dashboard with strong market education and premium analytics tools.
+                Professional interface
+                and premium market
+                tracking experience.
             </p>
 
         </div>
 
-        <!-- 2 -->
         <div class="testimonial-card">
 
             <div class="testimonial-top">
 
-                <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                    class="testimonial-avatar">
+                <img
+                src="https://i.pravatar.cc/150?img=32"
+                class="testimonial-avatar"
+                />
 
                 <div>
-                    <h3>Sarah J.</h3>
-                    <span>United Kingdom</span>
+                    <h3>
+                        Sophia R.
+                    </h3>
 
-                    <div class="stars">
+                    <span>
+                        Germany
+                    </span>
+
+                    <div class="rating">
                         ★★★★★
                     </div>
                 </div>
@@ -972,24 +1212,33 @@ allow_symbol_change: true
             </div>
 
             <p>
-                Excellent market insights and professional crypto monitoring tools.
+                Smooth trading
+                experience and clean
+                premium platform
+                design.
             </p>
 
         </div>
 
-        <!-- 3 -->
         <div class="testimonial-card">
 
             <div class="testimonial-top">
 
-                <img src="https://randomuser.me/api/portraits/men/77.jpg"
-                    class="testimonial-avatar">
+                <img
+                src="https://i.pravatar.cc/150?img=28"
+                class="testimonial-avatar"
+                />
 
                 <div>
-                    <h3>David R.</h3>
-                    <span>Australia</span>
+                    <h3>
+                        David K.
+                    </h3>
 
-                    <div class="stars">
+                    <span>
+                        Australia
+                    </span>
+
+                    <div class="rating">
                         ★★★★★
                     </div>
                 </div>
@@ -997,82 +1246,9 @@ allow_symbol_change: true
             </div>
 
             <p>
-                GlobalEarn gives a premium brokerage feel with smooth trading education.
-            </p>
-
-        </div>
-
-        <!-- 4 -->
-        <div class="testimonial-card">
-
-            <div class="testimonial-top">
-
-                <img src="https://randomuser.me/api/portraits/women/25.jpg"
-                    class="testimonial-avatar">
-
-                <div>
-                    <h3>Emma L.</h3>
-                    <span>Germany</span>
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                </div>
-
-            </div>
-
-            <p>
-                Very professional platform with clean navigation and market research.
-            </p>
-
-        </div>
-
-        <!-- 5 -->
-        <div class="testimonial-card">
-
-            <div class="testimonial-top">
-
-                <img src="https://randomuser.me/api/portraits/men/14.jpg"
-                    class="testimonial-avatar">
-
-                <div>
-                    <h3>Daniel O.</h3>
-                    <span>Nigeria</span>
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                </div>
-
-            </div>
-
-            <p>
-                Clean premium design and simple access to trading market education.
-            </p>
-
-        </div>
-
-        <!-- 6 -->
-        <div class="testimonial-card">
-
-            <div class="testimonial-top">
-
-                <img src="https://randomuser.me/api/portraits/women/56.jpg"
-                    class="testimonial-avatar">
-
-                <div>
-                    <h3>Sophia W.</h3>
-                    <span>Singapore</span>
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-                </div>
-
-            </div>
-
-            <p>
-                Premium crypto and forex educational platform with smooth user experience.
+                Great professional
+                market access and
+                responsive support.
             </p>
 
         </div>
@@ -1081,303 +1257,481 @@ allow_symbol_change: true
 
 </section>
 
-<!-- ========================================= -->
-<!-- FAQ -->
-<!-- ========================================= -->
+<!-- ==========================
+FAQ
+=========================== -->
 
-<section class="faq-section" id="faq">
+<section id="faq">
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            Frequently Asked Questions
-        </h2>
+<h2>
+Frequently Asked Questions
+</h2>
 
-    </div>
+</div>
 
-    <div class="faq-wrapper">
+<div class="faq-wrapper">
 
-        <details>
-            <summary>
-                How do I get started?
-            </summary>
+<details>
+<summary>
+How do I start trading?
+</summary>
+<p>
+Create an account and
+access professional
+market tools instantly.
+</p>
+</details>
 
-            <p>
-                Create an account and explore
-                trading products and education resources.
-            </p>
-        </details>
+<details>
+<summary>
+Which markets are supported?
+</summary>
+<p>
+Crypto, forex, stocks,
+commodities, futures
+and global indices.
+</p>
+</details>
 
-        <details>
-            <summary>
-                What products are available?
-            </summary>
+<details>
+<summary>
+Is support available?
+</summary>
+<p>
+Professional customer
+support is available
+24/7.
+</p>
+</details>
 
-            <p>
-                Crypto, Forex, Stocks,
-                Commodities, Indices and Futures.
-            </p>
-        </details>
+<details>
+<summary>
+Can I monitor markets live?
+</summary>
+<p>
+Yes, access real-time
+market monitoring and
+advanced insights.
+</p>
+</details>
 
-        <details>
-            <summary>
-                Is support available?
-            </summary>
+<details>
+<summary>
+Is GlobalEarn accessible globally?
+</summary>
+<p>
+Yes, traders in more
+than 170+ countries
+can access the platform.
+</p>
+</details>
 
-            <p>
-                Contact support through
-                WhatsApp or Email anytime.
-            </p>
-        </details>
-
-        <details>
-            <summary>
-                Do I get market tools?
-            </summary>
-
-            <p>
-                Yes. TradingView charts,
-                analytics and market insights
-                are available.
-            </p>
-        </details>
-
-        <details>
-            <summary>
-                Is education included?
-            </summary>
-
-            <p>
-                Educational trading videos
-                and market content are included.
-            </p>
-        </details>
-
-    </div>
+</div>
 
 </section>
 
-<!-- ========================================= -->
-<!-- CTA -->
-<!-- ========================================= -->
+<!-- ==========================
+RISK DISCLOSURES
+=========================== -->
 
-<section class="cta-section">
+<section class="legal-section">
+
+<div class="section-title">
+
+<h2>
+Risk Disclosures &
+Legal Information
+</h2>
+
+</div>
+
+<div class="legal-grid">
+
+<div class="legal-card">
+
+<h3>
+Risk Warning
+</h3>
+
+<p>
+Trading financial
+markets involves risk.
+Market volatility may
+impact performance and
+users should evaluate
+their financial goals
+before participation.
+</p>
+
+</div>
+
+<div class="legal-card">
+
+<h3>
+Compliance
+</h3>
+
+<p>
+GlobalEarn follows
+professional operating
+standards and applies
+platform policies for
+security and market
+access management.
+</p>
+
+</div>
+
+<div class="legal-card">
+
+<h3>
+Market Notice
+</h3>
+
+<p>
+Past market performance
+does not guarantee
+future outcomes.
+Financial markets are
+subject to price
+movements and volatility.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ==========================
+PREMIUM CTA
+=========================== -->
+
 <section class="premium-cta">
 
     <div class="cta-glow"></div>
 
-    <div class="cta-content">
+    <span class="cta-badge">
 
-        <span class="cta-badge">
-            Trusted Global Brokerage Platform
-        </span>
+        Trusted By Global Traders
 
-        <h2>
-            Start Trading Crypto, Forex & Stocks With Confidence
-        </h2>
+    </span>
 
-        <p>
-            Access premium trading education, smart market analytics,
-            portfolio monitoring, forex signals and real-time market tools
-            through GlobalEarn Premium Brokerage.
-        </p>
+    <h2>
 
-        <div class="cta-buttons">
+        Start Your Professional
+        Trading Experience Today
 
-            <a href="dashboard/dashboard.html"
-               class="cta-primary-btn">
+    </h2>
 
-               Open Live Account
-            </a>
+    <p>
 
-            <a href="#markets"
-               class="cta-secondary-btn">
+        Access professional-grade
+        market insights, premium
+        trading tools, live market
+        monitoring, and global
+        investment opportunities
+        through GlobalEarn Premium.
 
-               Explore Markets
-            </a>
+    </p>
 
-        </div>
+    <div class="cta-buttons">
 
-        <div class="cta-stats">
+        <button
+            class="primary-btn"
+        >
+            Open Live Account
+        </button>
 
-            <div class="cta-stat">
-                <h3>170+</h3>
-                <p>Countries Supported</p>
-            </div>
-
-            <div class="cta-stat">
-                <h3>24/7</h3>
-                <p>Market Education</p>
-            </div>
-
-            <div class="cta-stat">
-                <h3>99.9%</h3>
-                <p>Platform Uptime</p>
-            </div>
-
-        </div>
+        <button
+            class="secondary-btn"
+        >
+            Explore Markets
+        </button>
 
     </div>
 
-</section>
+    <div class="cta-stats">
 
-<!-- ========================================= -->
-<!-- LEGAL -->
-<!-- ========================================= -->
-<section class="legal-section">
+        <div class="cta-stat">
 
-<div class="legal-card">
-
-<h3>
-Risk Disclosure
-</h3>
-
-<p>
-Trading cryptocurrencies, forex,
-stocks and derivatives involves
-substantial risk and may not be
-suitable for all investors. Market
-prices fluctuate rapidly and losses
-may exceed expectations.
-</p>
-
-</div>
-
-<div class="legal-card">
-
-<h3>
-Privacy & Data Protection
-</h3>
-
-<p>
-GlobalEarn securely manages user
-information for operational,
-educational and customer support
-purposes while maintaining privacy
-and data protection standards.
-</p>
-
-</div>
-
-<div class="legal-card">
-
-<h3>
-AML / KYC Compliance
-</h3>
-
-<p>
-Identity verification and compliance
-procedures may be required to
-maintain platform integrity and
-regulatory transparency.
-</p>
-
-</div>
-
-</section>
-<!-- ========================================= -->
-<!-- FOOTER -->
-<!-- ========================================= -->
-<footer class="footer" id="contact">
-
-    <div class="footer-grid">
-
-        <!-- About -->
-        <div class="footer-column">
-
-            <h3>GlobalEarn</h3>
+            <h3>
+                170+
+            </h3>
 
             <p>
-                Premium brokerage platform for
-                crypto, forex and stock market
-                education and market access.
+                Countries Supported
             </p>
 
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-column">
+        <div class="cta-stat">
 
-            <h3>Quick Links</h3>
+            <h3>
+                24/7
+            </h3>
 
-            <a href="#">Home</a>
-            <a href="#markets">Markets</a>
-            <a href="#plans">Plans</a>
-            <a href="#faq">FAQ</a>
+            <p>
+                Customer Support
+            </p>
+
+        </div>
+
+        <div class="cta-stat">
+
+            <h3>
+                $847M+
+            </h3>
+
+            <p>
+                Global Market Volume
+            </p>
 
         </div>
 
-        <!-- Support -->
+    </div>
+
+</section>
+
+<!-- ==========================
+FOOTER
+=========================== -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- COMPANY -->
+
         <div class="footer-column">
 
-            <h3>Support</h3>
+            <h3>
+                GlobalEarn Premium
+            </h3>
 
-            <p>Email: globalearnbrokerage@gmail.com</p>
+            <p>
 
-            <p>WhatsApp: +234 702 632 8785</p>
+                Professional crypto,
+                forex, stock and
+                commodities trading
+                experience built for
+                global traders.
+
+            </p>
+
+            <p>
+
+                Access real-time
+                markets, premium
+                analytics, advanced
+                monitoring and global
+                opportunities.
+
+            </p>
 
         </div>
+
+        <!-- PRODUCTS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Markets
+            </h3>
+
+            <a href="#">
+                Cryptocurrency
+            </a>
+
+            <a href="#">
+                Forex Trading
+            </a>
+
+            <a href="#">
+                Stocks & Shares
+            </a>
+
+            <a href="#">
+                Commodities
+            </a>
+
+            <a href="#">
+                Futures & Indices
+            </a>
+
+        </div>
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h3>
+                Company
+            </h3>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#tiers">
+                Trading Plans
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+            <a href="#">
+                Legal Disclosure
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
+
+        <!-- SUPPORT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+            <p>
+                Available 24/7
+            </p>
+
+            <p>
+                Global Trading Help
+            </p>
+
+            <p>
+                Premium Client
+                Assistance
+            </p>
+
+            <p>
+                Market Education
+            </p>
+
+        </div>
+
+    </div>
 
     <div class="footer-bottom">
-        © 2026 GlobalEarn. All Rights Reserved.
+
+        © 2026 GlobalEarn Premium.
+        All Rights Reserved.
+
     </div>
 
 </footer>
 
-<!-- FLOATING SUPPORT -->
-    
+<!-- ==========================
+FLOATING LANGUAGE SWITCHER
+=========================== -->
+
+<div class="language-floating">
+
+    <select
+        id="languageSwitcher"
+    >
+
+        <option value="en">
+            English
+        </option>
+
+        <option value="fr">
+            Français
+        </option>
+
+        <option value="es">
+            Español
+        </option>
+
+        <option value="ar">
+            العربية
+        </option>
+
+        <option value="hi">
+            हिन्दी
+        </option>
+
+    </select>
+
+</div>
+
+<!-- ==========================
+FLOATING SUPPORT
+=========================== -->
+
 <div class="floating-support">
 
     <a
         href="https://wa.me/2347026328785"
         class="support-btn whatsapp-btn"
-        target="_blank">
-
-        W
-
+    >
+        💬
     </a>
 
     <a
         href="mailto:globalearnbrokerage@gmail.com"
-        class="support-btn email-btn">
-
-        @
-
+        class="support-btn email-btn"
+    >
+        ✉
     </a>
 
 </div>
-<div class="language-floating">
-  <select id="languageSwitcher">
-    <option value="en">English</option>
-    <option value="fr">French</option>
-    <option value="es">Spanish</option>
-    <option value="ar">Arabic</option>
-    <option value="hi">Hindi</option>
-  </select>
-</div>
-    
-  <div id="tradePopup"
-     class="trade-popup">
 
-    <div class="trade-popup-top">
+<!-- ==========================
+TRADE POPUP
+=========================== -->
 
-        <div class="trade-dot"></div>
+<div
+    id="tradePopup"
+    class="live-trade-popup"
+>
+
+    <div class="popup-content">
+
+        <div class="popup-dot">
+
+        </div>
 
         <div>
-            <strong id="popupUser">
-                Michael from Canada
+
+            <strong>
+                Live Market Activity
             </strong>
 
-            <p id="popupTrade">
-                Earned $4,520 trading BTC/USD
+            <p
+                id="popupUser"
+            >
+                Michael from Canada
             </p>
+
+            <p
+                id="popupTrade"
+            >
+                Opened BTC/USD trade
+            </p>
+
         </div>
 
     </div>
 
 </div>
 
-<script src="./src/js/app.js"></script>
+<!-- ==========================
+APP.JS
+=========================== -->
+
+<script
+src="./src/js/app.js">
+</script>
 
 </body>
 </html>
