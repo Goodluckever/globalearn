@@ -62,7 +62,17 @@ DASHBOARD NAVBAR
     </div>
 
     <div class="nav-right">
+<button
+id="logoutBtn"
+class="primary-btn"
+>
 
+Logout
+
+</button>
+        </div>
+
+</nav>
         <select
             id="currencySwitcher"
             class="currency-switcher"
@@ -1666,6 +1676,28 @@ window.location.href =
 }
 
 </script>
+    
+    <script>
+
+document
+.getElementById(
+"logoutBtn"
+)
+
+?.addEventListener(
+"click",
+
+()=>{
+
+localStorage.clear();
+
+window.location.href =
+"../auth.html";
+
+}
+);
+
+    </script>
     
 </body>
 </html>
