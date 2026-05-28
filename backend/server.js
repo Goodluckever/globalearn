@@ -537,7 +537,218 @@ app.get(
         });
     }
 });
+// ======================================
+// ADMIN MIDDLEWARE
+// ======================================
 
+function adminMiddleware(
+    req,
+    res,
+    next
+){
+
+    if(
+        req.user.role !==
+        "admin"
+    ){
+
+        return res.status(403)
+        .json({
+
+            success:false,
+
+            message:
+            "Admin access only"
+
+        });
+    }
+
+    next();
+}
+
+// ======================================
+// GET ALL USERS
+// ======================================
+
+app.get(
+"/api/admin/users",
+
+authMiddleware,
+
+adminMiddleware,
+
+async (
+req,
+res
+) => {
+
+try{
+
+const users =
+await User.find()
+.sort({
+createdAt:-1
+});
+
+res.json({
+
+success:true,
+
+users
+
+});
+
+}
+
+catch(error){
+
+console.error(error);
+
+res.status(500)
+.json({
+
+success:false,
+
+message:
+"Failed to load users"
+
+});
+
+}
+
+});
+
+// ======================================
+// UPDATE USER
+// ======================================
+
+app.put(
+"/api/admin/user/:id",
+
+authMiddleware,
+
+adminMiddleware,
+
+async (
+req,
+res
+) => {
+
+try{
+
+const {
+
+balance,
+equity,
+profit,
+plan,
+kycStatus
+
+} = req.body;
+
+const updatedUser =
+await User.findByIdAndUpdate(
+
+req.params.id,
+
+{
+
+balance,
+equity,
+profit,
+plan,
+kycStatus
+
+},
+
+{
+new:true
+}
+
+);
+
+res.json({
+
+success:true,
+
+message:
+"User updated",
+
+user:
+updatedUser
+
+});
+
+}
+
+catch(error){
+
+console.error(error);
+
+res.status(500)
+.json({
+
+success:false,
+
+message:
+"Update failed"
+
+});
+
+}
+
+});
+
+// ======================================
+// DELETE USER
+// ======================================
+
+app.delete(
+"/api/admin/user/:id",
+
+authMiddleware,
+
+adminMiddleware,
+
+async (
+req,
+res
+) => {
+
+try{
+
+await User.findByIdAndDelete(
+req.params.id
+);
+
+res.json({
+
+success:true,
+
+message:
+"User deleted"
+
+});
+
+}
+
+catch(error){
+
+console.error(error);
+
+res.status(500)
+.json({
+
+success:false,
+
+message:
+"Delete failed"
+
+});
+
+}
+
+});
 // ======================================
 // SERVER START
 // ======================================
