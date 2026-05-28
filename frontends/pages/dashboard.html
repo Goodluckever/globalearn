@@ -1,418 +1,1645 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
 
-<title>GlobalEarn Dashboard</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
-<link rel="stylesheet"
-href="dashboard.css">
+<title>
+GlobalEarn Dashboard
+</title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+<link
+rel="stylesheet"
+href="../src/css/styles.css"
+/>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+/>
 
 </head>
 
-<body>
+<body class="dashboard-body">
 
-<!-- ========================================= -->
-<!-- SIDEBAR -->
-<!-- ========================================= -->
+<!-- ==========================
+MARKET TICKER
+=========================== -->
 
-<aside class="sidebar">
+<div class="market-ticker">
 
-    <div class="brand">
+    <div class="ticker-track">
 
-        <h2>
-            GlobalEarn
-        </h2>
-
-        <p>
-            Premium Dashboard
-        </p>
+        <span>BTC/USD $109,420 ▲</span>
+        <span>ETH/USD $6,210 ▲</span>
+        <span>NASDAQ 21,980 ▲</span>
+        <span>GOLD $3,340 ▲</span>
+        <span>XRP/USD $2.43 ▲</span>
+        <span>EUR/USD 1.12 ▲</span>
 
     </div>
 
-    <nav class="side-links">
+</div>
 
-        <a href="#overview">
-            Dashboard
-        </a>
+<!-- ==========================
+DASHBOARD NAVBAR
+=========================== -->
 
-        <a href="#portfolio">
-            Portfolio
-        </a>
+<nav class="navbar dashboard-navbar">
 
-        <a href="#markets">
-            Markets
-        </a>
+    <div class="logo">
 
-        <a href="#history">
-            Trading Activity
-        </a>
+        <h1>
+            GlobalEarn
+        </h1>
 
-        <a href="#education">
-            Education
-        </a>
+    </div>
 
-        <a href="#profile">
-            Profile
-        </a>
+    <div class="nav-right">
 
-    </nav>
+        <select
+            id="currencySwitcher"
+            class="currency-switcher"
+        >
 
-</aside>
+            <option value="USD">
+                USD $
+            </option>
 
-<!-- ========================================= -->
-<!-- MAIN -->
-<!-- ========================================= -->
+            <option value="EUR">
+                EUR €
+            </option>
 
-<main class="dashboard-main">
+            <option value="GBP">
+                GBP £
+            </option>
 
-    <!-- HEADER -->
+            <option value="INR">
+                INR ₹
+            </option>
 
-    <section class="dashboard-header">
+            <option value="AED">
+                AED
+            </option>
+
+        </select>
+
+        <button class="menu-toggle">
+            ☰
+        </button>
+
+    </div>
+
+</nav>
+
+<!-- ==========================
+MOBILE MENU
+=========================== -->
+
+<div class="mobile-menu">
+
+    <a href="#">
+        Dashboard
+    </a>
+
+    <a href="#">
+        Portfolio
+    </a>
+
+    <a href="#">
+        Markets
+    </a>
+
+    <a href="#">
+        Trade History
+    </a>
+
+    <a href="#">
+        Account
+    </a>
+
+    <a href="#">
+        Logout
+    </a>
+
+</div>
+
+<!-- ==========================
+DASHBOARD WRAPPER
+=========================== -->
+
+<section class="dashboard-wrapper">
+
+    <!-- SIDEBAR -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-profile">
+
+            <img
+            src="https://i.pravatar.cc/150?img=12"
+            alt="User"
+            class="user-avatar"
+            />
+
+            <h3 id="userName">
+                Welcome Trader
+            </h3>
+
+            <span>
+                Premium Account
+            </span>
+
+        </div>
+
+        <div class="sidebar-links">
+
+            <a href="#">
+                Dashboard
+            </a>
+
+            <a href="#">
+                Portfolio
+            </a>
+
+            <a href="#">
+                Markets
+            </a>
+
+            <a href="#">
+                Trading Activity
+            </a>
+
+            <a href="#">
+                Notifications
+            </a>
+
+            <a href="#">
+                KYC Verification
+            </a>
+
+            <a href="#">
+                Account Settings
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-main">
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span class="hero-badge">
+
+                    Professional
+                    Trading Dashboard
+
+                </span>
+
+                <h1>
+
+                    Welcome Back,
+                    Trader
+
+                </h1>
+
+                <p>
+
+                    Monitor your
+                    account, track
+                    market activity
+                    and manage your
+                    portfolio through
+                    GlobalEarn Premium.
+
+                </p>
+
+            </div>
+
+            <!-- BACKEND STATUS -->
+
+            <div
+                id="server-status"
+                class="server-status"
+            >
+                🟡 Connecting Backend...
+            </div>
+
+        </div>
+
+        <!-- ==========================
+        PORTFOLIO OVERVIEW
+        =========================== -->
+
+        <section
+            class="dashboard-stats"
+        >
+
+            <div class="stat-card">
+
+                <h2
+                    data-counter="12540"
+                >
+                    $12,540
+                </h2>
+
+                <p>
+                    Portfolio Value
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2
+                    data-counter="3480"
+                >
+                    $3,480
+                </h2>
+
+                <p>
+                    Total Profit
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2
+                    data-counter="27"
+                >
+                    27
+                </h2>
+
+                <p>
+                    Active Positions
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2
+                    data-counter="170"
+                >
+                    170+
+                </h2>
+
+                <p>
+                    Global Markets
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        QUICK ACCOUNT OVERVIEW
+        =========================== -->
+
+        <section
+            class="quick-overview"
+        >
+
+            <div class="hero-card">
+
+                <h3>
+                    Account Balance
+                </h3>
+
+                <p>
+
+                    Current portfolio
+                    valuation and
+                    active trading
+                    exposure.
+
+                </p>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Available
+                        Balance
+                    </strong>
+
+                    <p>
+                        $8,940.00
+                    </p>
+
+                </div>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Total Equity
+                    </strong>
+
+                    <p>
+                        $12,540.00
+                    </p>
+
+                </div>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Daily Growth
+                    </strong>
+
+                    <p>
+                        +4.81%
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <h3>
+                    Account Status
+                </h3>
+
+                <p>
+
+                    Professional
+                    account activity
+                    and verification
+                    overview.
+
+                </p>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Verification
+                    </strong>
+
+                    <p>
+                        Pending Review
+                    </p>
+
+                </div>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Plan Type
+                    </strong>
+
+                    <p>
+                        Premium Trader
+                    </p>
+
+                </div>
+
+                <div
+                    class="market-mini-card"
+                >
+
+                    <strong>
+                        Support Tier
+                    </strong>
+
+                    <p>
+                        24/7 Priority
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ==========================
+        LIVE MARKET CHART
+        =========================== -->
+
+        <section class="market-view">
+
+            <div class="section-title">
+
+                <span class="section-badge">
+                    Live Markets
+                </span>
+
+                <h2>
+                    Professional Market Overview
+                </h2>
+
+                <p>
+
+                    Monitor global crypto,
+                    forex, commodities,
+                    indices and stock
+                    movements in real-time.
+
+                </p>
+
+            </div>
+
+            <div class="tradingview-wrapper">
+
+                <div
+                    id="tradingview_chart"
+                    style="height:550px;"
+                ></div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        LIVE MARKETS
+        =========================== -->
+
+        <section class="products-grid">
+
+            <div class="product-card">
+
+                <div class="product-icon">
+                    ₿
+                </div>
+
+                <h3>
+                    Cryptocurrency Markets
+                </h3>
+
+                <p>
+
+                    Access premium market
+                    data for Bitcoin,
+                    Ethereum, XRP, Solana,
+                    Cardano and more digital
+                    assets.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        BTC/USD
+                    </strong>
+
+                    <p>
+                        $109,420
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        ETH/USD
+                    </strong>
+
+                    <p>
+                        $6,210
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        XRP/USD
+                    </strong>
+
+                    <p>
+                        $2.43
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="product-card">
+
+                <div class="product-icon">
+                    💹
+                </div>
+
+                <h3>
+                    Forex Markets
+                </h3>
+
+                <p>
+
+                    Trade and monitor
+                    major, minor and
+                    exotic currency pairs
+                    with live market data.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        EUR/USD
+                    </strong>
+
+                    <p>
+                        1.12
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        GBP/USD
+                    </strong>
+
+                    <p>
+                        1.33
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        USD/JPY
+                    </strong>
+
+                    <p>
+                        155.12
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="product-card">
+
+                <div class="product-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Stocks & Indices
+                </h3>
+
+                <p>
+
+                    Monitor premium
+                    stock market activity,
+                    indices and commodity
+                    performance globally.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        NASDAQ
+                    </strong>
+
+                    <p>
+                        21,980
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        GOLD
+                    </strong>
+
+                    <p>
+                        $3,340
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        S&P 500
+                    </strong>
+
+                    <p>
+                        6,421
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        PORTFOLIO BREAKDOWN
+        =========================== -->
+
+        <section class="stats-section">
+
+            <div class="stat-card">
+
+                <h2>
+                    42%
+                </h2>
+
+                <p>
+                    Crypto Exposure
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+                    26%
+                </h2>
+
+                <p>
+                    Forex Holdings
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+                    18%
+                </h2>
+
+                <p>
+                    Commodity Assets
+                </p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>
+                    14%
+                </h2>
+
+                <p>
+                    Global Equities
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        ACTIVE POSITIONS
+        =========================== -->
+
+        <section class="quick-overview">
+
+            <div class="hero-card">
+
+                <h3>
+                    Open Positions
+                </h3>
+
+                <p>
+
+                    Active market
+                    positions currently
+                    being monitored.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        BTC/USD Long
+                    </strong>
+
+                    <p>
+                        +$1,240 Profit
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        EUR/USD Buy
+                    </strong>
+
+                    <p>
+                        +$540 Profit
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        GOLD Position
+                    </strong>
+
+                    <p>
+                        +$920 Profit
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <h3>
+                    Market Signals
+                </h3>
+
+                <p>
+
+                    AI-powered premium
+                    trade signal summary
+                    across supported
+                    instruments.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        BTC Signal
+                    </strong>
+
+                    <p>
+                        Strong Buy
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        EUR/USD Signal
+                    </strong>
+
+                    <p>
+                        Buy Trend
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        NASDAQ Signal
+                    </strong>
+
+                    <p>
+                        Bullish Momentum
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ==========================
+        TRADE HISTORY
+        =========================== -->
+
+        <section class="dashboard-history">
+
+            <div class="section-title">
+
+                <span class="section-badge">
+                    Trading Activity
+                </span>
+
+                <h2>
+                    Recent Trade History
+                </h2>
+
+                <p>
+
+                    Monitor recent market
+                    activity, execution
+                    history and portfolio
+                    performance.
+
+                </p>
+
+            </div>
+
+            <div class="history-card">
+
+                <div class="history-table-wrapper">
+
+                    <table class="trade-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Asset
+                                </th>
+
+                                <th>
+                                    Position
+                                </th>
+
+                                <th>
+                                    Entry
+                                </th>
+
+                                <th>
+                                    Profit
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    BTC/USD
+                                </td>
+
+                                <td>
+                                    Long
+                                </td>
+
+                                <td>
+                                    $108,920
+                                </td>
+
+                                <td class="profit-green">
+                                    +$1,240
+                                </td>
+
+                                <td>
+                                    Active
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    EUR/USD
+                                </td>
+
+                                <td>
+                                    Buy
+                                </td>
+
+                                <td>
+                                    1.10
+                                </td>
+
+                                <td class="profit-green">
+                                    +$540
+                                </td>
+
+                                <td>
+                                    Active
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    GOLD
+                                </td>
+
+                                <td>
+                                    Long
+                                </td>
+
+                                <td>
+                                    $3,210
+                                </td>
+
+                                <td class="profit-green">
+                                    +$920
+                                </td>
+
+                                <td>
+                                    Closed
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    NASDAQ
+                                </td>
+
+                                <td>
+                                    Buy
+                                </td>
+
+                                <td>
+                                    21,500
+                                </td>
+
+                                <td class="profit-red">
+                                    -$160
+                                </td>
+
+                                <td>
+                                    Closed
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        NOTIFICATIONS + PROFILE
+        =========================== -->
+
+        <section class="quick-overview">
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="hero-card">
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+
+                    Latest account,
+                    market and platform
+                    updates.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Market Update
+                    </strong>
+
+                    <p>
+
+                        BTC/USD showing
+                        bullish momentum.
+
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Account Notice
+                    </strong>
+
+                    <p>
+
+                        Profile verification
+                        awaiting review.
+
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Portfolio Alert
+                    </strong>
+
+                    <p>
+
+                        Total portfolio
+                        value increased
+                        by +4.81%.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- USER PROFILE -->
+
+            <div class="hero-card">
+
+                <h3>
+                    Account Profile
+                </h3>
+
+                <p>
+
+                    Personal account
+                    information and
+                    premium membership
+                    overview.
+
+                </p>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Account Name
+                    </strong>
+
+                    <p id="profileName">
+                        Premium Trader
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Membership
+                    </strong>
+
+                    <p>
+                        Premium Trading
+                    </p>
+
+                </div>
+
+                <div class="market-mini-card">
+
+                    <strong>
+                        Account Status
+                    </strong>
+
+                    <p>
+                        Active
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+        KYC STATUS
+        =========================== -->
+
+        <section class="dashboard-kyc">
+
+            <div class="section-title">
+
+                <span class="section-badge">
+                    Verification
+                </span>
+
+                <h2>
+                    KYC Verification Status
+                </h2>
+
+                <p>
+
+                    Review your account
+                    verification status
+                    for uninterrupted
+                    trading access.
+
+                </p>
+
+            </div>
+
+            <div class="legal-grid">
+
+                <div class="legal-card">
+
+                    <h3>
+                        Personal Details
+                    </h3>
+
+                    <p>
+
+                        Name, country,
+                        email and contact
+                        information
+                        verification.
+
+                    </p>
+
+                    <strong>
+                        Status:
+                        Pending Review
+                    </strong>
+
+                </div>
+
+                <div class="legal-card">
+
+                    <h3>
+                        Trading Access
+                    </h3>
+
+                    <p>
+
+                        Access to premium
+                        platform features
+                        and professional
+                        market tools.
+
+                    </p>
+
+                    <strong>
+                        Status:
+                        Active
+                    </strong>
+
+                </div>
+
+                <div class="legal-card">
+
+                    <h3>
+                        Security
+                    </h3>
+
+                    <p>
+
+                        Professional-grade
+                        account monitoring
+                        and portfolio
+                        protection.
+
+                    </p>
+
+                    <strong>
+                        Status:
+                        Protected
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ==========================
+        PREMIUM CTA
+        =========================== -->
+
+        <section class="premium-cta">
+
+            <div class="cta-glow"></div>
+
+            <span class="cta-badge">
+
+                Professional
+                Trading Platform
+
+            </span>
+
+            <h2>
+
+                Continue Monitoring
+                Global Markets With
+                Confidence
+
+            </h2>
+
+            <p>
+
+                Access premium market
+                intelligence, portfolio
+                monitoring, trading
+                analytics and real-time
+                global financial data.
+
+            </p>
+
+            <div class="cta-buttons">
+
+                <button
+                    class="cta-primary-btn"
+                    id="openMarketsBtn"
+                >
+
+                    Explore Markets
+
+                </button>
+
+                <button
+                    class="cta-secondary-btn"
+                    id="supportBtn"
+                >
+
+                    Customer Support
+
+                </button>
+
+            </div>
+
+            <div class="cta-stats">
+
+                <div class="cta-stat">
+
+                    <h3>
+                        170+
+                    </h3>
+
+                    <p>
+                        Global Markets
+                    </p>
+
+                </div>
+
+                <div class="cta-stat">
+
+                    <h3>
+                        24/7
+                    </h3>
+
+                    <p>
+                        Premium Support
+                    </p>
+
+                </div>
+
+                <div class="cta-stat">
+
+                    <h3>
+                        99.9%
+                    </h3>
+
+                    <p>
+                        Platform Uptime
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</section>
+
+<!-- ==========================
+FLOATING LANGUAGE SWITCHER
+=========================== -->
+
+<div class="language-floating">
+
+    <select id="languageSwitcher">
+
+        <option value="en">
+            English
+        </option>
+
+        <option value="fr">
+            Français
+        </option>
+
+        <option value="es">
+            Español
+        </option>
+
+        <option value="ar">
+            العربية
+        </option>
+
+        <option value="hi">
+            हिन्दी
+        </option>
+
+    </select>
+
+</div>
+
+<!-- ==========================
+FLOATING SUPPORT
+=========================== -->
+
+<div class="floating-support">
+
+    <a
+        href="#"
+        class="support-btn whatsapp-btn"
+    >
+        💬
+    </a>
+
+    <a
+        href="#"
+        class="support-btn email-btn"
+    >
+        ✉
+    </a>
+
+</div>
+
+<!-- ==========================
+LIVE TRADE POPUP
+=========================== -->
+
+<div
+    id="tradePopup"
+    class="live-trade-popup"
+>
+
+    <div class="popup-content">
+
+        <div class="popup-dot"></div>
 
         <div>
 
-            <h1>
-                Welcome Back
-            </h1>
+            <strong
+                id="popupUser"
+            >
 
-            <p>
-                Monitor your markets,
-                trading activity and
-                portfolio insights.
+                Market Activity
+
+            </strong>
+
+            <p
+                id="popupTrade"
+            >
+
+                Loading live trade...
+
             </p>
 
         </div>
 
-        <button class="dashboard-btn">
-            Start Trading
-        </button>
+    </div>
 
-    </section>
+</div>
 
-    <!-- OVERVIEW -->
+<!-- ==========================
+FOOTER
+=========================== -->
 
-    <section
-    class="overview-grid"
-    id="overview">
+<footer class="footer">
 
-        <div class="overview-card">
+    <div class="footer-grid">
 
-            <span>
-                Portfolio Balance
-            </span>
-
-            <h2>
-                $24,500
-            </h2>
-
-        </div>
-
-        <div class="overview-card">
-
-            <span>
-                Active Trades
-            </span>
-
-            <h2>
-                12
-            </h2>
-
-        </div>
-
-        <div class="overview-card">
-
-            <span>
-                Daily Growth
-            </span>
-
-            <h2>
-                +5.2%
-            </h2>
-
-        </div>
-
-        <div class="overview-card">
-
-            <span>
-                Market Watchlist
-            </span>
-
-            <h2>
-                24 Assets
-            </h2>
-
-        </div>
-
-    </section>
-
-    <!-- MARKET CHART -->
-
-    <section
-    class="dashboard-chart"
-    id="markets">
-
-        <div class="section-header">
-
-            <h2>
-                Live Market Chart
-            </h2>
-        </div>
-
-        <div id="dashboardChart"></div>
-
-    </section>
-
-    <!-- PORTFOLIO -->
-
-    <section
-    class="portfolio-grid"
-    id="portfolio">
-
-        <div class="portfolio-card">
+        <div class="footer-column">
 
             <h3>
-                Bitcoin
+                GlobalEarn
             </h3>
 
             <p>
-                BTC Portfolio
+
+                Professional crypto,
+                forex, commodities
+                and global market
+                monitoring platform.
+
             </p>
 
-            <h2>
-                +2.4%
-            </h2>
-
         </div>
 
-        <div class="portfolio-card">
+        <div class="footer-column">
 
             <h3>
-                Gold
+                Markets
             </h3>
 
-            <p>
-                Commodity
-            </p>
+            <a href="#">
+                Cryptocurrency
+            </a>
 
-            <h2>
-                +1.2%
-            </h2>
+            <a href="#">
+                Forex
+            </a>
+
+            <a href="#">
+                Commodities
+            </a>
+
+            <a href="#">
+                Stocks
+            </a>
 
         </div>
 
-        <div class="portfolio-card">
+        <div class="footer-column">
 
             <h3>
-                Nasdaq
+                Account
             </h3>
 
-            <p>
-                Index Fund
-            </p>
+            <a href="#">
+                Dashboard
+            </a>
 
-            <h2>
-                +3.1%
-            </h2>
+            <a href="#">
+                Portfolio
+            </a>
 
-        </div>
+            <a href="#">
+                KYC Status
+            </a>
 
-    </section>
-
-    <!-- TRADING HISTORY -->
-
-    <section
-    class="history-section"
-    id="history">
-
-        <div class="section-header">
-
-            <h2>
-                Recent Trading Activity
-            </h2>
+            <a
+                href="#"
+                id="logoutBtn"
+            >
+                Logout
+            </a>
 
         </div>
 
-        <div class="table-wrapper">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Asset
-                        </th>
-
-                        <th>
-                            Type
-                        </th>
-
-                        <th>
-                            Amount
-                        </th>
-
-                        <th>
-                            Status
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>
-                            BTC/USD
-                        </td>
-
-                        <td>
-                            Buy
-                        </td>
-
-                        <td>
-                            $2,500
-                        </td>
-
-                        <td>
-                            Completed
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>
-                            GOLD
-                        </td>
-
-                        <td>
-                            Buy
-                        </td>
-
-                        <td>
-                            $1,500
-                        </td>
-
-                        <td>
-                            Running
-                        </td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
-
-    <!-- EDUCATION -->
-
-    <section
-    class="education-grid"
-    id="education">
-
-        <div class="education-card">
-
-            <iframe
-            src="https://www.youtube.com/embed/41JCpzvnn_0"
-            allowfullscreen>
-            </iframe>
+        <div class="footer-column">
 
             <h3>
-                Bitcoin Trading
+                Support
             </h3>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact Support
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
 
         </div>
 
-        <div class="education-card">
+    </div>
 
-            <iframe
-            src="https://www.youtube.com/embed/SSo_EIwHSd4"
-            allowfullscreen>
-            </iframe>
+    <div class="footer-bottom">
 
-            <h3>
-                Forex Trading
-            </h3>
+        © 2026 GlobalEarn
+        Premium Brokerage.
+        All Rights Reserved.
 
-        </div>
+    </div>
 
-    </section>
+</footer>
 
-    <!-- PROFILE -->
+<!-- ==========================
+TRADINGVIEW SCRIPT
+=========================== -->
 
-    <section
-    class="profile-card"
-    id="profile">
+<script
+src="https://s3.tradingview.com/tv.js"
+></script>
 
-        <h2>
-            Profile Verification
-        </h2>
+<script>
 
-        <form>
+new TradingView.widget({
 
-            <input
-            type="text"
-            placeholder="Full Name">
+    "autosize": true,
 
-            <input
-            type="email"
-            placeholder="Email">
+    "symbol":
+    "BINANCE:BTCUSDT",
 
-            <input
-            type="tel"
-            placeholder="Phone Number">
+    "interval":
+    "30",
 
-            <select>
+    "timezone":
+    "Etc/UTC",
 
-                <option>
-                    Country
-                </option>
+    "theme":
+    "dark",
 
-                <option>
-                    Nigeria
-                </option>
+    "style":
+    "1",
 
-                <option>
-                    USA
-                </option>
+    "locale":
+    "en",
 
-                <option>
-                    UK
-                </option>
+    "toolbar_bg":
+    "#081327",
 
-            </select>
+    "enable_publishing":
+    false,
 
-            <button
-            class="dashboard-btn">
+    "allow_symbol_change":
+    true,
 
-                Save Profile
+    "container_id":
+    "tradingview_chart"
 
-            </button>
+});
 
-        </form>
+</script>
 
-    </section>
+<script
+src="../src/js/app.js"
+></script>
 
-</main>
+<script>
 
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script src="dashboard.js"></script>
+// ==========================
+// DASHBOARD USER SESSION
+// ==========================
+
+const user =
+JSON.parse(
+    localStorage.getItem(
+        "user"
+    )
+);
+
+if(user){
+
+    const profile =
+    document.getElementById(
+        "profileName"
+    );
+
+    const welcome =
+    document.getElementById(
+        "userName"
+    );
+
+    if(profile){
+
+        profile.textContent =
+        user.name ||
+        "Premium Trader";
+    }
+
+    if(welcome){
+
+        welcome.textContent =
+        user.name ||
+        "Welcome Trader";
+    }
+}
+
+// ==========================
+// LOGOUT
+// ==========================
+
+const logoutBtn =
+document.getElementById(
+    "logoutBtn"
+);
+
+if(logoutBtn){
+
+    logoutBtn.addEventListener(
+        "click",
+        () => {
+
+            localStorage.removeItem(
+                "token"
+            );
+
+            localStorage.removeItem(
+                "user"
+            );
+
+            window.location.href =
+            "../index.html";
+        }
+    );
+}
+
+</script>
 
 </body>
-                </html>
+</html>
