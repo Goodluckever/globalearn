@@ -1,395 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
 
-<title>GlobalEarn Admin Dashboard</title>
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
-<link rel="stylesheet"
-href="admin.css">
+<title>
+GlobalEarn Admin Dashboard
+</title>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-rel="stylesheet">
+<link
+rel="stylesheet"
+href="../src/ccs/styles.css"
+/>
 
 </head>
 
 <body>
 
-<!-- ========================================= -->
-<!-- ADMIN SIDEBAR -->
-<!-- ========================================= -->
+<!-- ==========================
+MARKET TICKER
+=========================== -->
 
-<aside class="admin-sidebar">
+<div class="market-ticker">
 
-    <div class="admin-logo">
+    <div class="ticker-track">
 
-        <h2>
-            GlobalEarn
-        </h2>
-
-        <p>
-            Admin Control Center
-        </p>
+        <span>BTC/USD +2.84%</span>
+        <span>ETH/USD +3.16%</span>
+        <span>EUR/USD +0.84%</span>
+        <span>GOLD +1.42%</span>
+        <span>NASDAQ +2.03%</span>
+        <span>US OIL +1.15%</span>
 
     </div>
 
-    <nav class="admin-links">
+</div>
 
-        <a href="#overview">
-            Dashboard
-        </a>
+<!-- ==========================
+NAVBAR
+=========================== -->
 
-        <a href="#users">
-            Users
-        </a>
+<nav class="navbar">
 
-        <a href="#activity">
-            Activity
-        </a>
+    <div class="logo">
 
-        <a href="#analytics">
-            Analytics
-        </a>
+        <h1>
+            GlobalEarn Admin
+        </h1>
 
-        <a href="#settings">
-            Settings
-        </a>
+    </div>
 
-    </nav>
-
-</aside>
-
-<!-- ========================================= -->
-<!-- MAIN ADMIN CONTENT -->
-<!-- ========================================= -->
-
-<main class="admin-main">
-
-    <!-- HEADER -->
-
-    <section class="admin-header">
-
-        <div>
-
-            <h1>
-                Admin Dashboard
-            </h1>
-
-            <p>
-                Manage platform activity,
-                monitor users and control
-                platform operations.
-            </p>
-
-        </div>
+    <div class="nav-right">
 
         <button
-        id="logoutBtn"
-        class="admin-btn">
+        class="primary-btn"
+        id="adminLogoutBtn"
+        >
 
             Logout
 
         </button>
 
-    </section>
+    </div>
 
-    <!-- OVERVIEW -->
+</nav>
 
-    <section
-    class="admin-overview"
-    id="overview">
+<!-- ==========================
+ADMIN HERO
+=========================== -->
 
-        <div class="admin-card">
+<section class="hero">
 
-            <span>
-                Total Users
-            </span>
+    <div>
 
-            <h2>
-                12,840
-            </h2>
+        <span class="hero-badge">
 
-        </div>
+            Premium Control Center
 
-        <div class="admin-card">
+        </span>
 
-            <span>
-                Active Sessions
-            </span>
+        <h1>
 
-            <h2>
-                5,216
-            </h2>
+            Brokerage
+            Administration
+            Dashboard
 
-        </div>
+        </h1>
 
-        <div class="admin-card">
+        <p>
 
-            <span>
-                Market Status
-            </span>
+            Manage users,
+            portfolio balances,
+            KYC verification,
+            plans and trading
+            permissions.
 
-            <h2>
-                Online
-            </h2>
+        </p>
 
-        </div>
+    </div>
 
-        <div class="admin-card">
+</section>
 
-            <span>
-                Support Tickets
-            </span>
+<!-- ==========================
+ADMIN USERS
+=========================== -->
 
-            <h2>
-                36
-            </h2>
+<section>
 
-        </div>
+    <div class="section-title">
 
-    </section>
+        <span class="section-badge">
 
-    <!-- USER MANAGEMENT -->
+            User Management
 
-    <section
-    class="admin-users"
-    id="users">
+        </span>
 
-        <div class="section-header">
+        <h2>
 
-            <h2>
-                User Management
-            </h2>
+            Platform Users
 
-            <p>
-                Search, review and manage users.
-            </p>
+        </h2>
 
-        </div>
+        <p>
 
-        <div class="admin-search">
+            View and manage
+            registered users
+            across the platform.
 
-            <input
-            type="text"
-            id="searchUser"
-            placeholder="Search user by email or name">
+        </p>
 
-        </div>
+    </div>
 
-        <div class="admin-table-wrapper">
+    <!-- SEARCH -->
 
-            <table id="usersTable">
+    <div
+    style="
+    margin-bottom:40px;
+    "
+    >
 
-                <thead>
+        <input
+        type="text"
+        id="searchUser"
+        placeholder="Search user..."
 
-                    <tr>
+        style="
+        width:100%;
+        padding:20px;
+        border-radius:20px;
+        border:none;
+        background:#081327;
+        color:#fff;
+        "
+        />
 
-                        <th>
-                            Name
-                        </th>
+    </div>
 
-                        <th>
-                            Email
-                        </th>
+    <!-- USER GRID -->
 
-                        <th>
-                            Country
-                        </th>
+    <div
+    class="tiers-grid"
+    id="adminUsersGrid"
+    >
 
-                        <th>
-                            Status
-                        </th>
+    </div>
 
-                        <th>
-                            Action
-                        </th>
+</section>
 
-                    </tr>
+<!-- ==========================
+FOOTER
+=========================== -->
 
-                </thead>
+<footer class="footer">
 
-                <tbody>
+    <div class="footer-bottom">
 
-                    <tr>
+        © 2026 GlobalEarn
+        Premium Brokerage
+        Admin Panel
 
-                        <td>
-                            John Carter
-                        </td>
+    </div>
 
-                        <td>
-                            john@email.com
-                        </td>
+</footer>
 
-                        <td>
-                            USA
-                        </td>
+<script
+src="../src/js/app.js"
+></script>
 
-                        <td>
-                            Active
-                        </td>
+<script>
 
-                        <td>
+// ==========================
+// ADMIN SECURITY CHECK
+// ==========================
 
-                            <button class="table-btn">
-                                View
-                            </button>
+const user =
+JSON.parse(
+localStorage.getItem(
+"user"
+)
+);
 
-                        </td>
+if(
+!user
+){
 
-                    </tr>
+window.location.href =
+"../auth.html";
 
-                    <tr>
+}
 
-                        <td>
-                            James Lee
-                        </td>
+const token =
+localStorage.getItem(
+"token"
+);
 
-                        <td>
-                            james@email.com
-                        </td>
+// ==========================
+// FETCH USERS
+// ==========================
 
-                        <td>
-                            UK
-                        </td>
+async function
+loadUsers(){
 
-                        <td>
-                            Pending
-                        </td>
+try{
 
-                        <td>
+const response =
+await fetch(
 
-                            <button class="table-btn">
-                                View
-                            </button>
+"https://globalearn-nfmm.onrender.com/api/admin/users",
 
-                        </td>
+{
+headers:{
 
-                    </tr>
+Authorization:
+`Bearer ${token}`
 
-                </tbody>
+}
+}
 
-            </table>
+);
 
-        </div>
+const data =
+await response.json();
 
-    </section>
+if(
+!data.success
+){
 
-    <!-- ACTIVITY -->
+window.location.href =
+"../dashboard/dashboard.html";
 
-    <section
-    class="admin-activity"
-    id="activity">
+return;
+}
 
-        <div class="section-header">
+renderUsers(
+data.users
+);
 
-            <h2>
-                Platform Activity
-            </h2>
+}
 
-        </div>
+catch(error){
 
-        <div class="activity-grid">
+console.error(error);
 
-            <div class="activity-card">
-                BTC Market Updated
-            </div>
+}
 
-            <div class="activity-card">
-                User Registration Completed
-            </div>
+}
 
-            <div class="activity-card">
-                Support Ticket Submitted
-            </div>
+// ==========================
+// RENDER USERS
+// ==========================
 
-            <div class="activity-card">
-                Market Analytics Updated
-            </div>
+function renderUsers(
+users
+){
 
-        </div>
+const grid =
+document.getElementById(
+"adminUsersGrid"
+);
 
-    </section>
+grid.innerHTML = "";
 
-    <!-- ANALYTICS -->
+users.forEach(user=>{
 
-    <section
-    class="admin-analytics"
-    id="analytics">
+grid.innerHTML += `
 
-        <div class="section-header">
+<div class="tier-card">
 
-            <h2>
-                Platform Analytics
-            </h2>
+<h3>
+${user.name}
+</h3>
 
-        </div>
+<p>
+${user.email}
+</p>
 
-        <div id="adminChart"></div>
+<div class="market-mini-card">
 
-    </section>
+<p>
+Balance:
+$${user.balance}
+</p>
 
-    <!-- SETTINGS -->
+<p>
+Equity:
+$${user.equity}
+</p>
 
-    <section
-    class="admin-settings"
-    id="settings">
+<p>
+Profit:
+$${user.profit}
+</p>
 
-        <div class="section-header">
+<p>
+Plan:
+${user.plan}
+</p>
 
-            <h2>
-                Admin Settings
-            </h2>
+<p>
+KYC:
+${user.kycStatus}
+</p>
 
-        </div>
+</div>
 
-        <form id="settingsForm">
+<button
+class="tier-btn"
+onclick="
+editUser(
+'${user._id}'
+)
+"
+>
 
-            <input
-            type="text"
-            placeholder="Platform Name">
+Edit User
 
-            <input
-            type="email"
-            placeholder="Support Email">
+</button>
 
-            <select>
+<button
+class="secondary-btn"
+style="
+margin-top:14px;
+width:100%;
+"
+onclick="
+deleteUser(
+'${user._id}'
+)
+"
+>
 
-                <option>
-                    Platform Status
-                </option>
+Delete User
 
-                <option>
-                    Online
-                </option>
+</button>
 
-                <option>
-                    Maintenance
-                </option>
+</div>
 
-            </select>
+`;
+});
 
-            <button
-            class="admin-btn"
-            type="submit">
+}
 
-                Save Settings
+// ==========================
+// DELETE USER
+// ==========================
 
-            </button>
+async function
+deleteUser(id){
 
-        </form>
+const confirmDelete =
+confirm(
+"Delete user?"
+);
 
-    </section>
+if(
+!confirmDelete
+)return;
 
-</main>
+await fetch(
 
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script src="admin.js"></script>
+`https://globalearn-nfmm.onrender.com/api/admin/user/${id}`,
+
+{
+method:"DELETE",
+
+headers:{
+Authorization:
+`Bearer ${token}`
+}
+}
+
+);
+
+loadUsers();
+
+}
+
+// ==========================
+// EDIT USER
+// ==========================
+
+async function
+editUser(id){
+
+const balance =
+prompt(
+"Balance"
+);
+
+const equity =
+prompt(
+"Equity"
+);
+
+const profit =
+prompt(
+"Profit"
+);
+
+const plan =
+prompt(
+"Trading Plan"
+);
+
+const kycStatus =
+prompt(
+"KYC Status"
+);
+
+await fetch(
+
+`https://globalearn-nfmm.onrender.com/api/admin/user/${id}`,
+
+{
+
+method:"PUT",
+
+headers:{
+
+"Content-Type":
+"application/json",
+
+Authorization:
+`Bearer ${token}`
+
+},
+
+body:JSON.stringify({
+
+balance,
+equity,
+profit,
+plan,
+kycStatus
+
+})
+
+}
+
+);
+
+loadUsers();
+
+}
+
+// ==========================
+// SEARCH USER
+// ==========================
+
+document
+.getElementById(
+"searchUser"
+)
+
+.addEventListener(
+
+"input",
+
+function(){
+
+const value =
+this.value
+.toLowerCase();
+
+document
+.querySelectorAll(
+".tier-card"
+)
+
+.forEach(card=>{
+
+card.style.display =
+card.innerText
+.toLowerCase()
+.includes(value)
+
+? "block"
+
+: "none";
+
+});
+
+}
+);
+
+// ==========================
+// LOGOUT
+// ==========================
+
+document
+.getElementById(
+"adminLogoutBtn"
+)
+
+.addEventListener(
+"click",
+
+()=>{
+
+localStorage.clear();
+
+window.location.href =
+"../auth.html";
+
+}
+);
+
+loadUsers();
+
+</script>
 
 </body>
 </html>
