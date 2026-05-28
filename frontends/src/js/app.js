@@ -515,8 +515,26 @@ data.user
 )
 );
 
+// ======================
+// ROLE BASED REDIRECT
+// ======================
+
+if(
+data.user.role ===
+"admin"
+){
+
+window.location.href =
+"./admin/admin.html";
+
+}
+
+else{
+
 window.location.href =
 "./dashboard/dashboard.html";
+
+}
 
 }
 
