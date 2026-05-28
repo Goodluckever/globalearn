@@ -1841,3 +1841,172 @@ PREMIUM CTA
     color:#dfe7ff;
     font-weight:600;
 }
+.ticker-wrapper{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    overflow:hidden;
+    background:#021028;
+    border-bottom:1px solid rgba(255,255,255,.05);
+    z-index:99999;
+    height:42px;
+}
+
+.ticker-track{
+    display:flex;
+    gap:60px;
+    white-space:nowrap;
+    animation:tickerMove 20s linear infinite;
+    color:#1cff89;
+    font-weight:700;
+    line-height:42px;
+    padding-left:100%;
+}
+
+@keyframes tickerMove{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+.navbar{
+    margin-top:42px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#03163b;
+}
+
+.logo h1{
+    color:white;
+    font-size:42px;
+    font-weight:800;
+}
+
+.nav-right{
+    display:flex;
+    gap:14px;
+    align-items:center;
+}
+
+.currency-switcher{
+    height:54px;
+    border:none;
+    border-radius:18px;
+    background:#08204b;
+    color:white;
+    padding:0 18px;
+    font-size:18px;
+}
+
+.menu-toggle{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:20px;
+    background:
+    linear-gradient(
+    135deg,
+    #2767ff,
+    #5ea1ff
+    );
+    color:white;
+    font-size:28px;
+}
+
+.hero{
+    padding:80px 28px;
+    background:
+    linear-gradient(
+    180deg,
+    #17356c,
+    #07142d
+    );
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:40px;
+    background:
+    rgba(80,130,255,.15);
+    color:#79a7ff;
+    font-weight:700;
+}
+
+.hero h1{
+    font-size:72px;
+    color:white;
+    line-height:1.1;
+    margin:30px 0;
+    font-weight:900;
+}
+
+.hero p{
+    color:#b7c4e5;
+    font-size:26px;
+    line-height:1.9;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:40px;
+}
+
+.primary-btn{
+    height:74px;
+    border:none;
+    border-radius:22px;
+    background:
+    linear-gradient(
+    135deg,
+    #2767ff,
+    #5ea1ff
+    );
+    color:white;
+    font-size:26px;
+    font-weight:800;
+}
+
+.secondary-btn{
+    height:74px;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.12);
+    background:transparent;
+    color:white;
+    font-size:26px;
+    font-weight:700;
+}
+
+.hero-stats{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+}
+
+.stat-card{
+    background:
+    rgba(11,25,55,.95);
+    border-radius:24px;
+    padding:30px;
+    border:
+    1px solid rgba(255,255,255,.06);
+}
+
+.stat-card h2{
+    color:white;
+    font-size:38px;
+}
+
+.stat-card p{
+    color:#97a7d4;
+    font-size:18px;
+}
