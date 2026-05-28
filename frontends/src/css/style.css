@@ -2010,169 +2010,153 @@ PREMIUM CTA
     color:#97a7d4;
     font-size:18px;
 }
-/* ==========================
-   MOBILE RESPONSIVE FIX
-========================== */
-@media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
   }
 
-  /* NAVBAR FIX */
-  .navbar,
-  nav {
-    position: sticky;
-    top: 40px; /* below ticker */
-    z-index: 999;
-    width: 100%;
-    padding: 18px 20px;
+/* =========================
+   PREMIUM MOBILE FIX V2
+========================= */
+@media (max-width:768px){
+
+  html, body{
+    overflow-x:hidden;
+    width:100%;
   }
 
-  .logo {
-    font-size: 2rem;
-    font-weight: 800;
+  /* MARKET TICKER */
+  .market-ticker{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    height:52px;
   }
 
-  /* MENU FIX */
-  .mobile-menu,
-  .nav-links {
-    position: absolute;
-    top: 90px;
-    left: 20px;
-    right: 20px;
-    background: rgba(8, 17, 48, 0.98);
-    border-radius: 24px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    z-index: 999;
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  /* NAVBAR */
+  nav,
+  .navbar{
+    position:fixed;
+    top:52px;
+    left:0;
+    width:100%;
+    z-index:999;
+    padding:18px 20px;
+    background:#071633;
   }
 
-  .nav-links a {
-    font-size: 20px;
-    text-align: center;
+  /* HERO FIX */
+  .hero{
+    padding-top:160px;
+    padding-bottom:70px;
+    min-height:auto;
   }
 
-  /* HERO SECTION */
-  .hero {
-    padding: 120px 22px 70px;
+  .hero h1{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:20px;
   }
 
-  .hero h1 {
-    font-size: 2.7rem;
-    line-height: 1.1;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    line-height: 1.8;
+  .hero p{
+    font-size:1.05rem;
+    line-height:1.8;
+    margin-bottom:28px;
   }
 
   /* CTA BUTTONS */
-  .cta-buttons,
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  .hero-buttons,
+  .cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-top:30px;
   }
 
   .btn,
-  .cta-btn {
-    width: 100%;
-    text-align: center;
+  .cta-btn{
+    width:100%;
+    min-height:60px;
+    border-radius:20px;
   }
 
-  /* MARKET OVERVIEW */
-  .market-card,
-  .market-overview {
-    padding: 28px;
-    border-radius: 32px;
+  /* MENU FIX */
+  .nav-links{
+    position:absolute;
+    top:95px;
+    left:20px;
+    right:20px;
+    background:#081735;
+    border-radius:26px;
+    padding:25px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
   }
 
-  /* TESTIMONIALS */
-  .testimonial-card {
-    padding: 26px;
-    border-radius: 30px;
-    margin-bottom: 22px;
-  }
-
-  /* FOOTER FIX */
-  footer {
-    padding: 60px 24px 140px;
-    min-height: auto;
-  }
-
-  .footer-content {
-    gap: 30px;
-  }
-
-  /* LANGUAGE SWITCHER */
-  .language-switcher {
-    position: fixed;
-    bottom: 22px;
-    left: 18px;
-    z-index: 998;
-    width: 140px;
-    border-radius: 18px;
+  .nav-links a{
+    font-size:20px;
+    text-align:center;
   }
 
   /* TRADE POPUP FIX */
-  .trade-popup {
-    position: fixed;
-    bottom: 100px;
-    left: 15px;
-    right: 15px;
-    width: auto;
-    padding: 18px;
-    border-radius: 24px;
-    z-index: 997;
+  .trade-popup{
+    position:fixed;
+    left:15px;
+    right:15px;
+    bottom:85px;
+    width:auto;
+    z-index:995;
+    border-radius:28px;
+    padding:18px 22px;
   }
 
-  .trade-popup h4 {
-    font-size: 20px;
+  .trade-popup h4{
+    font-size:22px;
   }
 
-  .trade-popup p {
-    font-size: 15px;
+  .trade-popup p{
+    font-size:15px;
   }
 
-  /* FLOATING SUPPORT BUTTONS */
-  .floating-support {
-    position: fixed;
-    right: 14px;
-    bottom: 120px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    z-index: 998;
+  /* LANGUAGE SWITCHER */
+  .language-switcher{
+    position:fixed;
+    bottom:20px;
+    left:15px;
+    z-index:996;
+    width:140px;
   }
 
-  .floating-support a {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+  /* SUPPORT FLOATING ICONS */
+  .floating-support{
+    position:fixed;
+    right:14px;
+    bottom:170px;
+    z-index:996;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
   }
 
-  /* VIDEO SECTION */
-  iframe,
-  video {
-    width: 100%;
-    height: 220px;
-    border-radius: 20px;
+  .floating-support a{
+    width:65px;
+    height:65px;
+    border-radius:50%;
   }
 
-  /* PREVENT HUGE EMPTY SPACE */
-  section {
-    overflow: hidden;
+  /* TESTIMONIALS */
+  .testimonial-card{
+    padding:26px;
+    border-radius:28px;
   }
 
-  .footer,
-  footer,
-  .container {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  /* FOOTER */
+  footer{
+    padding:60px 24px 150px;
+  }
+
+  /* REMOVE BIG EMPTY SPACE */
+  section{
+    margin-top:0;
   }
 }
