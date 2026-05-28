@@ -1,8 +1,44 @@
 /* =========================================
-   GLOBAL RESET
+   GLOBALEARN PREMIUM BINANCE STYLE CSS
+   PART 1 — FOUNDATION + HERO
 ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* =========================================
+   ROOT VARIABLES
+========================================= */
+
+:root{
+
+    --bg-primary:#050d1b;
+    --bg-secondary:#071428;
+    --bg-card:#0b1730;
+    --bg-card-2:#0f1d3b;
+
+    --primary:#2962ff;
+    --primary-light:#5ea2ff;
+
+    --success:#00d26a;
+    --warning:#f3ba2f;
+    --danger:#ff4d4f;
+
+    --text-primary:#ffffff;
+    --text-secondary:#9ba9ca;
+    --text-muted:#7f8db1;
+
+    --border:
+    rgba(255,255,255,.08);
+
+    --shadow:
+    0 18px 50px rgba(0,0,0,.35);
+
+    --radius:28px;
+}
+
+/* =========================================
+   RESET
+========================================= */
 
 *{
     margin:0;
@@ -16,21 +52,21 @@ html{
 
 body{
     font-family:'Inter',sans-serif;
+
     background:
-    radial-gradient(circle at top,
-    #16305f 0%,
-    #071120 45%,
+    radial-gradient(
+    circle at top,
+    #17366e 0%,
+    #071428 40%,
     #030712 100%);
 
-    color:#fff;
-    overflow-x:hidden;
-    min-height:100vh;
-    padding-top:90px;
-}
+    color:var(--text-primary);
 
-a{
-    text-decoration:none;
-    color:#fff;
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    padding-top:130px;
 }
 
 img{
@@ -38,8 +74,17 @@ img{
     display:block;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
 section{
-    padding:90px 7%;
+    padding:100px 7%;
 }
 
 .container{
@@ -54,94 +99,103 @@ section{
 
 .section-title{
     text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:48px;
-    font-weight:900;
-    margin-bottom:18px;
-}
-
-.section-title p{
-    color:#9ea9c9;
-    max-width:780px;
-    margin:auto;
-    line-height:1.9;
-    font-size:17px;
+    margin-bottom:70px;
 }
 
 .section-badge{
+
     display:inline-flex;
     align-items:center;
 
-    padding:10px 20px;
+    padding:12px 22px;
 
     border-radius:999px;
 
     background:
-    rgba(33,102,255,.12);
+    rgba(41,98,255,.12);
 
     border:
-    1px solid rgba(70,135,255,.18);
+    1px solid rgba(94,162,255,.15);
 
-    color:#69a7ff;
+    color:#78acff;
+
     font-size:14px;
     font-weight:700;
 
+    margin-bottom:24px;
+}
+
+.section-title h2{
+    font-size:54px;
+    font-weight:900;
     margin-bottom:20px;
 }
 
-/* ==============================
-MARKET TICKER - TOP FIX
-============================== */
+.section-title p{
+    max-width:760px;
+    margin:auto;
+
+    color:var(--text-secondary);
+
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* =========================================
+   MARKET TICKER
+========================================= */
 
 .market-ticker{
     position:fixed;
+
     top:0;
     left:0;
-    width:100%;
 
+    width:100%;
     height:52px;
 
-    background:#020d24;
+    background:#021028;
 
     border-bottom:
-    1px solid rgba(255,255,255,.08);
+    1px solid var(--border);
 
     overflow:hidden;
 
-    z-index:9999;
+    z-index:99999;
 
     display:flex;
     align-items:center;
 }
 
 .ticker-track{
+
     display:flex;
     gap:70px;
-    width:max-content;
 
     white-space:nowrap;
 
-    animation:tickerMove 25s linear infinite;
+    padding-left:100%;
 
-    padding-left:20px;
+    animation:
+    tickerMove 22s linear infinite;
 }
 
 .ticker-track span{
-    color:#2eea84;
-    font-size:20px;
+
+    color:var(--success);
+
+    font-size:17px;
     font-weight:700;
 }
 
 @keyframes tickerMove{
+
     from{
         transform:translateX(0);
     }
 
     to{
-        transform:translateX(-50%);
+        transform:translateX(-100%);
     }
 }
 
@@ -150,131 +204,127 @@ MARKET TICKER - TOP FIX
 ========================================= */
 
 .navbar{
-    position:fixed;
-    top:52px; /* below ticker */
 
+    position:fixed;
+
+    top:52px;
     left:0;
+
     width:100%;
 
-    z-index:9998;
-
-    background:
-    rgba(2,15,45,.96);
-
-    backdrop-filter:blur(14px);
+    z-index:9999;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:18px 24px;
+    padding:20px 7%;
+
+    background:
+    rgba(4,12,28,.94);
+
+    backdrop-filter:
+    blur(18px);
 
     border-bottom:
-    1px solid rgba(255,255,255,.08);
+    1px solid var(--border);
 }
 
 .logo{
+
     font-size:34px;
     font-weight:900;
 }
 
 .nav-right{
+
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:16px;
 }
 
-/* currency */
+.nav-links{
 
-.currency-select{
-    height:48px;
-    border:none;
-    outline:none;
+    display:flex;
+    align-items:center;
+    gap:26px;
+}
 
-    border-radius:16px;
-
-    padding:0 18px;
-
-    background:#0c1d40;
-    color:#fff;
+.nav-links a{
 
     font-size:15px;
     font-weight:600;
+
+    color:#dbe4ff;
+
+    transition:.3s ease;
 }
 
-/* menu toggle */
+.nav-links a:hover{
+    color:#6da8ff;
+}
 
-.menu-toggle{
-    width:52px;
+/* =========================================
+   CURRENCY SWITCHER
+========================================= */
+
+.currency-switcher{
+
     height:52px;
 
     border:none;
-    border-radius:16px;
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 18px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid var(--border);
+
+    color:white;
+
+    font-size:15px;
+    font-weight:700;
+}
+
+/* =========================================
+   MENU TOGGLE
+========================================= */
+
+.menu-toggle{
+
+    width:54px;
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
 
     background:
     linear-gradient(
     135deg,
-    #2166ff,
-    #53a2ff);
+    var(--primary),
+    var(--primary-light));
 
-    color:#fff;
-    font-size:24px;
+    color:white;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    font-size:28px;
 
     cursor:pointer;
+
+    display:none;
 
     transition:.3s ease;
 }
 
 .menu-toggle:hover{
-    transform:translateY(-3px);
-}
 
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-.mobile-menu{
-    position:fixed;
-
-    top:80px;
-    right:-100%;
-
-    width:280px;
-    height:100vh;
-
-    background:
-    rgba(6,14,30,.98);
-
-    backdrop-filter:blur(20px);
-
-    padding:35px 30px;
-
-    display:flex;
-    flex-direction:column;
-    gap:24px;
-
-    transition:.4s ease;
-
-    z-index:999;
-}
-
-.mobile-menu.active{
-    right:0;
-}
-
-.mobile-menu a{
-    font-size:17px;
-    font-weight:600;
-
-    transition:.3s ease;
-}
-
-.mobile-menu a:hover{
-    color:#67a8ff;
+    transform:
+    translateY(-3px);
 }
 
 /* =========================================
@@ -282,17 +332,21 @@ MARKET TICKER - TOP FIX
 ========================================= */
 
 .hero{
+
     display:grid;
+
     grid-template-columns:
     1.2fr .8fr;
 
     align-items:center;
-    gap:60px;
+
+    gap:70px;
 
     min-height:90vh;
 }
 
 .hero-badge{
+
     display:inline-flex;
 
     padding:12px 22px;
@@ -300,12 +354,12 @@ MARKET TICKER - TOP FIX
     border-radius:999px;
 
     background:
-    rgba(33,102,255,.12);
+    rgba(41,98,255,.12);
 
     border:
-    1px solid rgba(90,150,255,.2);
+    1px solid rgba(94,162,255,.18);
 
-    color:#6ea9ff;
+    color:#73abff;
 
     font-size:14px;
     font-weight:700;
@@ -314,22 +368,27 @@ MARKET TICKER - TOP FIX
 }
 
 .hero h1{
-    font-size:72px;
-    line-height:1.08;
+
+    font-size:74px;
+
+    line-height:1.05;
+
     font-weight:900;
 
-    margin-bottom:20px;
+    margin-bottom:26px;
 }
 
 .hero p{
-    font-size:18px;
+
+    max-width:760px;
+
+    color:var(--text-secondary);
+
+    font-size:19px;
+
     line-height:1.9;
 
-    color:#9aa7ca;
-
-    margin-bottom:35px;
-
-    max-width:720px;
+    margin-bottom:40px;
 }
 
 /* =========================================
@@ -337,51 +396,58 @@ MARKET TICKER - TOP FIX
 ========================================= */
 
 .hero-buttons{
+
     display:flex;
     gap:18px;
     flex-wrap:wrap;
 }
 
 .primary-btn{
+
     border:none;
     cursor:pointer;
 
-    padding:18px 38px;
+    padding:20px 40px;
 
-    border-radius:18px;
+    border-radius:22px;
 
     background:
     linear-gradient(
     135deg,
-    #2166ff,
-    #53a2ff);
+    var(--primary),
+    var(--primary-light));
 
-    color:#fff;
+    color:white;
 
     font-size:16px;
     font-weight:800;
 
     box-shadow:
-    0 14px 35px rgba(33,102,255,.35);
+    0 12px 35px
+    rgba(41,98,255,.30);
 
     transition:.35s ease;
 }
 
 .primary-btn:hover{
-    transform:translateY(-5px);
+
+    transform:
+    translateY(-4px);
 }
 
 .secondary-btn{
+
     border:
-    1px solid rgba(255,255,255,.12);
+    1px solid var(--border);
 
-    background:transparent;
+    background:
+    rgba(255,255,255,.04);
 
-    padding:18px 38px;
+    color:white;
 
-    border-radius:18px;
+    padding:20px 40px;
 
-    color:#fff;
+    border-radius:22px;
 
     font-size:16px;
     font-weight:700;
@@ -392,200 +458,320 @@ MARKET TICKER - TOP FIX
 }
 
 .secondary-btn:hover{
+
     background:
-    rgba(255,255,255,.06);
+    rgba(255,255,255,.08);
 }
 
 /* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:1100px){
-
-    .hero{
-        grid-template-columns:1fr;
-    }
-
-    .hero h1{
-        font-size:58px;
-    }
-}
-
-@media(max-width:768px){
-
-    body{
-        padding-top:80px;
-    }
-
-    section{
-        padding:70px 22px;
-    }
-
-    .navbar{
-        padding:0 20px;
-        height:76px;
-    }
-
-    .logo{
-        font-size:28px;
-    }
-
-    .currency-select{
-        width:120px;
-        height:44px;
-        font-size:14px;
-    }
-
-    .menu-toggle{
-        width:48px;
-        height:48px;
-    }
-
-    .hero{
-        min-height:auto;
-        gap:40px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .primary-btn,
-    .secondary-btn{
-        width:100%;
-    }
-
-    .section-title h2{
-        font-size:34px;
-    }
-
-    .mobile-menu{
-        width:100%;
-    }
-}
-/* =========================================
-   HERO CARD / MARKET CARD
+   HERO CARD
 ========================================= */
 
 .hero-card{
+
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(13,25,50,.98),
     rgba(7,13,28,.98));
 
     border:
-    1px solid rgba(255,255,255,.06);
+    1px solid var(--border);
 
     border-radius:36px;
 
-    padding:40px;
+    padding:38px;
 
     box-shadow:
-    0 18px 60px rgba(0,0,0,.35);
-
-    transition:.35s ease;
-}
-
-.hero-card:hover{
-    transform:translateY(-8px);
+    var(--shadow);
 }
 
 .hero-card h3{
-    font-size:30px;
-    font-weight:800;
-    margin-bottom:12px;
+
+    font-size:28px;
+    margin-bottom:14px;
 }
 
 .hero-card p{
-    color:#9aa7ca;
-    line-height:1.8;
+
+    font-size:16px;
+    color:var(--text-secondary);
     margin-bottom:22px;
 }
 
 .market-mini-card{
+
     background:
     rgba(255,255,255,.03);
 
     border:
     1px solid rgba(255,255,255,.05);
 
-    border-radius:22px;
+    border-radius:20px;
 
     padding:20px;
+
     margin-bottom:16px;
 
     transition:.3s ease;
 }
 
 .market-mini-card:hover{
-    border-color:
-    rgba(90,150,255,.22);
 
-    transform:translateY(-4px);
+    transform:
+    translateY(-4px);
+
+    border-color:
+    rgba(94,162,255,.18);
 }
+
+/* =========================================
+   SERVER STATUS
+========================================= */
+
+.server-status{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:24px;
+
+    padding:14px 20px;
+
+    border-radius:16px;
+
+    background:
+    rgba(12,22,45,.96);
+
+    border:
+    1px solid var(--border);
+
+    font-weight:700;
+}
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+@media(max-width:991px){
+
+    .menu-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav-links{
+
+        position:fixed;
+
+        top:125px;
+        left:20px;
+        right:20px;
+
+        background:
+        rgba(5,15,35,.98);
+
+        border:
+        1px solid var(--border);
+
+        border-radius:30px;
+
+        padding:30px;
+
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+
+        transform:
+        translateY(-30px);
+
+        opacity:0;
+        visibility:hidden;
+
+        transition:.35s ease;
+    }
+
+    .nav-links.active{
+
+        transform:
+        translateY(0);
+
+        opacity:1;
+        visibility:visible;
+    }
+
+    .nav-links a{
+        font-size:18px;
+    }
+
+    .hero{
+
+        grid-template-columns:
+        1fr;
+
+        min-height:auto;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+    body{
+        padding-top:120px;
+    }
+
+    section{
+        padding:80px 22px;
+    }
+
+    .navbar{
+        padding:18px 20px;
+    }
+
+    .logo{
+        font-size:28px;
+    }
+
+    .currency-switcher{
+        height:46px;
+        width:120px;
+    }
+
+    .hero{
+
+        gap:50px;
+
+        padding-top:20px;
+    }
+
+    .hero h1{
+
+        font-size:44px;
+        line-height:1.1;
+    }
+
+    .hero p{
+
+        font-size:16px;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:100%;
+    }
+
+    .section-title h2{
+        font-size:36px;
+    }
+
+    .hero-card{
+        padding:28px;
+    }
+}
+/* =========================================
+   PART 2 — PREMIUM MARKETS + TRADING TIERS
+========================================= */
 
 /* =========================================
    PREMIUM STATS
 ========================================= */
 
 .stats-section{
+
     display:grid;
+
     grid-template-columns:
     repeat(4,1fr);
 
-    gap:26px;
+    gap:28px;
 }
 
 .stat-card{
+
+    position:relative;
+
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(15,27,54,.98),
     rgba(7,13,28,.98));
 
     border:
     1px solid rgba(255,255,255,.06);
 
-    border-radius:30px;
+    border-radius:34px;
 
-    padding:36px;
+    padding:40px;
 
-    text-align:center;
+    overflow:hidden;
 
     transition:.35s ease;
 }
 
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(41,98,255,.08),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.stat-card:hover::before{
+    opacity:1;
+}
+
 .stat-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+    translateY(-8px);
 
     border-color:
-    rgba(90,150,255,.2);
+    rgba(94,162,255,.18);
 
     box-shadow:
-    0 18px 50px rgba(33,102,255,.12);
+    0 20px 50px rgba(41,98,255,.12);
 }
 
 .stat-card h2{
-    font-size:42px;
+
+    font-size:46px;
+
     font-weight:900;
 
-    color:#69a7ff;
+    color:#6ca9ff;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .stat-card p{
-    color:#9ea9c9;
-    line-height:1.7;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    font-size:16px;
 }
 
 /* =========================================
@@ -597,6 +783,7 @@ MARKET TICKER - TOP FIX
 }
 
 .tradingview-wrapper{
+
     overflow:hidden;
 
     border-radius:36px;
@@ -608,25 +795,31 @@ MARKET TICKER - TOP FIX
     rgba(7,13,28,.98));
 
     border:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.08);
 
-    padding:25px;
+    padding:28px;
 
     box-shadow:
-    0 18px 50px rgba(0,0,0,.35);
+    var(--shadow);
 }
 
 #tradingview_chart{
-    border-radius:26px;
+
     overflow:hidden;
+
+    border-radius:28px;
+
+    min-height:520px;
 }
 
 /* =========================================
-   PRODUCTS / MARKETS
+   PRODUCTS / MARKET INSTRUMENTS
 ========================================= */
 
 .products-grid{
+
     display:grid;
+
     grid-template-columns:
     repeat(3,1fr);
 
@@ -634,7 +827,118 @@ MARKET TICKER - TOP FIX
 }
 
 .product-card{
+
     position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(13,25,50,.98),
+    rgba(7,13,28,.98));
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    border-radius:36px;
+
+    padding:40px;
+
+    transition:.35s ease;
+}
+
+.product-card::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(41,98,255,.10),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.product-card:hover::before{
+    opacity:1;
+}
+
+.product-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(94,162,255,.18);
+
+    box-shadow:
+    0 18px 50px rgba(41,98,255,.12);
+}
+
+.product-icon{
+
+    width:74px;
+    height:74px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    margin-bottom:26px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light));
+
+    font-size:34px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 14px 35px rgba(41,98,255,.35);
+}
+
+.product-card h3{
+
+    font-size:28px;
+    font-weight:800;
+
+    margin-bottom:16px;
+}
+
+.product-card p{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+}
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:28px;
+}
+
+.why-card{
 
     background:
     linear-gradient(
@@ -647,159 +951,86 @@ MARKET TICKER - TOP FIX
 
     border-radius:34px;
 
-    padding:38px;
-
-    overflow:hidden;
-
-    transition:.35s ease;
-}
-
-.product-card:hover{
-    transform:translateY(-10px);
-
-    border-color:
-    rgba(80,140,255,.2);
-
-    box-shadow:
-    0 18px 50px rgba(33,102,255,.12);
-}
-
-.product-card::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(33,102,255,.08),
-    transparent);
-
-    opacity:0;
-
-    transition:.3s;
-}
-
-.product-card:hover::before{
-    opacity:1;
-}
-
-.product-icon{
-    width:72px;
-    height:72px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:22px;
-
-    margin-bottom:24px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2166ff,
-    #53a2ff);
-
-    font-size:34px;
-    font-weight:800;
-
-    box-shadow:
-    0 10px 35px rgba(33,102,255,.35);
-}
-
-.product-card h3{
-    font-size:28px;
-    font-weight:800;
-    margin-bottom:14px;
-}
-
-.product-card p{
-    color:#9aa7ca;
-    line-height:1.9;
-}
-
-/* =========================================
-   WHY CHOOSE US
-========================================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:28px;
-}
-
-.why-card{
-    background:
-    linear-gradient(
-    180deg,
-    rgba(14,25,48,.98),
-    rgba(7,13,28,.98));
-
-    border:
-    1px solid rgba(255,255,255,.06);
-
-    border-radius:32px;
-
     padding:36px;
 
     transition:.35s ease;
 }
 
 .why-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(94,162,255,.18);
+
+    box-shadow:
+    0 18px 40px rgba(41,98,255,.12);
 }
 
 .why-card h3{
-    font-size:24px;
+
+    font-size:26px;
+
+    font-weight:800;
+
     margin-bottom:14px;
 }
 
 .why-card p{
-    color:#9ea9c9;
-    line-height:1.8;
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
 }
 
 /* =========================================
-   STORY / ABOUT
+   COMPANY STORY / ABOUT
 ========================================= */
 
 .story-section{
+
     display:grid;
+
     grid-template-columns:
     1fr 1fr;
 
-    gap:50px;
+    gap:60px;
+
     align-items:center;
 }
 
 .story-left h2{
-    font-size:52px;
+
+    font-size:56px;
+
     font-weight:900;
-    margin-bottom:20px;
+
+    margin-bottom:22px;
 }
 
 .story-left p{
-    color:#9ea9c9;
+
+    color:var(--text-secondary);
+
     line-height:2;
+
     margin-bottom:18px;
 }
 
 .story-right{
+
     display:flex;
     flex-direction:column;
     gap:24px;
 }
 
 .story-card{
+
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(15,28,55,.98),
     rgba(7,13,28,.98));
 
     border:
@@ -813,17 +1044,191 @@ MARKET TICKER - TOP FIX
 }
 
 .story-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+    translateY(-6px);
+
+    border-color:
+    rgba(94,162,255,.18);
 }
 
 .story-card h3{
-    margin-bottom:12px;
+
     font-size:24px;
+
+    margin-bottom:14px;
 }
 
 .story-card p{
-    color:#9aa7ca;
+
+    color:var(--text-secondary);
+
     line-height:1.8;
+}
+
+/* =========================================
+   PROFESSIONAL 6 TRADING TIERS
+========================================= */
+
+.tiers-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:32px;
+}
+
+.tier-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    180deg,
+    rgba(14,25,48,.98),
+    rgba(7,13,28,.98));
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:38px;
+
+    padding:42px 36px;
+
+    transition:.35s ease;
+}
+
+.tier-card::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(41,98,255,.10),
+    transparent);
+
+    opacity:0;
+
+    transition:.35s;
+}
+
+.tier-card:hover::before{
+    opacity:1;
+}
+
+.tier-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(94,162,255,.20);
+
+    box-shadow:
+    0 18px 60px rgba(41,98,255,.16);
+}
+
+.tier-badge{
+
+    position:absolute;
+
+    top:24px;
+    right:24px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light));
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.tier-card h3{
+
+    font-size:30px;
+
+    font-weight:900;
+
+    margin-bottom:14px;
+}
+
+.tier-price{
+
+    font-size:58px;
+
+    font-weight:900;
+
+    color:#6ca9ff;
+
+    margin-bottom:20px;
+}
+
+.tier-description{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    margin-bottom:26px;
+}
+
+.tier-card ul{
+
+    margin-bottom:30px;
+}
+
+.tier-card ul li{
+
+    margin-bottom:16px;
+
+    color:#aab5d4;
+
+    line-height:1.8;
+}
+
+.tier-btn{
+
+    width:100%;
+
+    border:none;
+    cursor:pointer;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light));
+
+    color:white;
+
+    font-size:16px;
+    font-weight:800;
+
+    transition:.35s ease;
+}
+
+.tier-btn:hover{
+
+    transform:
+    translateY(-4px);
 }
 
 /* =========================================
@@ -838,7 +1243,9 @@ MARKET TICKER - TOP FIX
     }
 
     .products-grid,
-    .why-grid{
+    .why-grid,
+    .tiers-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
@@ -856,20 +1263,35 @@ MARKET TICKER - TOP FIX
 
     .stats-section,
     .products-grid,
-    .why-grid{
+    .why-grid,
+    .tiers-grid{
+
         grid-template-columns:1fr;
     }
 
-    .hero-card,
+    .stat-card,
     .product-card,
-    .story-card,
     .why-card,
-    .stat-card{
+    .story-card,
+    .tier-card{
+
         padding:28px;
     }
 
+    .tier-price{
+        font-size:44px;
+    }
+
+    .product-icon{
+
+        width:64px;
+        height:64px;
+
+        font-size:28px;
+    }
+
     .story-left h2{
-        font-size:34px;
+        font-size:36px;
     }
 
     .product-card h3{
@@ -877,266 +1299,109 @@ MARKET TICKER - TOP FIX
     }
 
     .stat-card h2{
-        font-size:34px;
+        font-size:36px;
     }
-
-    .product-icon{
-        width:64px;
-        height:64px;
-        font-size:28px;
-    }
-   }
+}
 /* =========================================
-   TRADING TIERS
+   PART 3 — TESTIMONIALS + CTA + FOOTER
 ========================================= */
 
-.tiers-grid{
+/* =========================================
+   TESTIMONIALS (BINANCE STYLE)
+========================================= */
+
+.testimonials-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:30px;
 }
 
-.tier-card{
-    position:relative;
+.testimonial-card{
 
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(14,26,50,.98),
     rgba(7,13,28,.98));
 
     border:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.08);
 
     border-radius:36px;
-    padding:42px 36px;
 
-    overflow:hidden;
+    padding:34px;
 
     transition:.35s ease;
-}
 
-.tier-card:hover{
-    transform:translateY(-10px);
-
-    border-color:
-    rgba(80,140,255,.20);
-
-    box-shadow:
-    0 18px 55px rgba(33,102,255,.16);
-}
-
-.tier-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-    135deg,
-    rgba(33,102,255,.08),
-    transparent);
-
-    opacity:0;
-    transition:.35s;
-}
-
-.tier-card:hover::before{
-    opacity:1;
-}
-
-.tier-badge{
-    position:absolute;
-    top:22px;
-    right:22px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2166ff,
-    #53a2ff);
-
-    color:#fff;
-
-    padding:10px 18px;
-    border-radius:999px;
-
-    font-size:13px;
-    font-weight:800;
-}
-
-.tier-card h3{
-    font-size:30px;
-    font-weight:900;
-    margin-bottom:14px;
-}
-
-.tier-price{
-    font-size:54px;
-    font-weight:900;
-    color:#69a7ff;
-    margin-bottom:20px;
-}
-
-.tier-card ul{
-    list-style:none;
-    margin:28px 0;
-}
-
-.tier-card ul li{
-    margin-bottom:14px;
-    color:#a8b3d2;
-    line-height:1.8;
-}
-
-.tier-btn{
-    width:100%;
-    border:none;
-    cursor:pointer;
-
-    border-radius:18px;
-    padding:18px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #2166ff,
-    #53a2ff);
-
-    color:#fff;
-
-    font-size:16px;
-    font-weight:800;
-
-    transition:.3s ease;
-}
-
-.tier-btn:hover{
-    transform:translateY(-4px);
-}
-
-.youtube-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-
-.video-card{
     overflow:hidden;
-    border-radius:30px;
-    background:#071226;
-}
-
-.video-card iframe{
-    width:100%;
-    aspect-ratio:16/9;
-    border:none;
-}
-
-.video-card h3{
-    padding:20px;
-    font-size:22px;
-}
-
-@media(max-width:768px){
-
-    .youtube-grid{
-        grid-template-columns:1fr;
-    }
-
-    .video-card h3{
-        font-size:20px;
-    }
-}
-
-
-/* ===========================
-TESTIMONIALS - BINANCE STYLE
-=========================== */
-
-.testimonials-section{
-    padding:90px 20px;
-}
-
-.testimonials-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
-}
-
-.testimonial-card{
-    background:
-    linear-gradient(
-    180deg,
-    rgba(10,20,45,.96),
-    rgba(4,10,22,.98));
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:32px;
-
-    padding:30px;
-
-    transition:.3s ease;
 }
 
 .testimonial-card:hover{
-    transform:translateY(-8px);
-    border-color:#2563ff;
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(94,162,255,.18);
+
+    box-shadow:
+    0 18px 45px rgba(41,98,255,.12);
 }
 
 .testimonial-top{
+
     display:flex;
     align-items:center;
+
     gap:18px;
-    margin-bottom:22px;
+
+    margin-bottom:24px;
 }
 
 .testimonial-avatar{
-    width:72px;
-    height:72px;
+
+    width:74px;
+    height:74px;
+
     border-radius:50%;
+
     object-fit:cover;
-    border:3px solid rgba(255,255,255,.12);
+
+    border:
+    3px solid rgba(255,255,255,.08);
 }
 
 .testimonial-top h3{
+
     font-size:24px;
     font-weight:800;
+
     margin-bottom:4px;
 }
 
 .testimonial-top span{
-    color:#9ca7c7;
+
+    color:var(--text-muted);
 }
 
-.stars{
-    color:#f6c344;
+.rating{
+
     margin-top:8px;
+
+    color:#f3ba2f;
+
     font-size:20px;
 }
 
 .testimonial-card p{
-    color:#9ea8c7;
+
+    color:var(--text-secondary);
+
     line-height:1.9;
-    font-size:16px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .testimonials-grid{
-        grid-template-columns:1fr;
-    }
-
-    .testimonial-card{
-        padding:24px;
-    }
-
-    .testimonial-top h3{
-        font-size:22px;
-    }
 }
 
 /* =========================================
@@ -1144,174 +1409,280 @@ TESTIMONIALS - BINANCE STYLE
 ========================================= */
 
 .faq-wrapper{
+
     max-width:1000px;
+
     margin:auto;
 }
 
 .faq-wrapper details{
+
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(15,28,55,.98),
     rgba(7,13,28,.98));
 
     border:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.08);
 
-    border-radius:26px;
+    border-radius:28px;
 
-    padding:28px 30px;
+    padding:30px;
+
     margin-bottom:18px;
 
     transition:.3s ease;
 }
 
 .faq-wrapper details:hover{
+
     border-color:
-    rgba(80,140,255,.20);
+    rgba(94,162,255,.18);
 }
 
 .faq-wrapper summary{
+
     cursor:pointer;
-    list-style:none;
 
     font-size:20px;
+
     font-weight:700;
+
+    list-style:none;
 }
 
 .faq-wrapper p{
+
     margin-top:18px;
-    color:#98a5ca;
+
+    color:var(--text-secondary);
+
     line-height:1.9;
 }
 
 /* =========================================
-   CTA SECTION
+   PREMIUM CTA
 ========================================= */
 
-.cta-section{
+.premium-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
     text-align:center;
 
-    border-radius:40px;
+    border-radius:42px;
 
     padding:90px 40px;
 
     background:
     linear-gradient(
     135deg,
-    rgba(20,50,130,.50),
-    rgba(6,12,26,.98));
+    #081a45 0%,
+    #163f9e 50%,
+    #071427 100%);
 
     border:
     1px solid rgba(255,255,255,.08);
 }
 
-.cta-section h2{
-    font-size:56px;
-    font-weight:900;
-    margin-bottom:20px;
+.cta-glow{
+
+    position:absolute;
+
+    top:-120px;
+    right:-120px;
+
+    width:320px;
+    height:320px;
+
+    background:
+    rgba(41,98,255,.20);
+
+    filter:blur(100px);
 }
 
-.cta-section p{
-    max-width:760px;
-    margin:auto auto 35px;
+.cta-badge{
 
-    color:#a8b3d2;
+    display:inline-flex;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    color:#7eb0ff;
+
+    font-size:14px;
+    font-weight:700;
+
+    margin-bottom:26px;
+}
+
+.premium-cta h2{
+
+    font-size:58px;
+
+    font-weight:900;
+
+    max-width:900px;
+
+    margin:auto auto 20px;
+}
+
+.premium-cta p{
+
+    max-width:760px;
+
+    margin:auto auto 40px;
+
+    color:#c7d0ea;
+
+    font-size:18px;
+
     line-height:1.9;
 }
 
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.cta-primary-btn{
+
+    border:none;
+
+    padding:20px 42px;
+
+    border-radius:22px;
+
+    cursor:pointer;
+
+    font-size:17px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-light));
+
+    color:white;
+}
+
+.cta-secondary-btn{
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.04);
+
+    padding:20px 42px;
+
+    border-radius:22px;
+
+    color:white;
+
+    font-weight:700;
+}
+
+.cta-stats{
+
+    margin-top:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:50px;
+}
+
+.cta-stat h3{
+
+    font-size:38px;
+
+    color:#6ca9ff;
+}
+
+.cta-stat p{
+
+    color:#a8b3d2;
+}
+
 /* =========================================
-   LEGAL SECTION
+   RISK DISCLOSURES / LEGAL
 ========================================= */
 
 .legal-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:28px;
 }
 
 .legal-card{
+
     background:
     linear-gradient(
     180deg,
-    rgba(14,25,48,.98),
+    rgba(14,26,50,.98),
     rgba(7,13,28,.98));
 
     border:
-    1px solid rgba(255,255,255,.06);
+    1px solid rgba(255,255,255,.08);
 
-    border-radius:32px;
-    padding:34px;
+    border-radius:34px;
+
+    padding:36px;
+
+    transition:.35s ease;
+}
+
+.legal-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:
+    rgba(94,162,255,.18);
 }
 
 .legal-card h3{
+
     font-size:24px;
+
     margin-bottom:16px;
 }
 
 .legal-card p{
-    color:#9ea9c9;
+
+    color:var(--text-secondary);
+
     line-height:1.9;
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:1100px){
-
-    .tiers-grid,
-    .testimonials-grid,
-    .legal-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .cta-section h2{
-        font-size:44px;
-    }
-}
-
-@media(max-width:768px){
-
-    .tiers-grid,
-    .testimonials-grid,
-    .legal-grid{
-        grid-template-columns:1fr;
-    }
-
-    .tier-card,
-    .testimonial-card,
-    .legal-card{
-        padding:28px;
-    }
-
-    .tier-price{
-        font-size:42px;
-    }
-
-    .testimonial-avatar{
-        width:62px;
-        height:62px;
-    }
-
-    .cta-section{
-        padding:60px 28px;
-        border-radius:30px;
-    }
-
-    .cta-section h2{
-        font-size:34px;
-    }
-
-    .faq-wrapper details{
-        padding:24px;
-    }
-   }
 /* =========================================
    FOOTER
 ========================================= */
 
 .footer{
+
     background:
     linear-gradient(
     180deg,
@@ -1325,68 +1696,90 @@ TESTIMONIALS - BINANCE STYLE
 }
 
 .footer-grid{
+
     display:grid;
+
     grid-template-columns:
-    1.2fr 1fr 1fr 1fr;
+    1.3fr 1fr 1fr 1fr;
 
     gap:40px;
 }
 
 .footer-column h3{
+
     font-size:22px;
+
     font-weight:800;
+
     margin-bottom:20px;
 }
 
-.footer-column p{
-    color:#9aa7ca;
-    line-height:1.9;
-    margin-bottom:14px;
-}
-
+.footer-column p,
 .footer-column a{
+
+    color:var(--text-secondary);
+
+    line-height:1.9;
+
+    margin-bottom:12px;
+
     display:block;
-    color:#98a5ca;
-    margin-bottom:14px;
+
     transition:.3s ease;
 }
 
 .footer-column a:hover{
-    color:#69a7ff;
-    transform:translateX(4px);
-}
 
-/* language switcher in footer */
+    color:#78acff;
 
-.language-floating{
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    z-index:9999;
+    transform:
+    translateX(4px);
 }
-
-.language-floating select{
-    height:50px;
-    padding:0 18px;
-    border:none;
-    border-radius:14px;
-    background:#091735;
-    color:#fff;
-    font-size:16px;
-}
-/* footer bottom */
 
 .footer-bottom{
-    margin-top:55px;
-    padding-top:28px;
+
+    margin-top:60px;
+
+    padding-top:30px;
 
     border-top:
     1px solid rgba(255,255,255,.08);
 
     text-align:center;
 
-    color:#8f9dc4;
+    color:#8b98bc;
+}
+
+/* =========================================
+   FLOATING LANGUAGE SWITCHER
+========================================= */
+
+.language-floating{
+
+    position:fixed;
+
+    left:20px;
+    bottom:20px;
+
+    z-index:9999;
+}
+
+.language-floating select{
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:15px 18px;
+
+    background:#081735;
+
+    color:white;
+
     font-size:15px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.30);
 }
 
 /* =========================================
@@ -1394,80 +1787,89 @@ TESTIMONIALS - BINANCE STYLE
 ========================================= */
 
 .floating-support{
+
     position:fixed;
 
     right:20px;
-    bottom:110px;
+    bottom:120px;
 
     display:flex;
     flex-direction:column;
+
     gap:16px;
 
     z-index:999;
 }
 
 .support-btn{
-    width:66px;
-    height:66px;
+
+    width:64px;
+    height:64px;
+
+    border-radius:50%;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border-radius:50%;
+    font-size:24px;
 
-    color:#fff;
-    font-size:22px;
-
-    text-decoration:none;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.35);
+    color:white;
 
     transition:.35s ease;
 }
 
 .support-btn:hover{
-    transform:translateY(-5px);
+
+    transform:
+    translateY(-5px);
 }
 
 .whatsapp-btn{
-    background:#25D366;
+    background:#25d366;
 }
 
 .email-btn{
+
     background:
     linear-gradient(
     135deg,
-    #2166ff,
-    #53a2ff);
+    var(--primary),
+    var(--primary-light));
 }
-/* ==========================
-PREMIUM TRADE POPUP
-========================== */
+
+/* =========================================
+   PREMIUM TRADE POPUP
+========================================= */
+
 .live-trade-popup{
+
     position:fixed;
+
     left:20px;
-    bottom:90px;
-    width:280px;
+    bottom:95px;
+
+    width:300px;
+
     z-index:9999;
 
     background:
-    rgba(7,18,38,.96);
+    rgba(7,18,38,.97);
 
     border:
     1px solid rgba(255,255,255,.08);
 
-    border-radius:20px;
+    border-radius:24px;
 
-    backdrop-filter:blur(14px);
+    padding:18px;
 
-    padding:16px 18px;
+    backdrop-filter:
+    blur(14px);
+
+    opacity:0;
 
     transform:
     translateY(40px);
-
-    opacity:0;
 
     transition:.4s ease;
 
@@ -1476,52 +1878,71 @@ PREMIUM TRADE POPUP
 }
 
 .live-trade-popup.show-popup{
-    transform:translateY(0);
+
     opacity:1;
+
+    transform:
+    translateY(0);
 }
 
 .popup-content{
+
     display:flex;
+
     gap:14px;
-    align-items:flex-start;
 }
 
 .popup-dot{
+
     width:12px;
     height:12px;
+
     border-radius:50%;
+
     background:#00d26a;
-    margin-top:6px;
+
+    margin-top:8px;
 
     box-shadow:
     0 0 18px #00d26a;
 }
 
 .popup-content strong{
-    color:#fff;
-    font-size:17px;
+
     display:block;
+
+    font-size:16px;
 }
 
 .popup-content p{
-    margin-top:5px;
-    color:#9ca8c7;
+
+    margin-top:4px;
+
+    color:var(--text-secondary);
+
     font-size:14px;
-    line-height:1.5;
 }
+
 /* =========================================
-   ANIMATION
+   REVEAL ANIMATION
 ========================================= */
 
 .hidden-element{
+
     opacity:0;
-    transform:translateY(40px);
+
+    transform:
+    translateY(40px);
+
     transition:.7s ease;
 }
 
 .show-element{
+
     opacity:1;
-    transform:translateY(0);
+
+    transform:
+    translateY(0);
 }
 
 /* =========================================
@@ -1530,7 +1951,10 @@ PREMIUM TRADE POPUP
 
 @media(max-width:1100px){
 
+    .testimonials-grid,
+    .legal-grid,
     .footer-grid{
+
         grid-template-columns:
         repeat(2,1fr);
     }
@@ -1538,625 +1962,58 @@ PREMIUM TRADE POPUP
 
 @media(max-width:768px){
 
-    .footer{
-        padding:
-        70px 22px 220px;
-    }
-
+    .testimonials-grid,
+    .legal-grid,
     .footer-grid{
-        grid-template-columns:1fr;
-        gap:35px;
-    }
 
-    .footer-column h3{
-        font-size:20px;
-    }
-
-    .footer-column p,
-    .footer-column a{
-        font-size:15px;
-    }
-
-    .footer-language select{
-        width:100%;
-    }
-
-    .floating-support{
-        right:14px;
-        bottom:115px;
-    }
-
-    .support-btn{
-        width:58px;
-        height:58px;
-        font-size:20px;
-    }
-
-    .live-trade-popup{
-        left:15px;
-        right:15px;
-        width:auto;
-        bottom:18px;
-    }
-
-    .popup-content strong{
-        font-size:14px;
-    }
-
-    .popup-content p{
-        font-size:13px;
-    }
-}
-.language-floating{
-    position:fixed;
-    bottom:25px;
-    left:20px;
-    z-index:999;
-}
-
-.language-floating select{
-    background:#081638;
-    color:#fff;
-    border:none;
-    padding:14px 18px;
-    border-radius:18px;
-    font-size:15px;
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.3);
-}
-
-@media(max-width:768px){
-
-    .language-floating{
-        bottom:20px;
-        left:14px;
-    }
-}
-.testimonial-card{
-
-    background:
-    linear-gradient(
-    180deg,
-    #0f1b35,
-    #081327);
-
-    border:1px solid
-    rgba(255,255,255,.08);
-
-    border-radius:28px;
-
-    padding:35px;
-
-    transition:.35s;
-}
-
-.testimonial-card:hover{
-
-    transform:
-    translateY(-8px);
-
-    border-color:#2d7eff;
-
-    box-shadow:
-    0 15px 45px
-    rgba(45,126,255,.2);
-}
-
-.testimonial-avatar{
-
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-    object-fit:cover;
-}
-
-.rating{
-    color:#f3ba2f;
-}
-.tiers-grid{
-    display:grid;
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:30px;
-    margin-top:50px;
-}
-
-@media(max-width:992px){
-
-    .tiers-grid{
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-}
-
-@media(max-width:768px){
-
-    .tiers-grid{
         grid-template-columns:1fr;
     }
-   }
-/* ==========================
-PREMIUM CTA
-========================== */
-
-.premium-cta{
-    position:relative;
-
-    margin:100px 20px;
-
-    border-radius:40px;
-
-    overflow:hidden;
-
-    padding:80px 35px;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    #071c47 0%,
-    #102f78 50%,
-    #071326 100%);
-
-    border:1px solid
-    rgba(255,255,255,.08);
-}
-
-.cta-glow{
-    position:absolute;
-    width:350px;
-    height:350px;
-
-    background:
-    rgba(45,108,255,.22);
-
-    filter:blur(100px);
-
-    top:-120px;
-    right:-120px;
-}
-
-.cta-badge{
-    display:inline-flex;
-
-    padding:12px 22px;
-
-    border-radius:999px;
-
-    background:
-    rgba(255,255,255,.08);
-
-    color:#7eb0ff;
-
-    font-weight:700;
-
-    margin-bottom:25px;
-}
-
-.premium-cta h2{
-    font-size:58px;
-    font-weight:900;
-    max-width:900px;
-    margin:auto auto 20px;
-}
-
-.premium-cta p{
-    max-width:760px;
-    margin:auto auto 40px;
-
-    color:#c1cbe7;
-
-    line-height:1.9;
-    font-size:19px;
-}
-
-.cta-buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.cta-primary-btn{
-    background:
-    linear-gradient(
-    135deg,
-    #2563ff,
-    #59a8ff);
-
-    color:#fff;
-
-    padding:20px 42px;
-
-    border-radius:20px;
-
-    font-size:18px;
-    font-weight:800;
-}
-
-.cta-secondary-btn{
-    border:1px solid
-    rgba(255,255,255,.12);
-
-    padding:20px 42px;
-
-    border-radius:20px;
-}
-
-.cta-stats{
-    margin-top:50px;
-
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
-}
-
-.cta-stat h3{
-    font-size:38px;
-    color:#65a8ff;
-}
-
-.cta-stat p{
-    margin-top:6px;
-    color:#a9b7d7;
-}
-
-@media(max-width:768px){
 
     .premium-cta{
-        padding:60px 24px;
-        margin:80px 16px;
+
+        padding:60px 26px;
     }
 
     .premium-cta h2{
+
         font-size:38px;
     }
 
-    .premium-cta p{
-        font-size:17px;
-    }
-
     .cta-buttons{
+
         flex-direction:column;
     }
 
     .cta-primary-btn,
     .cta-secondary-btn{
+
         width:100%;
     }
-}
-.server-status{
-    margin-top:20px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:12px 18px;
-    border-radius:14px;
-    background:rgba(18,30,60,.95);
-    border:1px solid rgba(255,255,255,.08);
-    color:#dfe7ff;
-    font-weight:600;
-}
-.ticker-wrapper{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    overflow:hidden;
-    background:#021028;
-    border-bottom:1px solid rgba(255,255,255,.05);
-    z-index:99999;
-    height:42px;
-}
 
-.ticker-track{
-    display:flex;
-    gap:60px;
-    white-space:nowrap;
-    animation:tickerMove 20s linear infinite;
-    color:#1cff89;
-    font-weight:700;
-    line-height:42px;
-    padding-left:100%;
-}
+    .floating-support{
 
-@keyframes tickerMove{
-    from{
-        transform:translateX(0);
+        right:14px;
+        bottom:170px;
     }
-    to{
-        transform:translateX(-100%);
+
+    .live-trade-popup{
+
+        left:15px;
+        right:15px;
+
+        width:auto;
+
+        bottom:22px;
     }
-}
 
-.navbar{
-    margin-top:42px;
-    padding:22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:#03163b;
-}
+    .language-floating{
 
-.logo h1{
-    color:white;
-    font-size:42px;
-    font-weight:800;
-}
+        left:14px;
+        bottom:20px;
+    }
 
-.nav-right{
-    display:flex;
-    gap:14px;
-    align-items:center;
-}
+    .footer{
 
-.currency-switcher{
-    height:54px;
-    border:none;
-    border-radius:18px;
-    background:#08204b;
-    color:white;
-    padding:0 18px;
-    font-size:18px;
-}
-
-.menu-toggle{
-    width:58px;
-    height:58px;
-    border:none;
-    border-radius:20px;
-    background:
-    linear-gradient(
-    135deg,
-    #2767ff,
-    #5ea1ff
-    );
-    color:white;
-    font-size:28px;
-}
-
-.hero{
-    padding:80px 28px;
-    background:
-    linear-gradient(
-    180deg,
-    #17356c,
-    #07142d
-    );
-}
-
-.hero-badge{
-    display:inline-block;
-    padding:12px 24px;
-    border-radius:40px;
-    background:
-    rgba(80,130,255,.15);
-    color:#79a7ff;
-    font-weight:700;
-}
-
-.hero h1{
-    font-size:72px;
-    color:white;
-    line-height:1.1;
-    margin:30px 0;
-    font-weight:900;
-}
-
-.hero p{
-    color:#b7c4e5;
-    font-size:26px;
-    line-height:1.9;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    margin-top:40px;
-}
-
-.primary-btn{
-    height:74px;
-    border:none;
-    border-radius:22px;
-    background:
-    linear-gradient(
-    135deg,
-    #2767ff,
-    #5ea1ff
-    );
-    color:white;
-    font-size:26px;
-    font-weight:800;
-}
-
-.secondary-btn{
-    height:74px;
-    border-radius:22px;
-    border:1px solid rgba(255,255,255,.12);
-    background:transparent;
-    color:white;
-    font-size:26px;
-    font-weight:700;
-}
-
-.hero-stats{
-    margin-top:45px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-}
-
-.stat-card{
-    background:
-    rgba(11,25,55,.95);
-    border-radius:24px;
-    padding:30px;
-    border:
-    1px solid rgba(255,255,255,.06);
-}
-
-.stat-card h2{
-    color:white;
-    font-size:38px;
-}
-
-.stat-card p{
-    color:#97a7d4;
-    font-size:18px;
-}
-  }
-
-/* =========================
-   PREMIUM MOBILE FIX V2
-========================= */
-@media (max-width:768px){
-
-  html, body{
-    overflow-x:hidden;
-    width:100%;
-  }
-
-  /* MARKET TICKER */
-  .market-ticker{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    height:52px;
-  }
-
-  /* NAVBAR */
-  nav,
-  .navbar{
-    position:fixed;
-    top:52px;
-    left:0;
-    width:100%;
-    z-index:999;
-    padding:18px 20px;
-    background:#071633;
-  }
-
-  /* HERO FIX */
-  .hero{
-    padding-top:160px;
-    padding-bottom:70px;
-    min-height:auto;
-  }
-
-  .hero h1{
-    font-size:3rem;
-    line-height:1.1;
-    margin-bottom:20px;
-  }
-
-  .hero p{
-    font-size:1.05rem;
-    line-height:1.8;
-    margin-bottom:28px;
-  }
-
-  /* CTA BUTTONS */
-  .hero-buttons,
-  .cta-buttons{
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-    margin-top:30px;
-  }
-
-  .btn,
-  .cta-btn{
-    width:100%;
-    min-height:60px;
-    border-radius:20px;
-  }
-
-  /* MENU FIX */
-  .nav-links{
-    position:absolute;
-    top:95px;
-    left:20px;
-    right:20px;
-    background:#081735;
-    border-radius:26px;
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-  }
-
-  .nav-links a{
-    font-size:20px;
-    text-align:center;
-  }
-
-  /* TRADE POPUP FIX */
-  .trade-popup{
-    position:fixed;
-    left:15px;
-    right:15px;
-    bottom:85px;
-    width:auto;
-    z-index:995;
-    border-radius:28px;
-    padding:18px 22px;
-  }
-
-  .trade-popup h4{
-    font-size:22px;
-  }
-
-  .trade-popup p{
-    font-size:15px;
-  }
-
-  /* LANGUAGE SWITCHER */
-  .language-switcher{
-    position:fixed;
-    bottom:20px;
-    left:15px;
-    z-index:996;
-    width:140px;
-  }
-
-  /* SUPPORT FLOATING ICONS */
-  .floating-support{
-    position:fixed;
-    right:14px;
-    bottom:170px;
-    z-index:996;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
-
-  .floating-support a{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-  }
-
-  /* TESTIMONIALS */
-  .testimonial-card{
-    padding:26px;
-    border-radius:28px;
-  }
-
-  /* FOOTER */
-  footer{
-    padding:60px 24px 150px;
-  }
-
-  /* REMOVE BIG EMPTY SPACE */
-  section{
-    margin-top:0;
-  }
-}
+        padding:70px 22px 180px;
+    }
+	}
