@@ -346,10 +346,10 @@ DASHBOARD WRAPPER
                         Available
                         Balance
                     </strong>
-
-                    <p>
-                        $8,940.00
-                    </p>
+                    
+                    <p id="accountBalance">
+                       Loading...
+                   </p>
 
                 </div>
 
@@ -361,9 +361,9 @@ DASHBOARD WRAPPER
                         Total Equity
                     </strong>
 
-                    <p>
-                        $12,540.00
-                    </p>
+                    <p id="totalEquity">
+                       Loading...
+                 </p>
 
                 </div>
 
@@ -375,9 +375,9 @@ DASHBOARD WRAPPER
                         Daily Growth
                     </strong>
 
-                    <p>
-                        +4.81%
-                    </p>
+                    <p id="totalProfit">
+                       Loading...
+                </p>
 
                 </div>
 
@@ -406,9 +406,9 @@ DASHBOARD WRAPPER
                         Verification
                     </strong>
 
-                    <p>
-                        Pending Review
-                    </p>
+                    <p id="verificationStatus">
+                       Loading...
+                </p>
 
                 </div>
 
@@ -420,10 +420,10 @@ DASHBOARD WRAPPER
                         Plan Type
                     </strong>
 
-                    <p>
-                        Premium Trader
-                    </p>
-
+                    <p id="planType">
+                       Loading...
+              </p>
+                    
                 </div>
 
                 <div
@@ -1098,6 +1098,29 @@ DASHBOARD WRAPPER
                 </div>
 
                 <div class="market-mini-card">
+      <strong>
+        Email
+    </strong>
+
+    <p id="profileEmail">
+        Loading...
+    </p>
+
+</div>
+
+<div class="market-mini-card">
+
+    <strong>
+        Country
+    </strong>
+
+    <p id="profileCountry">
+        Loading...
+    </p>
+
+</div>
+
+                <div class="market-mini-card">
 
                     <strong>
                         Membership
@@ -1635,7 +1658,10 @@ localStorage.getItem(
 )
 );
 
-// protect route
+// ======================
+// ROUTE PROTECTION
+// ======================
+
 if(
 !token ||
 !user
@@ -1646,34 +1672,152 @@ window.location.href =
 
 }
 
-// welcome name
-const profile =
-document.getElementById(
+// ======================
+// LOAD USER DATA
+// ======================
+
+async function
+loadDashboard(){
+
+try{
+
+const response =
+await fetch(
+
+"https://globalearn-nfmm.onrender.com/api/dashboard",
+
+{
+
+headers:{
+
+Authorization:
+`Bearer ${token}`
+
+}
+
+}
+
+);
+
+const data =
+await response.json();
+
+if(
+!data.success
+){
+
+window.location.href =
+"../auth.html";
+
+return;
+
+}
+
+// ======================
+// USER DATA
+// ======================
+
+const user =
+data.user;
+
+// names
+
+document
+.getElementById(
 "profileName"
-);
+)
+.textContent =
+user.name ||
+"Trader";
 
-const welcome =
-document.getElementById(
+document
+.getElementById(
 "userName"
-);
-
-if(profile){
-
-profile.textContent =
+)
+.textContent =
 user.name ||
-"Premium Trader";
+"Trader";
+
+// balance
+
+document
+.getElementById(
+"accountBalance"
+)
+.textContent =
+`$${user.balance || 0}`;
+
+// equity
+
+document
+.getElementById(
+"totalEquity"
+)
+.textContent =
+`$${user.equity || 0}`;
+
+// profit
+
+document
+.getElementById(
+"totalProfit"
+)
+.textContent =
+`$${user.profit || 0}`;
+
+// plan
+
+document
+.getElementById(
+"planType"
+)
+.textContent =
+user.plan ||
+"Starter";
+
+// kyc
+
+document
+.getElementById(
+"verificationStatus"
+)
+.textContent =
+user.kycStatus ||
+"Pending Review";
+
+// email
+
+document
+.getElementById(
+"profileEmail"
+)
+.textContent =
+user.email ||
+"Not set";
+
+// country
+
+document
+.getElementById(
+"profileCountry"
+)
+.textContent =
+user.country ||
+"Not set";
+
+}
+catch(error){
+
+console.error(error);
 
 }
 
-if(welcome){
-
-welcome.textContent =
-user.name ||
-"Welcome Trader";
-
 }
 
-// navbar logout
+// ======================
+// LOGOUT
+// ======================
+
 document
 .getElementById(
 "logoutBtn"
@@ -1693,6 +1837,7 @@ window.location.href =
 );
 
 // footer logout
+
 document
 .getElementById(
 "footerLogoutBtn"
@@ -1712,6 +1857,8 @@ window.location.href =
 
 }
 );
+
+loadDashboard();
 
 </script>
 
