@@ -19,32 +19,43 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <body>
 
 <!-- MARKET TICKER -->
-<div class="market-ticker">
+ <section class="ticker-wrapper">
     <div class="ticker-track">
-        <span>BTC/USD +2.15%</span>
-        <span>ETH/USD +1.48%</span>
+        <span>BTC/USD +2.45%</span>
+        <span>ETH/USD +1.87%</span>
         <span>Gold +1.92%</span>
         <span>EUR/USD +0.61%</span>
-        <span>NASDAQ +3.11%</span>
-        <span>USD/JPY +0.89%</span>
-        <span>Oil +2.44%</span>
+        <span>NASDAQ +3.20%</span>
     </div>
-</div>
+</section>
 
-<!-- NAVBAR -->
 <header class="navbar">
 
     <div class="logo">
-        GlobalEarn
+        <h1>GlobalEarn</h1>
     </div>
 
     <div class="nav-right">
 
-        <select id="currencySwitcher">
-            <option value="USD">USD $</option>
-            <option value="EUR">EUR €</option>
-            <option value="GBP">GBP £</option>
-            <option value="INR">INR ₹</option>
+        <select id="currencySwitcher"
+            class="currency-switcher">
+
+            <option value="USD">
+                USD $
+            </option>
+
+            <option value="EUR">
+                EUR €
+            </option>
+
+            <option value="GBP">
+                GBP £
+            </option>
+
+            <option value="INR">
+                INR ₹
+            </option>
+
         </select>
 
         <button class="menu-toggle">
@@ -55,53 +66,57 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 </header>
 
-<!-- =========================================
-MOBILE MENU
-========================================= -->
-<nav class="mobile-menu" id="mobileMenu">
-
-    <a href="#">Home</a>
-    <a href="#markets">Markets</a>
-    <a href="#plans">Trading Plans</a>
-    <a href="#education">Education</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Support</a>
-
-</nav>
-                
-<!-- ========================================= -->
-<!-- HERO SECTION -->
-<!-- ========================================= -->
 <section class="hero">
 
-    <div class="hero-left">
+    <div class="hero-badge">
+        Trusted Global Trading Platform
+    </div>
 
-        <span class="hero-badge">
-            Trusted Global Trading Platform
-        </span>
+    <h1 id="heroTitle">
+        Trade Crypto, Forex &
+        Stocks With Confidence
+    </h1>
 
-        <h1>
-            Trade Crypto, Forex & Stocks
-            With Confidence
-        </h1>
+    <p id="heroText">
+        Access premium global markets,
+        professional trading tools,
+        market analytics, education
+        and smart portfolio tracking
+        through GlobalEarn Premium.
+    </p>
 
-        <p>
-            Access global financial markets with premium tools,
-            educational resources, smart analytics and advanced
-            trading experiences.
-        </p>
+    <div class="hero-buttons">
 
-        <div class="hero-buttons">
+        <button class="primary-btn">
+            Open Live Account
+        </button>
 
-            <button class="primary-btn">
-                Open Live Account
-            </button>
+        <button class="secondary-btn">
+            Explore Markets
+        </button>
 
-            <button class="secondary-btn">
-                Explore Markets
-            </button>
+    </div>
 
+    <div class="hero-stats">
+
+        <div class="stat-card">
+            <h2>$847M+</h2>
+            <p>Daily Market Volume</p>
         </div>
+
+        <div class="stat-card">
+            <h2>170+</h2>
+            <p>Countries Supported</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Trading Access</p>
+        </div>
+
+    </div>
+
+</section>
 
         <div id="server-status" class="server-status">
     Connecting backend...
