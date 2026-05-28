@@ -62,20 +62,10 @@ DASHBOARD NAVBAR
     </div>
 
     <div class="nav-right">
-<button
-id="logoutBtn"
-class="primary-btn"
->
 
-Logout
-
-</button>
-        </div>
-
-</nav>
         <select
-            id="currencySwitcher"
-            class="currency-switcher"
+        id="currencySwitcher"
+        class="currency-switcher"
         >
 
             <option value="USD">
@@ -100,8 +90,17 @@ Logout
 
         </select>
 
-        <button class="menu-toggle">
+        <button
+        class="menu-toggle"
+        >
             ☰
+        </button>
+
+        <button
+        id="logoutBtn"
+        class="primary-btn"
+        >
+            Logout
         </button>
 
     </div>
@@ -1484,12 +1483,11 @@ FOOTER
             </a>
 
             <a
-                href="#"
-                id="logoutBtn"
-            >
-                Logout
-            </a>
-
+href="#"
+id="footerLogoutBtn"
+>
+    Logout
+</a>
         </div>
 
         <div class="footer-column">
@@ -1623,34 +1621,6 @@ if(user){
 // ==========================
 // LOGOUT
 // ==========================
-
-const logoutBtn =
-document.getElementById(
-    "logoutBtn"
-);
-
-if(logoutBtn){
-
-    logoutBtn.addEventListener(
-        "click",
-        () => {
-
-            localStorage.removeItem(
-                "token"
-            );
-
-            localStorage.removeItem(
-                "user"
-            );
-
-            window.location.href =
-            "../index.html";
-        }
-    );
-}
-
-</script>
-    
 <script>
 
 const token =
@@ -1665,6 +1635,7 @@ localStorage.getItem(
 )
 );
 
+// protect route
 if(
 !token ||
 !user
@@ -1675,10 +1646,34 @@ window.location.href =
 
 }
 
-</script>
-    
-    <script>
+// welcome name
+const profile =
+document.getElementById(
+"profileName"
+);
 
+const welcome =
+document.getElementById(
+"userName"
+);
+
+if(profile){
+
+profile.textContent =
+user.name ||
+"Premium Trader";
+
+}
+
+if(welcome){
+
+welcome.textContent =
+user.name ||
+"Welcome Trader";
+
+}
+
+// navbar logout
 document
 .getElementById(
 "logoutBtn"
@@ -1697,7 +1692,29 @@ window.location.href =
 }
 );
 
-    </script>
+// footer logout
+document
+.getElementById(
+"footerLogoutBtn"
+)
+
+?.addEventListener(
+"click",
+
+(e)=>{
+
+e.preventDefault();
+
+localStorage.clear();
+
+window.location.href =
+"../auth.html";
+
+}
+);
+
+</script>
+
     
 </body>
 </html>
